@@ -18,6 +18,13 @@ const minasIvpUrl = 'https://www.biblegateway.com/resources/ivp-nt/Parable-Stewa
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
 const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=Luk+19&theme=false';
+const templeWitnessWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-33-3/commentary-on-luke-215-19';
+const eschatologyWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-of-advent-3/commentary-on-luke-2125-36-6';
+const lastSupperWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/narrative-lectionary/last-supper/commentary-on-luke-221-27-4';
+const passionResurrectionYaleUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/the-passion-and-resurrection-study-guide/';
+const emptyTombWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/resurrection-of-our-lord-3/commentary-on-luke-241-12-6';
+const emmausWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/third-sunday-of-easter/commentary-on-luke-2413-35-7';
+const ascensionWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ascension-of-our-lord/commentary-on-luke-2444-53-9';
 
 const academicSources = {
   'Lanier 2025': { label: 'Lanier 2025', url: lanierUrl },
@@ -162,6 +169,115 @@ export const chapterNineteenReferences: ChapterReference[] = [
     text: 'Yale Bible Study. “The Gospel of Luke: In Jerusalem.”',
     url: yaleJerusalemUrl,
     note: '用于路加 19 章后半的文学结构、进城宣告、哭城与路加简写的圣殿行动。',
+  },
+];
+
+export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCitation[]> = {
+  '20:1–8': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
+  '20:9–19': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读')],
+  '20:20–26': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
+  '20:27–40': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读')],
+  '20:41–47': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读')],
+  '21:1–4': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
+  '21:5–24': [
+    source('WP · 21:5–19', 'Working Preacher · 路 21:5–19', templeWitnessWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '21:25–28': [
+    source('WP · 21:25–36', 'Working Preacher · 路 21:25–36', eschatologyWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '21:29–36': [source('WP · 21:25–36', 'Working Preacher · 路 21:25–36', eschatologyWorkingPreacherUrl, '解读')],
+  '21:37–38': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
+  '22:1–6': [
+    source('WP · 末后晚餐', 'Working Preacher · 末后晚餐', lastSupperWorkingPreacherUrl, '背景'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '22:7–23': [
+    source('WP · 末后晚餐', 'Working Preacher · 末后晚餐', lastSupperWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '22:24–30': [source('WP · 末后晚餐', 'Working Preacher · 末后晚餐', lastSupperWorkingPreacherUrl, '解读')],
+  '22:31–38': [source('WP · 末后晚餐', 'Working Preacher · 末后晚餐', lastSupperWorkingPreacherUrl, '解读')],
+  '22:39–46': [
+    source('WP · 末后晚餐', 'Working Preacher · 末后晚餐', lastSupperWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '22:47–71': [
+    source('WP · 末后晚餐', 'Working Preacher · 末后晚餐', lastSupperWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '23:1–25': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读')],
+  '23:26–31': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景')],
+  '23:32–43': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读')],
+  '23:44–49': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读')],
+  '23:50–56': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景')],
+  '24:1–12': [
+    source('WP · 空坟墓', 'Working Preacher · 空坟墓', emptyTombWorkingPreacherUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
+  ],
+  '24:13–35': [
+    source('WP · 以马忤斯', 'Working Preacher · 以马忤斯', emmausWorkingPreacherUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
+  ],
+  '24:36–49': [
+    source('WP · 升天', 'Working Preacher · 路 24:44–53', ascensionWorkingPreacherUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
+  ],
+  '24:50–53': [
+    source('WP · 升天', 'Working Preacher · 路 24:44–53', ascensionWorkingPreacherUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
+  ],
+};
+
+export const chapterTwentyToTwentyFourReferences: ChapterReference[] = [
+  {
+    id: 'Yale · 在耶路撒冷',
+    text: 'Yale Bible Study. “The Gospel of Luke: In Jerusalem.”',
+    url: yaleJerusalemUrl,
+    note: '用于路加 20–22 章的耶路撒冷场景、圣殿权柄、末世讲论与受难前夜的文学和历史背景。',
+  },
+  {
+    id: 'WP · 21:5–19',
+    text: 'Working Preacher. “Commentary on Luke 21:5–19.”',
+    url: templeWitnessWorkingPreacherUrl,
+    note: '用于圣殿毁坏、逼迫与见证的段落性解读；链接为公开释经资源。',
+  },
+  {
+    id: 'WP · 21:25–36',
+    text: 'Working Preacher. “Commentary on Luke 21:25–36.”',
+    url: eschatologyWorkingPreacherUrl,
+    note: '用于但以理 7、人子、救赎与警醒祷告的末世图像解读。',
+  },
+  {
+    id: 'WP · 末后晚餐',
+    text: 'Working Preacher. “Commentary on Luke 22:1–27.”',
+    url: lastSupperWorkingPreacherUrl,
+    note: '用于逾越节桌席、出卖、神国与服事领导的段落解读；相关段落旁另以经文链接核对文本。',
+  },
+  {
+    id: 'Yale · 受难与复活',
+    text: 'Yale Bible Study. “The Gospel of Luke: The Passion and Resurrection.”',
+    url: passionResurrectionYaleUrl,
+    note: '用于路加 23–24 章的受难、安葬、空坟墓、以马忤斯与使命结构。',
+  },
+  {
+    id: 'WP · 空坟墓',
+    text: 'Working Preacher. “Commentary on Luke 24:1–12.”',
+    url: emptyTombWorkingPreacherUrl,
+    note: '用于妇女见证、空坟墓与门徒困惑的叙事观察。',
+  },
+  {
+    id: 'WP · 以马忤斯',
+    text: 'Working Preacher. “Commentary on Luke 24:13–35.”',
+    url: emmausWorkingPreacherUrl,
+    note: '用于同行、经文开启、擘饼与回到耶路撒冷见证的叙事观察。',
+  },
+  {
+    id: 'WP · 升天',
+    text: 'Working Preacher. “Commentary on Luke 24:44–53.”',
+    url: ascensionWorkingPreacherUrl,
+    note: '用于复活身体、圣经开启、悔改赦罪、圣灵等候与升天的结尾结构。',
   },
 ];
 

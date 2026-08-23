@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, type ChapterReference } from './academicCitations';
+import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
+import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, type ChapterReference } from './academicCitations';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
 
@@ -186,6 +186,7 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
       academicSourceCitation('Lanier 2025', '解读'),
       academicSourceCitation('Johnson 2018', '背景'),
       ...(chapterNineteenCitationsByRange[note.range] ?? []),
+      ...(chapterTwentyToTwentyFourCitationsByRange[note.range] ?? []),
       ...(note.citations ?? []),
       ...relatedPassages,
     ],
@@ -201,7 +202,7 @@ export const chapterData: Chapter[] = chapterThemes.map(([title, focus], index) 
   questions: index === 0 ? ['我在本章看见神怎样在等待中工作？', '马利亚、以利沙伯、撒迦利亚的回应有什么不同？', '本周我可以怎样让“神的应许”进入一个具体关系？'] : [`本章最挑战我原有观念的哪一处？`, '耶稣在这里如何看待被忽略的人？', '小组可以怎样把本章的一个动作带进这两周的生活？'],
   practice: index === 0 ? '找一个仍在等待中的祷告，用本章的三种回应（诚实、聆听、顺服）写下祷告，再找一位组员彼此代祷。' : `在未来两周刻意练习“${focus}”：记录一次具体场景，下次小组分享经文如何改变你的回应。`,
   prayer: index === 0 ? '主啊，在等待与不明白中，求你使我们像马利亚一样听见、像以利沙伯一样祝福、像撒迦利亚一样重新学会赞美。' : `主耶稣，求你让我们不只知道“${focus}”，也在今天的关系和选择中活出来。`,
-  notes: (index === 0 ? chapterNotes : chapterNotesByChapter[index + 1]).map(applyResearchReview).map(index === 0 ? addChapterOneCitations : addLaterChapterCitations),
+  notes: (index === 0 ? chapterNotes : chapterNotesByChapter[index + 1]).map(applyResearchReview).map(applyDeepStudyEnhancement).map(index === 0 ? addChapterOneCitations : addLaterChapterCitations),
 }));
 
 function getChapterReferences(chapter: Chapter): ChapterReference[] {
@@ -227,6 +228,7 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     },
     ...academicReferences,
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
+    ...(chapter.no >= 20 && chapter.no <= 24 ? chapterTwentyToTwentyFourReferences : []),
     ...pastoralReferences,
     ...(relatedPassages.length ? [{
       id: '互文',
