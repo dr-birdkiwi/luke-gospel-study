@@ -13,6 +13,21 @@ const sterlingUrl = 'https://www.eerdmans.com/9780802848734/shaping-the-past-to-
 const johnsonUrl = 'https://litpress.org/Products/E8331/Sacra-Pagina-The-Gospel-of-Luke';
 const birdUrl = 'https://www.ivpress.com/a-bird-s-eye-view-of-luke-and-acts';
 
+const academicSources = {
+  'Lanier 2025': { label: 'Lanier 2025', url: lanierUrl },
+  'Sterling 2023': { label: 'Sterling 2023', url: sterlingUrl },
+  'Johnson 2018': { label: 'Johnson 2018', url: johnsonUrl },
+  Bird: { label: 'Bird · Luke-Acts', url: birdUrl },
+} as const;
+
+export function academicSourceCitation(
+  id: keyof typeof academicSources,
+  scope: StudyCitation['scope'] = '解读',
+): StudyCitation {
+  const item = academicSources[id];
+  return source(id, item.label, item.url, scope);
+}
+
 function source(id: string, label: string, url: string, scope: StudyCitation['scope']): StudyCitation {
   return { id, label, url, scope };
 }
