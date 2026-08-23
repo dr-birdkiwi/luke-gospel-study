@@ -64,6 +64,22 @@ button,input { font:inherit; } button { cursor:pointer; }
 .related-chapter[open]>summary::before { content:'▾'; }
 @media (max-width:760px) { .scripture-block { padding:14px 13px 11px; }.scripture-text p { grid-template-columns:21px 1fr; gap:7px; font-size:14px; line-height:1.8; }.scripture-text sup { padding-top:9px; }.scripture-version { font-size:8px; }.related-scriptures-body { padding:13px; }.related-card { padding:11px 11px 12px; } }
 
+.pastoral-guide { margin:0 0 22px; border:1px solid #d8e2da; background:linear-gradient(135deg,#fbfdf9 0%,#f4f8f3 62%,#fff9f5 100%); padding:20px 22px 18px; box-shadow:0 12px 28px rgba(45,65,54,.045); }
+.pastoral-guide-head { display:flex; align-items:baseline; gap:12px; padding-bottom:13px; border-bottom:1px solid #dce5de; }
+.pastoral-guide-head>span { color:var(--sage-deep); font-size:8px; font-weight:800; letter-spacing:.15em; }
+.pastoral-guide-head h3 { margin:0; color:var(--ink); font-size:18px; letter-spacing:-.045em; }
+.pastoral-guide-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; }
+.pastoral-guide-grid>div { padding:15px 17px 4px 0; }
+.pastoral-guide-grid>div+div { border-left:1px solid #dce5de; padding-left:17px; }
+.pastoral-guide-label { display:block; margin-bottom:7px; color:var(--sage-deep); font-size:8px; font-weight:800; letter-spacing:.08em; }
+.pastoral-guide-grid p { margin:0; color:var(--muted); font-size:11px; line-height:1.78; }
+.pastoral-guide-grid .pastoral-guardrail p,.pastoral-guide-grid .pastoral-guardrail .pastoral-guide-label { color:var(--clay-deep); }
+.pastoral-guide-sources { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin-top:13px; padding-top:11px; border-top:1px solid #dce5de; font-size:9px; }
+.pastoral-guide-sources>span { color:var(--faint); font-weight:800; margin-right:2px; }
+.pastoral-guide-sources a { color:var(--sage-deep); text-decoration:none; border-bottom:1px solid rgba(87,123,97,.22); }
+.pastoral-guide-sources a:hover { color:var(--clay-deep); border-color:rgba(169,103,76,.35); }
+@media (max-width:760px) { .pastoral-guide { padding:18px 17px 16px; }.pastoral-guide-head { display:block; }.pastoral-guide-head h3 { margin-top:5px; }.pastoral-guide-grid { grid-template-columns:1fr; }.pastoral-guide-grid>div { padding:13px 0 12px; }.pastoral-guide-grid>div+div { border-left:0; border-top:1px solid #dce5de; padding-left:0; }.pastoral-guide-sources { margin-top:4px; } }
+
 /* Align small reference labels and verse numbers to the first text baseline. */
 .chapter-reference-list li { align-items:start; }
 .reference-index { line-height:1.5; padding-top:5px; }
