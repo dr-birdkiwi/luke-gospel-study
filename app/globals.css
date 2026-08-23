@@ -31,7 +31,7 @@ button,input { font:inherit; } button { cursor:pointer; }
 .scripture-version { color:var(--faint); font-size:9px; letter-spacing:.06em; }
 .scripture-text { display:flex; flex-direction:column; gap:7px; padding-top:13px; }
 .scripture-text p { display:grid; grid-template-columns:25px 1fr; gap:9px; align-items:start; margin:0; color:var(--ink); font-family:Georgia,"Noto Serif TC",serif; font-size:15px; line-height:1.85; }
-.scripture-text sup { align-self:start; padding-top:5px; color:var(--clay-deep); font-family:Inter,ui-sans-serif,sans-serif; font-size:9px; font-weight:800; line-height:1.15; text-align:left; vertical-align:initial; }
+.scripture-text sup { align-self:start; display:block; padding-top:11px; color:var(--clay-deep); font-family:Inter,ui-sans-serif,sans-serif; font-size:9px; font-weight:800; line-height:1.15; text-align:left; vertical-align:initial; }
 .scripture-source { color:var(--faint); font-size:8px; line-height:1.5; margin:13px 0 0; }
 .scripture-empty { color:var(--faint); font-size:11px; line-height:1.7; margin:13px 0 0; }
 .scripture-block.compact { border:0; box-shadow:none; margin:0; padding:12px 0 0; background:transparent; }
@@ -59,4 +59,4 @@ button,input { font:inherit; } button { cursor:pointer; }
 .related-chapter>summary { color:var(--clay-deep); cursor:pointer; font-size:10px; font-weight:800; padding-top:11px; }
 .related-chapter>summary::before { content:'▸'; margin-right:6px; }
 .related-chapter[open]>summary::before { content:'▾'; }
-@media (max-width:760px) { .scripture-block { padding:14px 13px 11px; }.scripture-text p { grid-template-columns:21px 1fr; gap:7px; font-size:14px; line-height:1.8; }.scripture-text sup { padding-top:4px; }.scripture-version { font-size:8px; }.related-scriptures-body { padding:13px; }.related-card { padding:11px 11px 12px; } }
+@media (max-width:760px) { .scripture-block { padding:14px 13px 11px; }.scripture-text p { grid-template-columns:21px 1fr; gap:7px; font-size:14px; line-height:1.8; }.scripture-text sup { padding-top:9px; }.scripture-version { font-size:8px; }.related-scriptures-body { padding:13px; }.related-card { padding:11px 11px 12px; } }
