@@ -41,6 +41,60 @@ const chapterGuideOverrides: Record<number, string[]> = {
   24: ['空坟墓与妇女见证', '以马忤斯的同行、擘饼与经文', '显现、开启心窍、祝福与差遣'],
 };
 
+const chapterSummaries = [
+  '从可靠的见证开始，神在两个普通家庭中开启救赎的序章。',
+  '耶稣在伯利恒、圣殿与拿撒勒之间进入人的家庭，也进入以色列的敬拜与盼望。',
+  '约翰在帝国权力的年代呼召悔改；耶稣受洗、被确认，并以家谱进入全人类的历史。',
+  '耶稣在旷野胜过试探，在拿撒勒宣告释放，又在迦百农以权柄医治和传讲神国。',
+  '耶稣呼召渔夫与税吏，在赦罪、洁净和安息日的争议中显明新的群体秩序。',
+  '从安息日争议到平原宝训，耶稣把天国伦理落在怜悯、仇敌、金钱与心的根基上。',
+  '外邦百夫长、寡妇、施洗约翰和被称为罪人的女人，都在追问耶稣究竟是谁。',
+  '神的话在不同土壤中生长；耶稣在湖上、湖东和人群中显明祂对自然、污鬼与疾病的权柄。',
+  '门徒被差遣、群众得饱、彼得认信；山上荣耀之后，耶稣定意走向耶路撒冷。',
+  '七十（二）个人被差遣，邻舍在路旁被重新定义，忙乱的家也成为聆听主的地方。',
+  '耶稣教导祷告、揭露假冒、警告财富与自满，并呼召人分辨神国临近的时刻。',
+  '在忧虑、财富、等候与家庭分裂中，耶稣要求门徒把忠心落实在日常选择。',
+  '灾难不是优越感的证据；耶稣以悔改、怜悯、神国成长和窄门回应耶路撒冷的危机。',
+  '宴席中的座位、邀请与计算代价，重新安排门徒如何看待尊荣、资源和跟随。',
+  '失羊、失钱和失子共同揭开父的喜乐，也把站在门外的自义带到光中。',
+  '管家、律法、财主与拉撒路把钱财问题推进到永恒：我们如何使用受托的一切？',
+  '从绊倒、饶恕、麻风病人的感恩到神国的临在，信心在关系和等待中被检验。',
+  '寡妇的祷告、税吏的谦卑、孩子的领受和富足官的挣扎，都汇入前往耶路撒冷的道路。',
+  '撒该的家、十锭银子、荣耀进城与圣殿哭泣，显示救恩同时改变个人、经济和城市。',
+  '在耶路撒冷圣殿，权柄、税收、复活与宗教外表被放在神国的审判之下。',
+  '圣殿的奉献、将来的毁坏、逼迫与人子降临，使门徒学习在混乱中清醒见证。',
+  '逾越节的桌边、门徒的争大、彼得的筛选和橄榄山的祷告，把忠心带到受难前夜。',
+  '耶稣在政治与宗教权力之间被交付，在十字架上赦免、受死，并被安放在坟墓。',
+  '空坟墓、以马忤斯、经文开启、身体复活与升天，把失望的门徒转成喜乐的见证人。',
+];
+
+const chapterSettings = [
+  '希律作犹太王；圣殿、拿撒勒与犹大山地成为应许展开的三个场景。',
+  '伯利恒的出生地、耶路撒冷圣殿与加利利的拿撒勒，交织出家庭、礼仪与成长的空间。',
+  '提庇留在位第十五年，约旦河与旷野成为帝国地图之外、却承载神话语的地方。',
+  '旷野、拿撒勒会堂与迦百农的会堂、家庭和城门，构成耶稣公开事奉的起点。',
+  '加利利湖、迦百农和税关把渔业、疾病、罪疚与社会边缘带到同一条道路上。',
+  '加利利平原与湖边人群聚集；安息日、会堂和十二使徒形成新群体的背景。',
+  '迦百农、拿因和加利利的筵席，让罗马秩序、死亡、债务与赦免彼此相遇。',
+  '加利利各城、湖上航行、湖东的外邦地区与会堂家庭，成为神的话被听见和拒绝的现场。',
+  '本章从加利利事工转向耶路撒冷旅程；山上、山下与撒玛利亚村庄都在这条路上。',
+  '耶稣从加利利南行，经过乡镇道路、撒玛利亚边界和普通家庭，教导门徒怎样成为邻舍。',
+  '旅程中的住宅、饭桌、会堂与公共空间，让祷告、财富、宗教权力和神国彼此碰撞。',
+  '耶稣继续走向耶路撒冷；家庭、田地、仓房和法庭成为警醒与分辨的日常场景。',
+  '旅程中的村镇、安息日会堂和通往耶路撒冷的路，把灾难、悔改和末世筵席放在一起。',
+  '法利赛人家中的安息日宴席成为观察座位、邀请和门徒代价的公共课堂。',
+  '旅程路上的失落与回家，以家庭、田野、邻舍和宴席呈现神寻找人的心。',
+  '旅程中的财物、债务、门口与餐桌，揭露财富如何塑造人看见谁、忽略谁。',
+  '撒玛利亚与加利利边界、旅程道路和末世盼望交汇，感恩者从边缘回来敬拜。',
+  '旅程接近耶路撒冷；祷告场景、孩子、税吏、富足者与瞎子共同显示谁能看见神国。',
+  '耶利哥通往耶路撒冷的入口，撒该的家、王权比喻、橄榄山和圣殿连成一条路。',
+  '耶路撒冷圣殿成为权柄争议的中心，宗教领导、罗马税制与复活盼望在此交锋。',
+  '圣殿与橄榄山之间，奉献、毁坏、战争、逼迫和人子盼望共同塑造门徒的警醒。',
+  '耶路撒冷逾越节夜晚、门徒聚集的房间、橄榄山与大祭司院落组成受难前夜。',
+  '耶路撒冷的审判场、各各他与新坟墓，把罗马刑罚、宗教指控和赦免的王权并置。',
+  '耶路撒冷、以马忤斯道路与伯大尼附近，把空坟墓、经文解释、显现和升天连成见证起点。',
+];
+
 const chapterNotes: StudyNote[] = [
   { range: '1:1–4', title: '为要叫你知道所学之道都是确实的', scene: '想象一间点着油灯的房间：手边有口述见证、早期记载和一位正在学习信仰的读者。路加没有从神迹开场，而是先说明他为何写、写给谁，以及怎样把传下来的见证整理成一条可以跟随的路。', scripture: '路加先说明写作不是传闻汇编，而是经过考察、按次序整理的见证。', literal: '作者把读者带到一个可以信靠的叙事中：福音既有信仰意义，也有见证的历史形状。“确实”不是取消思考，而是邀请人把信仰放在可查考的见证上。', context: '第一世纪的希腊—罗马写作常以致意对象、资料来源和写作目的开头；“按着次序”可以指为读者整理出清楚的叙事路径，并不一定只指严格的时间顺序。提阿非罗的身份不能武断确定为某位官员。', connection: '可对照徒 1:1–3，看见路加福音与使徒行传像一部两卷本见证；也可回看申 19:15，留意圣经对见证与确证的重视。', life: '讨论：我们的信仰哪些部分来自经文，哪些只是“教会里听来的说法”？操练：本周选一件信仰疑问，先写下经文根据，再和组员一起查考，而不是急着用一句口号盖过去。' },
   { range: '1:5–25', title: '你的祈祷已经被听见了', scene: '耶路撒冷的早晨，圣殿里有祭司轮值，外院的百姓在等待。香烟从圣所升起，撒迦利亚独自进去服事；就在这套延续已久的敬拜秩序里，一个年老、无子的家庭忽然被神点名。', scripture: '撒迦利亚与以利沙伯年老无子；天使宣告约翰将使许多人回转，预备主的道路。', literal: '神的回应不只是解决一个家庭的遗憾，而是把一个孩子放在救赎历史的前奏中。撒迦利亚的迟疑也被保留下来：圣经没有把信心写成没有挣扎的样子。', context: '希律大帝仍在位；圣殿是犹太人共同敬拜与身份记忆的中心。祭司按班次服事，香坛前的烟与外面百姓的祷告同场出现；路加把私人愿望放回公共敬拜。经文说的是圣所的“殿”，不是一年一次的大祭司进入至圣所。', connection: '可串联玛 3:1、玛 4:5–6 与赛 40:3，留意“预备道路”和“使父亲的心转向儿女”的先知回声；也可对照启 8:3–4，观察香与祷告在新约中的象征联系。', life: '讨论：长期没有答案的祷告会怎样塑造我们？操练：把一个等待中的祷告写成“我期待什么／神可能正在预备什么／今天我仍可忠心做什么”三行，和组员彼此代祷。' },
@@ -54,8 +108,8 @@ const chapterNotes: StudyNote[] = [
 
 const chapterData: Chapter[] = chapterThemes.map(([title, focus], index) => ({
   no: index + 1, title, focus,
-  summary: index === 0 ? '从可靠的见证开始，神在两个普通家庭中开启救赎的序章。' : `沿着耶稣从加利利走向耶路撒冷的道路，${focus}`,
-  setting: index === 0 ? '希律作犹太王；圣殿、拿撒勒与犹大山地成为应许展开的三个场景。' : `本章位于路加福音的${index < 19 ? '加利利与旅程段落' : '耶路撒冷段落'}，适合先读完整章，再回到关键段落。`,
+  summary: chapterSummaries[index],
+  setting: chapterSettings[index],
   sections: chapterGuideOverrides[index + 1] ?? chapterGuides[index] ?? [],
   crossRefs: index === 0 ? ['创 12:1–3 · 亚伯拉罕之约', '撒上 2:1–10 · 哈拿的祷告', '玛 4:5–6 · 以利亚的应许'] : [`太 ${index + 1} · 平行叙事与不同焦点`, `诗 ${Math.max(1, index + 1)} · 旧约祷告的回声`, `徒 ${Math.min(28, index + 1)} · 见证如何延伸`],
   questions: index === 0 ? ['我在本章看见神怎样在等待中工作？', '马利亚、以利沙伯、撒迦利亚的回应有什么不同？', '本周我可以怎样让“神的应许”进入一个具体关系？'] : [`本章最挑战我原有观念的哪一处？`, '耶稣在这里如何看待被忽略的人？', '小组可以怎样把本章的一个动作带进这两周的生活？'],
@@ -79,10 +133,10 @@ export default function Home() {
     <div className="mobile-chapter-strip" aria-label="选择章节"><span className="mobile-strip-label">章节</span><div className="mobile-chapters">{chapterData.map((item) => <button key={item.no} className={item.no === chapter.no ? 'chapter-pill active' : 'chapter-pill'} onClick={() => selectChapter(item.no)} type="button">{String(item.no).padStart(2, '0')}</button>)}</div></div>
     <div className="page-grid">
       <aside className="sidebar"><div className="sidebar-intro"><p className="section-label">LUKE / 24</p><h2>章节导航</h2><p>每两周走一章，读经、对照、回应。</p></div><label className="search-box"><span aria-hidden="true">⌕</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="寻找章节或主题" aria-label="寻找章节或主题" />{search && <button type="button" onClick={() => setSearch('')} aria-label="清除搜索">×</button>}</label><nav className="chapter-list" aria-label="路加福音章节">{filteredChapters.map((item) => <button key={item.no} type="button" className={item.no === chapter.no ? 'chapter-row selected' : 'chapter-row'} onClick={() => selectChapter(item.no)}><span className="chapter-number">{String(item.no).padStart(2, '0')}</span><span className="chapter-copy"><strong>{item.title}</strong><small>{item.focus}</small></span>{completed.includes(item.no) && <span className="check-dot" aria-label="已查考">✓</span>}</button>)}</nav><div className="sidebar-footer"><span className="progress-ring">{completed.length}<small>/24</small></span><span><strong>查考进度</strong><small>一步一步走</small></span></div></aside>
-      <section className="content-column"><div className="chapter-hero"><div className="chapter-hero-top"><span className="chapter-tag">第 {chapter.no} 章</span><span className="hero-meta">LUKE · {String(chapter.no).padStart(2, '0')} <span>／</span> 约 20 分钟阅读</span></div><h1>{chapter.title}</h1><p className="hero-summary">{chapter.summary}</p></div><div className="tab-panel"><div className="panel-heading"><div><p className="section-label">01 / 逐段阅读</p><h2>先读经文，再让问题打开经文</h2></div><button type="button" className={isCurrent ? 'complete-button done' : 'complete-button'} onClick={toggleCompleted}>{isCurrent ? '✓ 本章已查考' : '标记本章已查考'}</button></div><div className="reading-map"><span className="map-kicker">本章路线</span><div className="map-steps">{chapter.sections.map((section, index) => <div className="map-step" key={section}><span>{String(index + 1).padStart(2, '0')}</span><p>{section}</p></div>)}</div></div><div className="notes-list">{(chapter.notes ?? chapter.sections.map((section, index) => ({ range: `本章 · ${String(index + 1).padStart(2, '0')}`, title: section, scene: `先把自己放进${chapter.setting}，再完整朗读这一段，想象人物怎样说、怎样做，以及叙事何处发生转折。`, scripture: '先完整朗读这一段，留意人物怎样说、怎样做，以及叙事何处发生转折。', literal: '把观察写成一句不带解释的事实：谁在什么处境中回应了谁。', context: chapter.setting, connection: `可与本章的${chapter.crossRefs[index % chapter.crossRefs.length]}互相参照，留意同一主题在不同经文中的展开。`, life: chapter.questions[index % chapter.questions.length] }))).map((note, index) => <StudyNoteCard key={note.range} note={note} index={index} />)}</div><div className="pause-card"><span className="pause-symbol">⌁</span><div><p className="section-label">停一下</p><p>哪一个词、哪一个人物或哪一个动作反复出现在你眼前？先不要急着解释，和组员分享你实际看见了什么。</p></div></div></div></section>
-      <aside className="right-rail"><div className="rail-card focus-card"><div className="card-icon">✧</div><p className="section-label">本章焦点</p><h3>{chapter.focus}</h3><p>{chapter.summary}</p><button type="button" onClick={() => document.getElementById('discussion')?.scrollIntoView({ behavior: 'smooth' })}>去小组讨论 <span>↗</span></button></div><div className="rail-card group-card" id="discussion"><div className="card-topline"><p className="section-label">小组讨论</p><span>3 / 3</span></div><h3>一起问，慢慢听</h3><p>好的问题不急着得到标准答案，先让每个人诚实地说出经文怎样碰到自己。</p><ol><li>我看见了什么？</li><li>这让我想到什么？</li><li>我可以怎样回应？</li></ol><button type="button" onClick={() => document.getElementById('discussion')?.scrollIntoView({ behavior: 'smooth' })}>打开讨论卡 <span>→</span></button></div><div className="quote-card"><span>“</span><p>读经不是把经文变小，而是让我们的生活重新被它照亮。</p><small>— 小组查经笔记</small></div></aside>
+      <section className="content-column"><div className="chapter-hero"><div className="chapter-hero-top"><span className="chapter-tag">第 {chapter.no} 章</span><span className="hero-meta">LUKE · {String(chapter.no).padStart(2, '0')} <span>／</span> 约 20–35 分钟预读</span></div><h1>{chapter.title}</h1><p className="hero-summary">{chapter.summary}</p></div><div className="tab-panel"><div className="panel-heading"><div><p className="section-label">01 / 逐段阅读</p><h2>先读经文，再让问题打开经文</h2></div><button type="button" className={isCurrent ? 'complete-button done' : 'complete-button'} onClick={toggleCompleted}>{isCurrent ? '✓ 本章已查考' : '标记本章已查考'}</button></div><div className="reading-note"><span className="reading-note-label">读法提示</span><p>“进入现场”是帮助我们进入叙事的场景重建；其中没有经文明确说明的细节，不作为历史事实或教义依据。阅读“经文观察”时，也请分辨哪些是文本直接写出的内容，哪些是根据上下文作出的初步解读。</p></div><div className="reading-map"><span className="map-kicker">本章路线</span><div className="map-steps">{chapter.sections.map((section, index) => <div className="map-step" key={section}><span>{String(index + 1).padStart(2, '0')}</span><p>{section}</p></div>)}</div></div><div className="notes-list">{(chapter.notes ?? chapter.sections.map((section, index) => ({ range: `本章 · ${String(index + 1).padStart(2, '0')}`, title: section, scene: `先把自己放进${chapter.setting}，再完整朗读这一段，想象人物怎样说、怎样做，以及叙事何处发生转折。`, scripture: '先完整朗读这一段，留意人物怎样说、怎样做，以及叙事何处发生转折。', literal: '把观察写成一句不带解释的事实：谁在什么处境中回应了谁。', context: chapter.setting, connection: `可与本章的${chapter.crossRefs[index % chapter.crossRefs.length]}互相参照，留意同一主题在不同经文中的展开。`, life: chapter.questions[index % chapter.questions.length] }))).map((note, index) => <StudyNoteCard key={note.range} note={note} index={index} />)}</div><div className="pause-card"><span className="pause-symbol">⌁</span><div><p className="section-label">停一下</p><p>哪一个词、哪一个人物或哪一个动作反复出现在你眼前？先不要急着解释，和组员分享你实际看见了什么。</p></div></div></div></section>
+      <aside className="right-rail"><div className="rail-card focus-card"><div className="card-icon">✧</div><p className="section-label">本章焦点</p><h3>{chapter.focus}</h3><p>{chapter.summary}</p><button type="button" onClick={() => document.getElementById('discussion')?.scrollIntoView({ behavior: 'smooth' })}>去小组讨论 <span>↗</span></button></div><div className="rail-card group-card" id="discussion"><div className="card-topline"><p className="section-label">小组讨论</p><span>3 / 3</span></div><h3>一起问，慢慢听</h3><p>好的问题不急着得到标准答案，先让每个人诚实地说出经文怎样碰到自己。</p><ol><li>我看见了什么？</li><li>这让我想到什么？</li><li>我可以怎样回应？</li></ol><div className="group-safety"><span>小组安全</span><p>可以选择不分享个人隐私；不使用经文责备受伤的人；饶恕不等于取消安全边界。涉及创伤、家暴、成瘾、财务或心理健康时，寻求合适的专业帮助。</p></div><button type="button" onClick={() => document.getElementById('discussion')?.scrollIntoView({ behavior: 'smooth' })}>打开讨论卡 <span>→</span></button></div><div className="quote-card"><span>“</span><p>读经不是把经文变小，而是让我们的生活重新被它照亮。</p><small>— 小组查经笔记</small></div></aside>
     </div><footer className="site-footer"><span>在福音的路上</span><span>每两周一章 · 读进去，也活出来</span><span>路加福音 01—24</span></footer>
   </main>;
 }
 
-function StudyNoteCard({ note, index }: { note: StudyNote; index: number }) { return <article className="study-note"><div className="note-index">{String(index + 1).padStart(2, '0')}</div><div className="note-body"><div className="note-heading"><span className="verse-range">{note.range}</span><h3>{note.title}</h3></div><div className="note-scene"><span className="note-label">进入现场</span><p>{note.scene}</p></div><div className="note-thesis"><span className="note-label">本段主旨</span><p>{note.scripture}</p></div><div className="note-observation"><span className="note-label">经文观察</span><p>{note.literal}</p></div><div className="note-supporting"><div className="note-context"><span className="note-label">历史窗口</span><p>{note.context}</p></div>{note.connection && <div className="note-connection"><span className="note-label">旧约／新约回声</span><p>{note.connection}</p></div>}</div>{note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{note.life}</p></div>}</div></article>; }
+function StudyNoteCard({ note, index }: { note: StudyNote; index: number }) { return <article className="study-note"><div className="note-index">{String(index + 1).padStart(2, '0')}</div><div className="note-body"><div className="note-heading"><span className="verse-range">{note.range}</span><h3>{note.title}</h3></div><div className="note-scene"><span className="note-label">进入现场</span><p>{note.scene}</p></div><div className="note-thesis"><span className="note-label">本段主旨</span><p>{note.scripture}</p></div><div className="note-observation"><span className="note-label">经文观察 · 初步解读</span><p>{note.literal}</p></div><div className="note-supporting"><div className="note-context"><span className="note-label">历史窗口</span><p>{note.context}</p></div>{note.connection && <div className="note-connection"><span className="note-label">旧约／新约回声</span><p>{note.connection}</p></div>}</div>{note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{note.life}</p></div>}</div></article>; }
