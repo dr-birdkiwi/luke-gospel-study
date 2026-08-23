@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { academicSourceCitation, bibleGatewayUrl, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, type ChapterReference } from './academicCitations';
+import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, type ChapterReference } from './academicCitations';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
 
@@ -66,7 +66,7 @@ const chapterGuidesByChapter: Record<number, string[]> = {
   16: ['不义管家与钱财的忠心', '法利赛人爱钱、律法与神国', '财主与拉撒路：看见门口的贫穷'],
   17: ['绊倒、饶恕与信心', '十个麻风病人与感恩', '神的国已经临在，也将完全显明'],
   18: ['寡妇与不义的官、恒切祷告', '法利赛人与税吏、小孩子', '富足的官、受难预告、瞎子得看见'],
-  19: ['撒该与救恩进家', '十锭银子与受托', '荣耀进城、为耶路撒冷哭泣、洁净圣殿'],
+  19: ['在耶利哥：“今天”救恩进入撒该的家（19:1–10）', '王尚未照人所想立刻显现：等候中的托付与审判（19:11–27）', '和平之王进城、为城哀哭，并以圣殿行动显明权柄（19:28–48）'],
   20: ['权柄质问与凶恶园户', '纳税给该撒、复活的争论', '大卫之子与文士、弱者与权力'],
   21: ['寡妇的两个小钱与圣殿', '圣殿被毁、战争、逼迫与见证', '人子来到、无花果树、警醒祷告'],
   22: ['阴谋、逾越节与圣餐', '谁为大、彼得被筛与不认主', '橄榄山的祷告、被捕与受审'],
@@ -93,7 +93,7 @@ const chapterSummaries = [
   '管家、律法、财主与拉撒路把钱财问题推进到永恒：我们如何使用受托的一切？',
   '从绊倒、饶恕、麻风病人的感恩到神国的临在，信心在关系和等待中被检验。',
   '寡妇的祷告、税吏的谦卑、孩子的领受和富足官的挣扎，都汇入前往耶路撒冷的道路。',
-  '撒该的家、十锭银子、荣耀进城与圣殿哭泣，显示救恩同时改变个人、经济和城市。',
+  '“今天”的救恩进入撒该家；王在等候中要求忠心，又以和平、眼泪和圣殿行动进入耶路撒冷，显明人怎样回应神的眷顾。',
   '在耶路撒冷圣殿，权柄、税收、复活与宗教外表被放在神国的审判之下。',
   '圣殿的奉献、将来的毁坏、逼迫与人子降临，使门徒学习在混乱中清醒见证。',
   '逾越节的桌边、门徒的争大、彼得的筛选和橄榄山的祷告，把忠心带到受难前夜。',
@@ -147,7 +147,7 @@ const chapterCrossRefs: Record<number, string[]> = {
   16: ['申 15:7–11 · 财物与穷人', '摩 6:4–7 · 奢华与冷漠', '提前 6:17–19 · 富足者如何行善'],
   17: ['利 13–14 · 洁净与重新进入群体', '王下 5:1–19 · 外族人的医治与感恩', '罗 14:17–19 · 神国与共同体'],
   18: ['申 10:17–18 · 神为弱者伸冤', '诗 51:17 · 谦卑的心', '可 10:13–52 · 门徒、财富与看见'],
-  19: ['亚 9:9–10 · 谦和的君王', '诗 118:25–27 · 奉主名来的王', '徒 2:22–36 · 王权、受死与复活'],
+  19: ['出 22:1–4 · 赔偿与修复', '亚 9:9–10；诗 118:25–27 · 谦和、和平而来的王', '赛 56:6–7；耶 7:1–11 · 祷告之殿与虚假安全'],
   20: ['赛 5:1–7 · 葡萄园与主人', '创 1:26–27 · 神的形象与公共责任', '诗 110:1 · 大卫的主'],
   21: ['耶 7:1–15 · 圣殿与虚假的安全', '但 7:13–14 · 人子与末世掌权', '帖前 5:1–8 · 清醒、盼望与见证'],
   22: ['出 12 · 逾越节与出埃及', '耶 31:31–34 · 新约应许', '林前 11:23–26 · 圣餐传统与记念'],
@@ -185,6 +185,8 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
       { id: `路 ${note.range}`, label: `路 ${note.range} 原文`, url: chapterOnePassageUrl(note.range), scope: '经文' as const },
       academicSourceCitation('Lanier 2025', '解读'),
       academicSourceCitation('Johnson 2018', '背景'),
+      ...(chapterNineteenCitationsByRange[note.range] ?? []),
+      ...(note.citations ?? []),
       ...relatedPassages,
     ],
   };
@@ -224,6 +226,7 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
       note: '本章主要经文；页面内同时保留逐段经文原文。',
     },
     ...academicReferences,
+    ...(chapter.no === 19 ? chapterNineteenReferences : []),
     ...pastoralReferences,
     ...(relatedPassages.length ? [{
       id: '互文',
@@ -270,7 +273,46 @@ function PastoralGuidePanel({ guide }: { guide: PastoralGuide }) {
   </section>;
 }
 
-function StudyNoteCard({ note, index }: { note: StudyNote; index: number }) { return <article className="study-note"><div className="note-index">{String(index + 1).padStart(2, '0')}</div><div className="note-body"><div className="note-heading"><span className="verse-range">{note.range}</span><h3>{note.title}</h3></div><ScriptureBlock passage={getLukePassage(note.range)} sourceUrl={note.range.includes(':') ? chapterOnePassageUrl(note.range) : undefined} /><div className="note-scene"><span className="note-label">进入现场</span><p>{note.scene}</p></div><div className="note-thesis"><span className="note-label">本段主旨</span><p>{note.scripture}</p><CitationLinks citations={note.citations} scope="经文" /></div><div className="note-observation"><span className="note-label">经文观察 · 初步解读</span><p>{note.literal}</p><CitationLinks citations={note.citations} scope="解读" /></div><div className="note-supporting"><div className="note-context"><span className="note-label">历史窗口</span><p>{note.context}</p><CitationLinks citations={note.citations} scope="背景" /></div>{note.connection && <div className="note-connection"><span className="note-label">旧约／新约回声</span><p>{note.connection}</p><CitationLinks citations={note.citations} scope="串联" /></div>}</div><RelatedScriptures connection={note.connection} />{note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{note.life}</p><CitationLinks citations={note.citations} scope="应用" /></div>}</div></article>; }
+function StudyNoteCard({ note, index }: { note: StudyNote; index: number }) {
+  return <article className="study-note">
+    <div className="note-index">{String(index + 1).padStart(2, '0')}</div>
+    <div className="note-body">
+      <div className="note-heading"><span className="verse-range">{note.range}</span><h3>{note.title}</h3></div>
+      <ScriptureBlock passage={getLukePassage(note.range)} sourceUrl={note.range.includes(':') ? chapterOnePassageUrl(note.range) : undefined} />
+      <div className="note-scene"><span className="note-label">进入现场</span><p>{note.scene}</p></div>
+      <div className="note-thesis"><span className="note-label">本段主旨</span><p>{note.scripture}</p><CitationLinks citations={note.citations} scope="经文" /></div>
+      <VerseWalkthrough insights={note.verseInsights} citations={note.citations} />
+      <div className="note-observation"><span className="note-label">{note.verseInsights?.length ? '整段综合 · 深层意义' : '经文观察 · 初步解读'}</span><p>{note.literal}</p>{!note.verseInsights?.length && <CitationLinks citations={note.citations} scope="解读" />}</div>
+      <InterpretationNotes notes={note.interpretationNotes} />
+      <div className="note-supporting"><div className="note-context"><span className="note-label">历史窗口</span><p>{note.context}</p><CitationLinks citations={note.citations} scope="背景" /></div>{note.connection && <div className="note-connection"><span className="note-label">旧约／新约回声</span><p>{note.connection}</p><CitationLinks citations={note.citations} scope="串联" /></div>}</div>
+      <RelatedScriptures connection={note.connection} />
+      {note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{note.life}</p><CitationLinks citations={note.citations} scope="应用" /></div>}
+    </div>
+  </article>;
+}
+
+function VerseWalkthrough({ insights, citations }: { insights?: StudyNote['verseInsights']; citations?: StudyCitation[] }) {
+  if (!insights?.length) return null;
+  return <section className="verse-walkthrough" aria-label="逐节解读">
+    <div className="verse-walkthrough-head"><div><span className="note-label">逐节解读</span><h4>先弄清经文在说什么，再问它为什么重要</h4></div><span className="walkthrough-count">{insights.length} 组</span></div>
+    <div className="verse-insight-list">
+      {insights.map((insight) => <article className="verse-insight" key={insight.range}>
+        <span className="verse-insight-range">{insight.range}</span>
+        <div className="verse-insight-copy"><span className="verse-insight-label">经文直接意思</span><p>{insight.direct}</p></div>
+        <div className="verse-insight-copy depth"><span className="verse-insight-label">为何重要</span><p>{insight.depth}</p></div>
+      </article>)}
+    </div>
+    <CitationLinks citations={citations} scope="解读" />
+  </section>;
+}
+
+function InterpretationNotes({ notes }: { notes?: StudyNote['interpretationNotes'] }) {
+  if (!notes?.length) return null;
+  return <section className="interpretation-notes" aria-label="解释难点">
+    <div className="interpretation-notes-head"><span className="note-label">解释难点</span><p>经文容许不同理解时，不把一种推论伪装成经文本身。</p></div>
+    <div className="interpretation-note-grid">{notes.map((note) => <article className="interpretation-note" key={note.title}><h4>{note.title}</h4><p>{note.text}</p></article>)}</div>
+  </section>;
+}
 
 function ScriptureBlock({ passage, compact = false, sourceUrl }: { passage: Passage[]; compact?: boolean; sourceUrl?: string }) { return <section className={compact ? 'scripture-block compact' : 'scripture-block'} aria-label="经文原文"><div className="scripture-block-head"><span className="note-label">经文原文</span><span className="scripture-version">{SCRIPTURE_VERSION}</span></div>{passage.length ? <div className="scripture-text">{passage.map((verse) => <p key={`${verse.label}-${verse.text}`}><sup>{verse.label}</sup><span>{verse.text}</span></p>)}</div> : <p className="scripture-empty">此段范围暂未载入经文原文，请先按出处阅读。</p>}<p className="scripture-source">文本来源：{sourceUrl ? <a href={sourceUrl} target="_blank" rel="noreferrer">{SCRIPTURE_SOURCE} · 打开出处</a> : SCRIPTURE_SOURCE}</p></section>; }
 

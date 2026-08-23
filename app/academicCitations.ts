@@ -12,6 +12,12 @@ const lanierUrl = 'https://www.bhpublishinggroup.com/product/luke-the-christian-
 const sterlingUrl = 'https://www.eerdmans.com/9780802848734/shaping-the-past-to-define-the-present/';
 const johnsonUrl = 'https://litpress.org/Products/E8331/Sacra-Pagina-The-Gospel-of-Luke';
 const birdUrl = 'https://www.ivpress.com/Media/Default/Downloads/Excerpts-and-Samples/A0809-excerpt.pdf';
+const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
+const minasGathercoleUrl = 'https://www.repository.cam.ac.uk/items/b9ff217f-5b15-400d-93d6-0c68c7b14d6e';
+const minasIvpUrl = 'https://www.biblegateway.com/resources/ivp-nt/Parable-Stewardship-Minas';
+const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
+const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
+const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=Luk+19&theme=false';
 
 const academicSources = {
   'Lanier 2025': { label: 'Lanier 2025', url: lanierUrl },
@@ -88,6 +94,76 @@ export type ChapterReference = {
   url: string;
   note: string;
 };
+
+export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = {
+  '19:1–10': [
+    source('Lose · 撒该', 'Working Preacher · 撒该', zacchaeusWorkingPreacherUrl, '解读'),
+    source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
+  ],
+  '19:11–27': [
+    source('Gathercole 2024', 'Gathercole 2024', minasGathercoleUrl, '解读'),
+    source('IVP · 十锭银子', 'IVP · 十锭银子', minasIvpUrl, '背景'),
+    source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
+  ],
+  '19:28–35': [
+    source('Johnson · 荣耀进城', 'Working Preacher · 荣耀进城', entryWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '背景'),
+    source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
+  ],
+  '19:36–40': [
+    source('Johnson · 荣耀进城', 'Working Preacher · 荣耀进城', entryWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '背景'),
+    source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
+  ],
+  '19:41–44': [
+    source('Johnson · 荣耀进城', 'Working Preacher · 荣耀进城', entryWorkingPreacherUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '背景'),
+    source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
+  ],
+  '19:45–48': [
+    source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '解读'),
+    source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
+  ],
+};
+
+export const chapterNineteenReferences: ChapterReference[] = [
+  {
+    id: 'NET · 路 19',
+    text: 'NET Bible. Luke 19: text, translation notes, and study notes.',
+    url: netLukeNineteenUrl,
+    note: '用于核对关键词、语法与翻译选择；中文经文仍以页面所标和合本为主。',
+  },
+  {
+    id: 'Lose · 撒该',
+    text: 'Lose, David J. “Commentary on Luke 19:1–10.” Working Preacher.',
+    url: zacchaeusWorkingPreacherUrl,
+    note: '用于撒该叙事、第 8 节现在时的两种解释，以及“看见／寻找／失丧”的路加主题。',
+  },
+  {
+    id: 'Gathercole 2024',
+    text: 'Gathercole, Simon. “Does the Parable of the Minas Address the Delay of the Parousia? Luke 19,11–27 in its Lukan, Rhetorical and Roman Settings.” Zeitschrift für die neutestamentliche Wissenschaft 115 (2024).',
+    url: minasGathercoleUrl,
+    note: '经同行评审的开放存档论文；用于检验把十锭银子单纯归纳为“再来延迟”是否足够。',
+  },
+  {
+    id: 'IVP · 十锭银子',
+    text: 'IVP New Testament Commentary. “The Parable of Stewardship: The Minas (Luke 19:11–27).”',
+    url: minasIvpUrl,
+    note: '用于比喻的叙事背景、受托与交账主题，以及古代银钱的数量级说明。',
+  },
+  {
+    id: 'Johnson · 荣耀进城',
+    text: 'Johnson, Elisabeth. “Commentary on Luke 19:28–40.” Working Preacher.',
+    url: entryWorkingPreacherUrl,
+    note: '用于耶路撒冷在路加叙事中的位置、诗 118 与亚 9 的回声，以及降生颂歌和进城颂歌之间的“和平／荣耀”联系。',
+  },
+  {
+    id: 'Yale · 在耶路撒冷',
+    text: 'Yale Bible Study. “The Gospel of Luke: In Jerusalem.”',
+    url: yaleJerusalemUrl,
+    note: '用于路加 19 章后半的文学结构、进城宣告、哭城与路加简写的圣殿行动。',
+  },
+];
 
 export const chapterOneReferences: ChapterReference[] = [
   {
