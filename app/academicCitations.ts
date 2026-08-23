@@ -11,7 +11,7 @@ export function chapterOnePassageUrl(range: string) {
 const lanierUrl = 'https://www.bhpublishinggroup.com/product/luke-the-christian-standard-commentary-2/';
 const sterlingUrl = 'https://www.eerdmans.com/9780802848734/shaping-the-past-to-define-the-present/';
 const johnsonUrl = 'https://litpress.org/Products/E8331/Sacra-Pagina-The-Gospel-of-Luke';
-const birdUrl = 'https://www.ivpress.com/a-bird-s-eye-view-of-luke-and-acts';
+const birdUrl = 'https://www.ivpress.com/Media/Default/Downloads/Excerpts-and-Samples/A0809-excerpt.pdf';
 
 const academicSources = {
   'Lanier 2025': { label: 'Lanier 2025', url: lanierUrl },
@@ -116,9 +116,9 @@ export const chapterOneReferences: ChapterReference[] = [
   },
   {
     id: 'Bird',
-    text: 'Bird, Michael F. A Bird’s-Eye View of Luke and Acts. IVP Academic.',
+    text: 'Bird, Michael F. A Bird’s-Eye View of Luke and Acts: Context, Story, and Themes. IVP Academic, 2023.',
     url: birdUrl,
-    note: '用于路加—使徒行传整体叙事与救赎历史脉络的辅助阅读。',
+    note: '用于路加—使徒行传整体叙事与救赎历史脉络的辅助阅读；链接为出版方试读 PDF。',
   },
   {
     id: '互文',
