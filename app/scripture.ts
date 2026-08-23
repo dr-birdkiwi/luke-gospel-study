@@ -13,6 +13,7 @@ export type RelatedPassage = {
   bookName: string;
   verses: Passage[];
   isWholeChapter: boolean;
+  isChapterRange: boolean;
 };
 
 type ParsedReference = {
@@ -52,14 +53,44 @@ const books: Record<string, { code: string; name: string }> = {
 };
 
 const bookAliases = Object.keys(books).sort((a, b) => b.length - a.length).join('|');
-const referencePattern = new RegExp(`(${bookAliases})\\s*(\\d+)(?::(\\d+)(?:[–—-](\\d+):(\\d+)|[–—-](\\d+))?)?`, 'g');
+const referencePattern = new RegExp(`(${bookAliases})\\s*(\\d+)(?:(?::(\\d+)(?:[–—-](?:(\\d+):(\\d+)|(\\d+)))?)|[–—-](\\d+))?`, 'g');
+
+// The public-domain CUVS data source occasionally folds a verse into the
+// previous verse or omits a verse that is displayed as a textual variant.
+// Keep those corrections here so every passage renderer uses the same
+// verse-by-verse alignment without rewriting the generated data file.
+const lukeVerseCorrections: Record<string, Record<number, ScriptureVerse>> = {
+  '2': {
+    34: { start: 34, end: 34, text: '西面给他们祝福，又对孩子的母亲马利亚说：「这[孩子]被立，是要叫以色列中许多人跌倒，许多人兴起；又要作毁谤的话柄，' },
+    35: { start: 35, end: 35, text: '叫许多人心里的意念显露出来；你自己的心也要被刀刺透。」' },
+  },
+  '17': {
+    36: { start: 36, end: 36, text: '（有古卷在此有：两个人在田里，要取去一个，撇下一个。）' },
+  },
+  '21': {
+    29: { start: 29, end: 29, text: '耶稣又设比喻对他们说：「你们看无花果树和各样的树；' },
+    30: { start: 30, end: 30, text: '他发芽的时候，你们一看见，自然晓得夏天近了。' },
+  },
+  '23': {
+    17: { start: 17, end: 17, text: '（有古卷在此有：每逢这节期，巡抚必须释放一个囚犯给他们。）' },
+  },
+};
+
+const scriptureVerseCorrections: Record<string, Record<string, Record<number, ScriptureVerse>>> = {
+  LUK: lukeVerseCorrections,
+  ISA: {
+    '4': {
+      4: { start: 4, end: 4, text: '主以公义的灵和焚烧的灵，将锡安女子的污秽洗去，又将耶路撒冷中杀人的血除净。' },
+    },
+  },
+};
 
 function normalizeDash(value: string) {
   return value.replace(/[—-]/g, '–');
 }
 
 function formatReference(book: string, startChapter: number, startVerse: number | null, endChapter: number, endVerse: number | null) {
-  if (startVerse === null) return `${book} ${startChapter}`;
+  if (startVerse === null) return `${book} ${startChapter}${endChapter !== startChapter ? `–${endChapter}` : ''}`;
   const start = `${startChapter}:${startVerse}`;
   if (endChapter !== startChapter) return `${book} ${start}–${endChapter}:${endVerse}`;
   if (endVerse !== null && endVerse !== startVerse) return `${book} ${start}–${endVerse}`;
@@ -71,7 +102,12 @@ function rowsForReference(parsed: ParsedReference): ScriptureVerse[] {
   if (!book) return [];
   const rows: ScriptureVerse[] = [];
   for (let chapter = parsed.startChapter; chapter <= parsed.endChapter; chapter += 1) {
-    const chapterRows = book[String(chapter)] ?? [];
+    const chapterKey = String(chapter);
+    const sourceRows = book[chapterKey] ?? [];
+    const corrections = scriptureVerseCorrections[parsed.code]?.[chapterKey];
+    const chapterRows = corrections
+      ? [...new Map([...sourceRows, ...Object.values(corrections)].map((row) => [row.start, row])).values()].sort((a, b) => a.start - b.start)
+      : sourceRows;
     const firstVerse = chapter === parsed.startChapter ? (parsed.startVerse ?? 1) : 1;
     const lastVerse = chapter === parsed.endChapter ? (parsed.endVerse ?? Number.POSITIVE_INFINITY) : Number.POSITIVE_INFINITY;
     chapterRows.forEach((row) => {
@@ -86,7 +122,7 @@ function parseMatch(match: RegExpExecArray): ParsedReference {
   const info = books[book];
   const startChapter = Number(match[2]);
   const startVerse = match[3] ? Number(match[3]) : null;
-  const endChapter = match[4] ? Number(match[4]) : startChapter;
+  const endChapter = match[4] ? Number(match[4]) : (match[7] ? Number(match[7]) : startChapter);
   const endVerse = match[4] ? Number(match[5]) : (match[6] ? Number(match[6]) : startVerse);
   return {
     book,
@@ -131,6 +167,7 @@ export function getRelatedPassages(connection?: string): RelatedPassage[] {
       bookName: parsed.bookName,
       verses: rowsForReference(parsed).map((row) => ({ label: row.start === row.end ? String(row.start) : `${row.start}–${row.end}`, text: row.text })),
       isWholeChapter: parsed.startVerse === null,
+      isChapterRange: parsed.startVerse === null && parsed.startChapter !== parsed.endChapter,
     });
   }
   return results;
