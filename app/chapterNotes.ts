@@ -1,3 +1,12 @@
+export type CitationScope = '经文' | '解读' | '背景' | '串联' | '应用';
+
+export type StudyCitation = {
+  id: string;
+  label: string;
+  url: string;
+  scope: CitationScope;
+};
+
 export type StudyNote = {
   range: string;
   title: string;
@@ -7,6 +16,7 @@ export type StudyNote = {
   context: string;
   connection?: string;
   life?: string;
+  citations?: StudyCitation[];
 };
 
 const researchReviewOverrides: Record<string, Partial<StudyNote>> = {
