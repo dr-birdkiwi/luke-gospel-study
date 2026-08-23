@@ -1,17 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-
-type StudyNote = {
-  range: string;
-  title: string;
-  scripture: string;
-  scene: string;
-  literal: string;
-  context: string;
-  connection?: string;
-  life?: string;
-};
+import { chapterNotesByChapter, type StudyNote } from './chapterNotes';
 
 type Chapter = {
   no: number;
@@ -55,7 +45,7 @@ const chapterData: Chapter[] = chapterThemes.map(([title, focus], index) => ({
   questions: index === 0 ? ['我在本章看见神怎样在等待中工作？', '马利亚、以利沙伯、撒迦利亚的回应有什么不同？', '本周我可以怎样让“神的应许”进入一个具体关系？'] : [`本章最挑战我原有观念的哪一处？`, '耶稣在这里如何看待被忽略的人？', '小组可以怎样把本章的一个动作带进这两周的生活？'],
   practice: index === 0 ? '找一个仍在等待中的祷告，用本章的三种回应（诚实、聆听、顺服）写下祷告，再找一位组员彼此代祷。' : `在未来两周刻意练习“${focus}”：记录一次具体场景，下次小组分享经文如何改变你的回应。`,
   prayer: index === 0 ? '主啊，在等待与不明白中，求你使我们像马利亚一样听见、像以利沙伯一样祝福、像撒迦利亚一样重新学会赞美。' : `主耶稣，求你让我们不只知道“${focus}”，也在今天的关系和选择中活出来。`,
-  notes: index === 0 ? chapterNotes : undefined,
+  notes: index === 0 ? chapterNotes : chapterNotesByChapter[index + 1],
 }));
 
 export default function Home() {
