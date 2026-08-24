@@ -343,6 +343,7 @@ function VerseWalkthrough({ insights, citations }: { insights?: StudyNote['verse
   if (!insights?.length) return null;
   return <section className="verse-walkthrough" aria-label="逐节解读">
     <div className="verse-walkthrough-head"><div><span className="note-label">逐节解读</span><h4>先弄清经文在说什么，再问它为什么重要</h4></div><span className="walkthrough-count">{insights.length} 组</span></div>
+    <div className="verse-insight-columns"><span aria-hidden="true" /><span>经文直接意思</span><span>为何重要</span></div>
     <div className="verse-insight-list">
       {insights.map((insight) => <article className="verse-insight" key={insight.range}>
         <span className="verse-insight-range">{insight.range}</span>
