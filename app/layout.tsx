@@ -4,6 +4,11 @@ import './globals.css';
 export const metadata: Metadata = {
   title: '在福音的路上｜路加福音小组查经',
   description: '为隔周小组预备的路加福音逐章查经空间：逐段阅读、背景串联与信仰生活回应。',
+  icons: {
+    icon: 'favicon.svg',
+    shortcut: 'favicon.svg',
+    apple: 'favicon.svg',
+  },
   openGraph: {
     title: '在福音的路上｜路加福音小组查经',
     description: '读进去，也活出来。每两周与一群人走一章路加福音。',
