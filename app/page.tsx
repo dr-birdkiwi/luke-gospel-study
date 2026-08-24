@@ -319,8 +319,8 @@ function VerseWalkthrough({ insights, citations }: { insights?: StudyNote['verse
     <div className="verse-insight-list">
       {insights.map((insight) => <article className="verse-insight" key={insight.range}>
         <span className="verse-insight-range">{insight.range}</span>
-        <div className="verse-insight-copy"><span className="verse-insight-label">经文直接意思</span><p>{insight.direct}</p></div>
-        <div className="verse-insight-copy depth"><span className="verse-insight-label">为何重要</span><p>{insight.depth}</p></div>
+        <div className="verse-insight-copy"><span className="sr-only">经文直接意思</span><p>{insight.direct}</p></div>
+        <div className="verse-insight-copy depth"><span className="sr-only">为何重要</span><p>{insight.depth}</p></div>
       </article>)}
     </div>
     <CitationLinks citations={citations} scope="解读" />

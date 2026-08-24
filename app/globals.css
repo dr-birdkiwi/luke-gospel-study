@@ -2,6 +2,7 @@
 
 :root { --ink:#24323a; --muted:#718088; --faint:#a2adb0; --paper:#f5f6f2; --card:#fff; --line:#dfe6e2; --line-strong:#cbd7d1; --sage:#dce8dd; --sage-deep:#6d8d78; --clay:#d79573; --clay-deep:#a9674c; --night:#2d3c42; }
 * { box-sizing:border-box; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif; }
 button,input { font:inherit; } button { cursor:pointer; }
@@ -98,8 +99,6 @@ button,input { font:inherit; } button { cursor:pointer; }
 .verse-insight-range { padding:15px 8px 15px 16px; color:var(--clay-deep); font-size:10px; font-weight:800; font-variant-numeric:tabular-nums; }
 .verse-insight-copy { min-width:0; padding:14px 15px 15px; }
 .verse-insight-copy.depth { border-left:1px solid #e5ebe7; background:#fbfcfa; }
-.verse-insight-label { display:block; margin-bottom:6px; color:var(--sage-deep); font-size:8px; font-weight:800; letter-spacing:.08em; }
-.verse-insight-copy.depth .verse-insight-label { color:var(--clay-deep); }
 .verse-insight-copy p { margin:0; color:var(--muted); font-size:11px; line-height:1.82; }
 .verse-walkthrough>.citation-links { margin:0; padding:11px 16px 12px 80px; border-top:1px solid #e5ebe7; background:#fbfcfa; }
 
@@ -179,7 +178,6 @@ button,input { font:inherit; } button { cursor:pointer; }
   .verse-walkthrough-head h4 { font-size:15px; }
   .walkthrough-count { font-size:10px; }
   .verse-insight-range { font-size:11px; }
-  .verse-insight-label { font-size:9px; }
   .verse-insight-copy p { font-size:13px; }
   .interpretation-notes-head>p { font-size:10px; }
   .interpretation-note h4 { font-size:13px; }
