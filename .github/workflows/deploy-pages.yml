@@ -45,10 +45,15 @@ jobs:
           mkdir -p _site
           cp dist/server/prerendered-routes/index.html _site/index.html
           cp dist/server/prerendered-routes/404.html _site/404.html
+          for route in dist/server/prerendered-routes/chapter/*.html; do
+            chapter_name="$(basename "$route" .html)"
+            mkdir -p "_site/chapter/${chapter_name}"
+            cp "$route" "_site/chapter/${chapter_name}/index.html"
+          done
           cp -R dist/client/_next _site/_next
           cp -R public/. _site/
           pages_base_path="/${GITHUB_REPOSITORY#*/}"
-          sed -i "s#href=\"/_next/#href=\"${pages_base_path}/_next/#g; s#src=\"/_next/#src=\"${pages_base_path}/_next/#g" _site/index.html
+          find _site -name '*.html' -print0 | xargs -0 sed -i "s#href=\"/_next/#href=\"${pages_base_path}/_next/#g; s#src=\"/_next/#src=\"${pages_base_path}/_next/#g"
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages

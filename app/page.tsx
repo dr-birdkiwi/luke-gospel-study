@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
 import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, type ChapterReference } from './academicCitations';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
@@ -239,12 +239,33 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
   ];
 }
 
-export default function Home() {
-  const [selectedChapter, setSelectedChapter] = useState(1);
+function chapterFromPath(pathname: string) {
+  const match = pathname.match(/\/chapter\/(\d+)(?:\/|$)/);
+  const chapterNo = match ? Number(match[1]) : 1;
+  return Number.isInteger(chapterNo) && chapterNo >= 1 && chapterNo <= chapterData.length ? chapterNo : 1;
+}
+
+function chapterPath(no: number, pathname: string) {
+  const basePath = pathname === '/luke-gospel-study' || pathname.startsWith('/luke-gospel-study/') ? '/luke-gospel-study' : '';
+  return `${basePath}/chapter/${no}`;
+}
+
+export function Home({ initialChapter = 1 }: { initialChapter?: number }) {
+  const [selectedChapter, setSelectedChapter] = useState(initialChapter);
   const [search, setSearch] = useState('');
-  const chapter = chapterData[selectedChapter - 1];
+  const chapter = chapterData[selectedChapter - 1] ?? chapterData[0];
+  useEffect(() => {
+    const handlePopState = () => setSelectedChapter(chapterFromPath(window.location.pathname));
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
   const filteredChapters = useMemo(() => { const query = search.trim().toLowerCase(); if (!query) return chapterData; return chapterData.filter((item) => `${item.no} ${item.title} ${item.focus}`.toLowerCase().includes(query)); }, [search]);
-  function selectChapter(no: number) { setSelectedChapter(no); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  function selectChapter(no: number) {
+    setSelectedChapter(no);
+    const nextPath = chapterPath(no, window.location.pathname);
+    if (window.location.pathname !== nextPath) window.history.pushState({ chapter: no }, '', nextPath);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   return <main className="site-shell">
     <header className="topbar"><div className="brand-lockup"><div className="brand-mark" aria-hidden="true"><span>✦</span></div><div><p className="brand-kicker">小组查经</p><p className="brand-name">在福音的路上</p></div></div><div className="topbar-center"><span className="topbar-line" /><span>路加福音</span><span className="topbar-line" /></div><div className="topbar-actions" aria-hidden="true" /></header>
@@ -255,6 +276,8 @@ export default function Home() {
     </div><footer className="site-footer"><span>在福音的路上</span><span>每两周一章 · 读进去，也活出来</span><span>路加福音 01—24</span></footer>
   </main>;
 }
+
+export default Home;
 
 function PastoralGuidePanel({ guide }: { guide: PastoralGuide }) {
   const methodReferences = pastoralMethodReferences.filter((reference) =>
