@@ -126,3 +126,63 @@ button,input { font:inherit; } button { cursor:pointer; }
   .interpretation-note-grid { grid-template-columns:1fr; }
   .interpretation-note+.interpretation-note { border-top:1px solid #eaded5; }
 }
+
+/* Desktop reading scale: keep the dense study interface comfortable at 100% zoom. */
+@media (min-width:761px) {
+  .brand-kicker,.section-label { font-size:10px; }
+  .brand-name { font-size:17px; }
+  .topbar-center { font-size:11px; }
+  .sidebar h2 { font-size:21px; }
+  .sidebar-intro p:last-child,.search-box input { font-size:13px; }
+  .chapter-row { padding-top:11px; padding-bottom:11px; }
+  .chapter-number { font-size:12px; }
+  .chapter-copy strong { font-size:13px; }
+  .chapter-copy small { font-size:11px; }
+  .chapter-tag { padding:8px 11px; font-size:10px; }
+  .chapter-hero h1 { font-size:clamp(38px,4.3vw,62px); }
+  .hero-summary { font-size:16px; }
+  .map-kicker { font-size:10px; }
+  .map-step span { font-size:11px; }
+  .map-step p { font-size:13px; }
+  .note-index { font-size:13px; }
+  .verse-range { font-size:11px; }
+  .note-heading h3 { font-size:18px; }
+  .note-label { font-size:10px; }
+  .note-scene p { font-size:15px; }
+  .note-thesis p { font-size:17px; }
+  .note-observation p { font-size:14px; }
+  .note-supporting p { font-size:13px; }
+  .note-life p { font-size:14px; }
+  .note-sub-label { font-size:10px; }
+  .citation-links { font-size:10px; }
+  .citation-label { font-size:9px; }
+  .scripture-text p { font-size:17px; }
+  .scripture-text sup { font-size:10px; }
+  .scripture-source { font-size:10px; }
+  .scripture-empty { font-size:13px; }
+  .scripture-block.compact .scripture-text p { font-size:15px; }
+  .related-scriptures>summary { font-size:12px; }
+  .related-count { font-size:10px; }
+  .related-why p { font-size:13px; }
+  .related-card-head strong { font-size:13px; }
+  .related-card-head span { font-size:10px; }
+  .chapter-references-head h3 { font-size:24px; }
+  .chapter-references-intro { font-size:13px; }
+  .chapter-reference-list a { font-size:15px; }
+  .chapter-reference-list p { font-size:12px; }
+  .reference-index { font-size:10px; }
+  .pastoral-guide-head>span { font-size:9px; }
+  .pastoral-guide-head h3 { font-size:21px; }
+  .pastoral-guide-label { font-size:9px; }
+  .pastoral-guide-grid p { font-size:13px; }
+  .pastoral-guide-sources { font-size:10px; }
+  .verse-walkthrough-head h4 { font-size:15px; }
+  .walkthrough-count { font-size:10px; }
+  .verse-insight-range { font-size:11px; }
+  .verse-insight-label { font-size:9px; }
+  .verse-insight-copy p { font-size:13px; }
+  .interpretation-notes-head>p { font-size:10px; }
+  .interpretation-note h4 { font-size:13px; }
+  .interpretation-note p { font-size:12px; }
+  .pause-card p:last-child { font-size:14px; }
+}
