@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
 import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, type ChapterReference } from './academicCitations';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
@@ -205,6 +205,33 @@ export const chapterData: Chapter[] = chapterThemes.map(([title, focus], index) 
   notes: (index === 0 ? chapterNotes : chapterNotesByChapter[index + 1]).map(applyResearchReview).map(applyDeepStudyEnhancement).map(index === 0 ? addChapterOneCitations : addLaterChapterCitations),
 }));
 
+function CollapsedAnswer({ children, label = '参考回应（可展开）' }: { children: ReactNode; label?: string }) {
+  return <details className="suggested-answer">
+    <summary><span>{label}</span><span className="suggested-answer-action">先讨论，再查看</span></summary>
+    <div className="suggested-answer-body">{children}</div>
+  </details>;
+}
+
+function getPracticeText(life: string) {
+  const practice = life.match(/操练：(.+)$/)?.[1]?.trim();
+  return practice ? practice.replace(/[。！？]+$/, '') : '';
+}
+
+function SuggestedLifeAnswer({ note }: { note: StudyNote }) {
+  const practice = note.life ? getPracticeText(note.life) : '';
+  return <CollapsedAnswer>
+    <p>可以先这样回应：这段经文让我看见，{note.literal}</p>
+    {practice && <p>因此我不只停在认同上，也愿意具体操练：{practice}。</p>}
+  </CollapsedAnswer>;
+}
+
+function SuggestedPauseAnswer({ chapter }: { chapter: Chapter }) {
+  const firstNote = chapter.notes?.[0];
+  return <CollapsedAnswer>
+    {firstNote ? <p>我先注意到 {firstNote.range}“{firstNote.title}”中的这个重点：{firstNote.literal}。这帮助我先说出经文实际写了什么，再进入解释；带回生活时，我要特别留意“{chapter.focus}”在一个具体关系或选择中如何出现。</p> : <p>我先从本章第一段开始，指出一个真实出现的人物、词语或动作，再说明它怎样连接到“{chapter.focus}”。我暂时不急着把经文变成口号，而是让观察先受经文本身约束。</p>}
+  </CollapsedAnswer>;
+}
+
 function getChapterReferences(chapter: Chapter): ChapterReference[] {
   const pastoralReferences: ChapterReference[] = pastoralMethodReferences.map((reference) => ({ ...reference }));
   if (chapter.no === 1) return [...chapterOneReferences, ...pastoralReferences];
@@ -272,7 +299,7 @@ export function Home({ initialChapter = 1 }: { initialChapter?: number }) {
     <div className="mobile-chapter-strip" aria-label="选择章节"><span className="mobile-strip-label">章节</span><div className="mobile-chapters">{chapterData.map((item) => <button key={item.no} className={item.no === chapter.no ? 'chapter-pill active' : 'chapter-pill'} onClick={() => selectChapter(item.no)} type="button">{String(item.no).padStart(2, '0')}</button>)}</div></div>
     <div className="page-grid">
       <aside className="sidebar"><div className="sidebar-intro"><h2>章节导航</h2></div><label className="search-box"><span aria-hidden="true">⌕</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="寻找章节或主题" aria-label="寻找章节或主题" />{search && <button type="button" onClick={() => setSearch('')} aria-label="清除搜索">×</button>}</label><nav className="chapter-list" aria-label="路加福音章节">{filteredChapters.map((item) => <button key={item.no} type="button" className={item.no === chapter.no ? 'chapter-row selected' : 'chapter-row'} onClick={() => selectChapter(item.no)}><span className="chapter-number">{String(item.no).padStart(2, '0')}</span><span className="chapter-copy"><strong>{item.title}</strong><small>{item.focus}</small></span></button>)}</nav></aside>
-      <section className="content-column"><div className="chapter-hero"><div className="chapter-hero-top"><span className="chapter-tag">第 {chapter.no} 章</span><div className="chapter-nav-controls" aria-label="章节导航"><button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no - 1)} disabled={chapter.no === 1} aria-label="上一章">上一章</button><button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no + 1)} disabled={chapter.no === chapterData.length} aria-label="下一章">下一章</button></div></div><h1>{chapter.title}</h1><p className="hero-summary">{chapter.summary}</p></div><div className="tab-panel"><PastoralGuidePanel guide={pastoralGuides[chapter.no]} /><div className="reading-map"><span className="map-kicker">本章路线</span><div className="map-steps">{chapter.sections.map((section, index) => <div className="map-step" key={section}><span>{String(index + 1).padStart(2, '0')}</span><p>{section}</p></div>)}</div></div><div className="notes-list">{(chapter.notes ?? chapter.sections.map((section, index) => ({ range: `本章 · ${String(index + 1).padStart(2, '0')}`, title: section, scene: `先把自己放进${chapter.setting}，再完整朗读这一段，想象人物怎样说、怎样做，以及叙事何处发生转折。`, scripture: '先完整朗读这一段，留意人物怎样说、怎样做，以及叙事何处发生转折。', literal: '把观察写成一句不带解释的事实：谁在什么处境中回应了谁。', context: chapter.setting, connection: `可与本章的${chapter.crossRefs[index % chapter.crossRefs.length]}互相参照，留意同一主题在不同经文中的展开。`, life: chapter.questions[index % chapter.questions.length] }))).map((note, index) => <StudyNoteCard key={note.range} note={note} index={index} />)}</div><div className="pause-card"><span className="pause-symbol">⌁</span><div><p className="section-label">停一下</p><p>哪一个词、哪一个人物或哪一个动作反复出现在你眼前？先不要急着解释，和组员分享你实际看见了什么。</p></div></div><ChapterReferences chapter={chapter} /></div></section>
+      <section className="content-column"><div className="chapter-hero"><div className="chapter-hero-top"><span className="chapter-tag">第 {chapter.no} 章</span><div className="chapter-nav-controls" aria-label="章节导航"><button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no - 1)} disabled={chapter.no === 1} aria-label="上一章">上一章</button><button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no + 1)} disabled={chapter.no === chapterData.length} aria-label="下一章">下一章</button></div></div><h1>{chapter.title}</h1><p className="hero-summary">{chapter.summary}</p></div><div className="tab-panel"><PastoralGuidePanel guide={pastoralGuides[chapter.no]} /><div className="reading-map"><span className="map-kicker">本章路线</span><div className="map-steps">{chapter.sections.map((section, index) => <div className="map-step" key={section}><span>{String(index + 1).padStart(2, '0')}</span><p>{section}</p></div>)}</div></div><div className="notes-list">{(chapter.notes ?? chapter.sections.map((section, index) => ({ range: `本章 · ${String(index + 1).padStart(2, '0')}`, title: section, scene: `先把自己放进${chapter.setting}，再完整朗读这一段，想象人物怎样说、怎样做，以及叙事何处发生转折。`, scripture: '先完整朗读这一段，留意人物怎样说、怎样做，以及叙事何处发生转折。', literal: '把观察写成一句不带解释的事实：谁在什么处境中回应了谁。', context: chapter.setting, connection: `可与本章的${chapter.crossRefs[index % chapter.crossRefs.length]}互相参照，留意同一主题在不同经文中的展开。`, life: chapter.questions[index % chapter.questions.length] }))).map((note, index) => <StudyNoteCard key={note.range} note={note} index={index} />)}</div><div className="pause-card"><span className="pause-symbol">⌁</span><div><p className="section-label">停一下</p><p>哪一个词、哪一个人物或哪一个动作反复出现在你眼前？先不要急着解释，和组员分享你实际看见了什么。</p><SuggestedPauseAnswer chapter={chapter} /></div></div><ChapterReferences chapter={chapter} /></div></section>
     </div><footer className="site-footer"><span>在福音的路上</span><span>路加福音 01—24</span></footer>
   </main>;
 }
@@ -307,7 +334,7 @@ function StudyNoteCard({ note, index }: { note: StudyNote; index: number }) {
       <InterpretationNotes notes={note.interpretationNotes} />
       <div className="note-supporting"><div className="note-context"><span className="note-label">历史窗口</span><p>{note.context}</p><CitationLinks citations={note.citations} scope="背景" /></div>{note.connection && <div className="note-connection"><span className="note-label">旧约／新约回声</span><p>{note.connection}</p><CitationLinks citations={note.citations} scope="串联" /></div>}</div>
       <RelatedScriptures connection={note.connection} />
-      {note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{note.life}</p><CitationLinks citations={note.citations} scope="应用" /></div>}
+      {note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{note.life}</p><CitationLinks citations={note.citations} scope="应用" /><SuggestedLifeAnswer note={note} /></div>}
     </div>
   </article>;
 }

@@ -126,6 +126,19 @@ button,input { font:inherit; } button { cursor:pointer; }
   .interpretation-note+.interpretation-note { border-top:1px solid #eaded5; }
 }
 
+.suggested-answer { margin-top:13px; border-top:1px dashed #e3bba7; }
+.suggested-answer>summary { display:flex; align-items:center; justify-content:space-between; gap:12px; list-style:none; cursor:pointer; padding:10px 0 0; color:var(--clay-deep); font-size:10px; font-weight:800; }
+.suggested-answer>summary::-webkit-details-marker { display:none; }
+.suggested-answer>summary::after { content:'＋'; color:var(--clay-deep); font-size:15px; font-weight:400; line-height:1; }
+.suggested-answer[open]>summary::after { content:'−'; }
+.suggested-answer-action { color:var(--faint); font-size:9px; font-weight:600; margin-left:auto; }
+.suggested-answer-body { padding:9px 0 1px; }
+.suggested-answer-body p,.note-life .suggested-answer-body p { margin:0; color:var(--muted); font-size:11px; line-height:1.8; }
+.suggested-answer-body p+p { margin-top:8px; }
+.pause-card .suggested-answer { flex:1; margin-top:13px; border-top-color:#e3cabe; }
+.pause-card .suggested-answer>summary { padding-top:10px; }
+.pause-card .suggested-answer-body p { color:var(--clay-deep); font-family:Georgia,"Noto Serif TC",serif; font-size:12px; line-height:1.75; }
+
 /* Desktop reading scale: keep the dense study interface comfortable at 100% zoom. */
 @media (min-width:761px) {
   .brand-kicker,.section-label { font-size:10px; }
