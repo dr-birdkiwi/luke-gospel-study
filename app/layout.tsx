@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: '在福音的路上｜路加福音小组查经',
-    description: '读进去，也活出来。每两周与一群人走一章路加福音。',
+    description: '逐章阅读路加福音，连接经文背景、整本圣经与当下信仰生活。',
     type: 'website',
   },
-  twitter: { card: 'summary_large_image', title: '在福音的路上｜路加福音小组查经', description: '读进去，也活出来。' },
+  twitter: { card: 'summary_large_image', title: '在福音的路上｜路加福音小组查经', description: '逐章读经、背景串联与信仰回应。' },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
