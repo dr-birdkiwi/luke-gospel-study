@@ -19,6 +19,12 @@ const travelNarrativeJblUrl = 'https://doi.org/10.15699/jbl.1441.2025.8';
 const templeHtrUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/weeping-over-jerusalem-lukes-response-to-the-destruction-of-the-temple/D0E1B13425A79861FE941F673AD8F258';
 const entryKinmanUrl = 'https://doi.org/10.53751/001c.30428190';
 const minasIvpUrl = 'https://www.biblegateway.com/resources/ivp-nt/Parable-Stewardship-Minas';
+const netLukeTwentyUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=20';
+const bryanResurrectionJtsUrl = 'https://doi.org/10.1093/jts/flag032';
+const bovonLukeTwentyVineyardUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.9';
+const bovonLukeTwentyTaxesUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.10';
+const bovonLukeTwentyResurrectionUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.11';
+const bovonLukeTwentyMessiahUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.12';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
 const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=luk+19';
@@ -208,11 +214,31 @@ export const chapterNineteenReferences: ChapterReference[] = [
 ];
 
 export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCitation[]> = {
-  '20:1–8': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
-  '20:9–19': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读')],
-  '20:20–26': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
-  '20:27–40': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读')],
-  '20:41–47': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读')],
+  '20:1–8': [
+    source('NET · 路 20', 'NET · 路 20 原文注释', netLukeTwentyUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '20:9–19': [
+    source('NET · 路 20', 'NET · 路 20 原文注释', netLukeTwentyUrl, '解读'),
+    source('Bovon · 葡萄园', 'Bovon · 路 20:9–19', bovonLukeTwentyVineyardUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读'),
+  ],
+  '20:20–26': [
+    source('NET · 路 20', 'NET · 路 20 原文注释', netLukeTwentyUrl, '背景'),
+    source('Bovon · 该撒银币', 'Bovon · 路 20:20–26', bovonLukeTwentyTaxesUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '20:27–40': [
+    source('NET · 路 20', 'NET · 路 20 原文注释', netLukeTwentyUrl, '背景'),
+    source('Bryan 2026', 'Bryan 2026 · 复活争论', bryanResurrectionJtsUrl, '解读'),
+    source('Bovon · 复活争论', 'Bovon · 路 20:27–40', bovonLukeTwentyResurrectionUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读'),
+  ],
+  '20:41–47': [
+    source('NET · 路 20', 'NET · 路 20 原文注释', netLukeTwentyUrl, '解读'),
+    source('Bovon · 大卫之主', 'Bovon · 路 20:41–47', bovonLukeTwentyMessiahUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读'),
+  ],
   '21:1–4': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
   '21:5–24': [
     source('WP · 21:5–19', 'Working Preacher · 路 21:5–19（前半）', templeWitnessWorkingPreacherUrl, '解读'),
@@ -319,6 +345,27 @@ export const chapterTwentyToTwentyFourReferences: ChapterReference[] = [
     text: 'Working Preacher. “Commentary on Luke 24:44–53.”',
     url: ascensionWorkingPreacherUrl,
     note: '用于复活身体、圣经开启、悔改赦罪、圣灵等候与升天的结尾结构。',
+  },
+];
+
+export const chapterTwentyReferences: ChapterReference[] = [
+  {
+    id: 'NET · 路 20',
+    text: 'NET Bible. Luke 20: text, translation notes, and study notes.',
+    url: netLukeTwentyUrl,
+    note: '用于核对权柄、葡萄园、该撒银币、复活和文士警告等段落的关键词、历史说明与文本差异。',
+  },
+  {
+    id: 'Bovon 2012 · 路加 3',
+    text: 'Bovon, François. Luke 3: Commentary on 19:28–24:53. Hermeneia. Fortress Press, 2012.',
+    url: 'https://doi.org/10.2307/j.ctvb6v8bq',
+    note: '用于第20章各场争论在路加耶路撒冷叙事中的连续性，以及葡萄园、纳税、复活和大卫之主等段落的文学与神学背景。',
+  },
+  {
+    id: 'Bryan 2026',
+    text: 'Bryan, Steven M. “What Kind of Life Is Raised? Luke’s Account of the Dispute Between Jesus and the Sadducees (Luke 20:27–40).” Journal of Theological Studies, 2026.',
+    url: bryanResurrectionJtsUrl,
+    note: '近期同行评审研究；用于进一步检验撒都该人的设问、婚姻律例、死亡之后的生命与复活之间的关系。此处采用其解释进路，同时保留不同传统解读的空间。',
   },
 ];
 

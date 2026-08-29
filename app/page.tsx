@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, type ChapterReference } from './academicCitations';
+import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, type ChapterReference } from './academicCitations';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
 
@@ -40,7 +40,7 @@ const chapterThemes = [
   ['感恩与神国的临在', '我是否在恩典中回到主面前？'],
   ['祷告、谦卑与跟随', '我用什么姿态来到主前？'],
   ['救恩进入耶路撒冷', '救恩如何落在一个家庭和一座城？'],
-  ['圣殿中的权柄', '在对立中怎样持守真理与公义？'],
+  ['圣殿中的权柄与受托', '谁真正拥有神的殿、人的生命与未来？'],
   ['末世警醒', '盼望怎样塑造今天的清醒？'],
   ['最后晚餐与橄榄山', '在被爱与被筛之间如何忠心？'],
   ['十字架上的王', '受苦、赦免与死亡如何相连？'],
@@ -67,7 +67,7 @@ const chapterGuidesByChapter: Record<number, string[]> = {
   17: ['绊倒、饶恕与信心', '十个麻风病人与感恩', '神的国已经临在，也将完全显明'],
   18: ['寡妇与不义的官、恒切祷告', '法利赛人与税吏、小孩子', '富足的官、受难预告、瞎子得看见'],
   19: ['王先进入人的家：撒该与“今天”的救恩（19:1–10）', '神的国不会按人的时间表立刻完成：十锭银子与等候中的忠心（19:11–27）', '王走近圣城：和平的欢呼、为城的眼泪与圣殿的恢复（19:28–48）'],
-  20: ['权柄质问与凶恶园户', '纳税给该撒、复活的争论', '大卫之子与文士、弱者与权力'],
+  20: ['权柄不是头衔：约翰的洗礼与凶恶园户', '该撒的银币与神所要的人', '复活的生命、大卫的主与受托者'],
   21: ['寡妇的两个小钱与圣殿', '圣殿被毁、战争、逼迫与见证', '人子来到、无花果树、警醒祷告'],
   22: ['阴谋、逾越节与圣餐', '谁为大、彼得被筛与不认主', '橄榄山的祷告、被捕与受审'],
   23: ['彼拉多与希律、被判钉十字架', '古利奈人西门与各各他', '十字架赦免、死亡与安葬'],
@@ -94,7 +94,7 @@ const chapterSummaries = [
   '从绊倒、饶恕、麻风病人的感恩到神国的临在，信心在关系和等待中被检验。',
   '寡妇的祷告、税吏的谦卑、孩子的领受和富足官的挣扎，都汇入前往耶路撒冷的道路。',
   '耶稣先把“今天”的救恩带进撒该的家，又纠正人以为神的国会立刻公开完成的期待；祂走近耶路撒冷，以和平、眼泪和圣殿行动显明自己是哪一种王。',
-  '在耶路撒冷圣殿，权柄、税收、复活与宗教外表被放在神国的审判之下。',
+  '在耶路撒冷圣殿，耶稣逐一揭露谁在拒绝神、谁只是受托管理，以及真正的王权如何面对税收、死亡与弱者。',
   '圣殿的奉献、将来的毁坏、逼迫与人子降临，使门徒学习在混乱中清醒见证。',
   '逾越节的桌边、门徒的争大、彼得的筛选和橄榄山的祷告，把忠心带到受难前夜。',
   '耶稣在政治与宗教权力之间被交付，在十字架上赦免、受死，并被安放在坟墓。',
@@ -121,7 +121,7 @@ const chapterSettings = [
   '撒玛利亚与加利利边界、旅程道路和末世盼望交汇，感恩者从边缘回来敬拜。',
   '旅程接近耶路撒冷；祷告场景、孩子、税吏、富足者与瞎子共同显示谁能看见神国。',
   '从耶利哥到耶路撒冷的路上，撒该的家、王权比喻、橄榄山、圣城和圣殿连成一条叙事线。',
-  '耶路撒冷圣殿成为权柄争议的中心，宗教领导、罗马税制与复活盼望在此交锋。',
+  '耶路撒冷圣殿成为权柄争议的中心；在同一片公共空间里，宗教领袖、罗马税制、复活盼望和弱者的处境彼此交锋。',
   '圣殿与橄榄山之间，奉献、毁坏、战争、逼迫和人子盼望共同塑造门徒的警醒。',
   '耶路撒冷逾越节夜晚、门徒聚集的房间、橄榄山与大祭司院落组成受难前夜。',
   '耶路撒冷的审判场、各各他与新坟墓，把罗马刑罚、宗教指控和赦免的王权并置。',
@@ -148,7 +148,7 @@ const chapterCrossRefs: Record<number, string[]> = {
   17: ['利 13–14 · 洁净与重新进入群体', '王下 5:1–19 · 外族人的医治与感恩', '罗 14:17–19 · 神国与共同体'],
   18: ['申 10:17–18 · 神为弱者伸冤', '诗 51:17 · 谦卑的心', '可 10:13–52 · 门徒、财富与看见'],
   19: ['出 22:1–4 · 赔偿与修复', '亚 9:9–10；诗 118:25–27 · 谦和、和平而来的王', '赛 56:6–7；耶 7:1–11 · 祷告之殿与虚假安全'],
-  20: ['赛 5:1–7 · 葡萄园与主人', '创 1:26–27 · 神的形象与公共责任', '诗 110:1 · 大卫的主'],
+  20: ['赛 5:1–7 · 葡萄园与受托者', '出 3:6；申 25:5–10 · 复活与婚姻律例', '创 1:26–27；诗 110:1 · 神的形象与大卫的主'],
   21: ['耶 7:1–15 · 圣殿与虚假的安全', '但 7:13–14 · 人子与末世掌权', '帖前 5:1–8 · 清醒、盼望与见证'],
   22: ['出 12 · 逾越节与出埃及', '耶 31:31–34 · 新约应许', '林前 11:23–26 · 圣餐传统与记念'],
   23: ['赛 53:7–12 · 受苦仆人', '诗 31:5；22:7–18 · 交托与被羞辱', '徒 4:25–28 · 权力合谋与神的计划'],
@@ -255,7 +255,8 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     },
     ...academicReferences,
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
-    ...(chapter.no >= 20 && chapter.no <= 24 ? chapterTwentyToTwentyFourReferences : []),
+    ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
+    ...(chapter.no >= 21 && chapter.no <= 24 ? chapterTwentyToTwentyFourReferences : []),
     ...pastoralReferences,
     ...(relatedPassages.length ? [{
       id: '互文',
