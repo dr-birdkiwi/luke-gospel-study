@@ -13,7 +13,11 @@ const sterlingUrl = 'https://www.eerdmans.com/9780802848734/shaping-the-past-to-
 const johnsonUrl = 'https://litpress.org/Products/E8331/Sacra-Pagina-The-Gospel-of-Luke';
 const birdUrl = 'https://www.ivpress.com/Media/Default/Downloads/Excerpts-and-Samples/A0809-excerpt.pdf';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
-const minasGathercoleUrl = 'https://www.repository.cam.ac.uk/items/b9ff217f-5b15-400d-93d6-0c68c7b14d6e';
+const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
+const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
+const travelNarrativeJblUrl = 'https://doi.org/10.15699/jbl.1441.2025.8';
+const templeHtrUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/weeping-over-jerusalem-lukes-response-to-the-destruction-of-the-temple/D0E1B13425A79861FE941F673AD8F258';
+const entryKinmanUrl = 'https://doi.org/10.53751/001c.30428190';
 const minasIvpUrl = 'https://www.biblegateway.com/resources/ivp-nt/Parable-Stewardship-Minas';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
@@ -106,6 +110,7 @@ export type ChapterReference = {
 export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = {
   '19:1–10': [
     source('Lose · 撒该', 'Working Preacher · 撒该', zacchaeusWorkingPreacherUrl, '解读'),
+    source('Macnamara 2025', 'Macnamara 2025 · 撒该', macnamaraZacchaeusUrl, '解读'),
     source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
   ],
   '19:11–27': [
@@ -115,20 +120,25 @@ export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = 
   ],
   '19:28–35': [
     source('Johnson · 荣耀进城', 'Working Preacher · 荣耀进城', entryWorkingPreacherUrl, '解读'),
+    source('Kinman · 进城研究', 'Kinman · 进城研究', entryKinmanUrl, '背景'),
+    source('JBL 2025 · 旅程节奏', 'JBL 2025 · 旅程节奏', travelNarrativeJblUrl, '背景'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '背景'),
     source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
   ],
   '19:36–40': [
     source('Johnson · 荣耀进城', 'Working Preacher · 荣耀进城', entryWorkingPreacherUrl, '解读'),
+    source('Kinman · 进城研究', 'Kinman · 进城研究', entryKinmanUrl, '背景'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '背景'),
     source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
   ],
   '19:41–44': [
     source('Johnson · 荣耀进城', 'Working Preacher · 荣耀进城', entryWorkingPreacherUrl, '解读'),
+    source('HTR · 哀哭耶路撒冷', 'HTR · 哀哭耶路撒冷', templeHtrUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '背景'),
     source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
   ],
   '19:45–48': [
+    source('HTR · 哀哭耶路撒冷', 'HTR · 哀哭耶路撒冷', templeHtrUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study', yaleJerusalemUrl, '解读'),
     source('NET · 路 19', 'NET · 原文注释', netLukeNineteenUrl, '解读'),
   ],
@@ -151,7 +161,31 @@ export const chapterNineteenReferences: ChapterReference[] = [
     id: 'Gathercole 2024',
     text: 'Gathercole, Simon. “Does the Parable of the Minas Address the Delay of the Parousia? Luke 19,11–27 in its Lukan, Rhetorical and Roman Settings.” Zeitschrift für die neutestamentliche Wissenschaft 115 (2024).',
     url: minasGathercoleUrl,
-    note: '经同行评审的开放存档论文；用于检验把十锭银子单纯归纳为“再来延迟”是否足够。',
+    note: '经同行评审的论文；用于检验把十锭银子单纯归纳为“再来延迟”是否足够，并重新连接撒该、王权和耶路撒冷叙事。',
+  },
+  {
+    id: 'Macnamara 2025',
+    text: 'Macnamara, Luke. “Zacchaeus’ Encounter with Jesus (Luke 19:1–10).” The Biblical Annals 15/2 (2025).',
+    url: macnamaraZacchaeusUrl,
+    note: '用于比较撒该与利未的叙事结构，并检验撒该的动作、身份和回应如何服务于路加的救赎叙事。',
+  },
+  {
+    id: 'Kinman · 进城研究',
+    text: 'Kinman, Brent Rogers. “The ‘A-Triumphal’ Entry (Luke 19:28–48): Historical Backgrounds, Theological Motifs, and the Purpose of Luke.” Tyndale Bulletin 45/1 (1994).',
+    url: entryKinmanUrl,
+    note: '作为特定学术进路使用：帮助观察进城、哭城和圣殿行动的连续性；其中关于所罗门背景的判断不作为唯一结论。',
+  },
+  {
+    id: 'JBL 2025 · 旅程节奏',
+    text: '“The Time It Takes: Prolonged Pace in Luke’s Travel Narrative (9:51–19:44).” Journal of Biblical Literature 144/1 (2025).',
+    url: travelNarrativeJblUrl,
+    note: '用于理解 19:1–44 仍处在漫长上耶路撒冷旅程的收束段落，帮助避免把本章读成彼此割裂的场景集合。',
+  },
+  {
+    id: 'HTR · 哀哭耶路撒冷',
+    text: '“Weeping Over Jerusalem: Luke’s Response to the Destruction of the Temple.” Harvard Theological Review.',
+    url: templeHtrUrl,
+    note: '用于保持路加圣殿描写的双重性：既肯定圣殿的祷告与教导功能，也批判其中被不义扭曲的使用。',
   },
   {
     id: 'IVP · 十锭银子',
