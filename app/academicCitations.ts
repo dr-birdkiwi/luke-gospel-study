@@ -20,11 +20,20 @@ const templeHtrUrl = 'https://www.cambridge.org/core/journals/harvard-theologica
 const entryKinmanUrl = 'https://doi.org/10.53751/001c.30428190';
 const minasIvpUrl = 'https://www.biblegateway.com/resources/ivp-nt/Parable-Stewardship-Minas';
 const netLukeTwentyUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=20';
+const netLukeTwentyOneUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=21';
+const netLukeTwentyTwoUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=22';
+const netLukeTwentyThreeUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=23';
+const netLukeTwentyFourUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=24';
 const bryanResurrectionJtsUrl = 'https://doi.org/10.1093/jts/flag032';
 const bovonLukeTwentyVineyardUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.9';
 const bovonLukeTwentyTaxesUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.10';
 const bovonLukeTwentyResurrectionUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.11';
 const bovonLukeTwentyMessiahUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.12';
+const nevilleLukeTwentyOneUrl = 'https://journals.sagepub.com/doi/10.1177/1476993X241229158';
+const jamesLukeTwentyTwoUrl = 'https://doi.org/10.1093/jts/flae045';
+const clostermanLukeTwentyThreeUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/reading-the-gospel-of-lukes-walk-to-calvary-as-a-funeral-procession-a-study-of-luke-23278/1C72C42AE96F64344D934FB044D92DD4';
+const thompsonLukeTwentyFourUrl = 'https://doi.org/10.1515/9783110773743';
+const clarkHowardLukeTwentyFourUrl = 'https://doi.org/10.1080/23312521.2025.2495004';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
 const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=luk+19';
@@ -239,53 +248,103 @@ export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCita
     source('Bovon · 大卫之主', 'Bovon · 路 20:41–47', bovonLukeTwentyMessiahUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '解读'),
   ],
-  '21:1–4': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
+  '21:1–4': [
+    source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
   '21:5–24': [
+    source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
+    source('Neville 2024', 'Neville 2024 · 耶路撒冷毁坏与人子', nevilleLukeTwentyOneUrl, '解读'),
     source('WP · 21:5–19', 'Working Preacher · 路 21:5–19（前半）', templeWitnessWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
   '21:25–28': [
+    source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
+    source('Neville 2024', 'Neville 2024 · 耶路撒冷毁坏与人子', nevilleLukeTwentyOneUrl, '解读'),
     source('WP · 21:25–36', 'Working Preacher · 路 21:25–36', eschatologyWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
-  '21:29–36': [source('WP · 21:25–36', 'Working Preacher · 路 21:25–36', eschatologyWorkingPreacherUrl, '解读')],
-  '21:37–38': [source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景')],
+  '21:29–36': [
+    source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
+    source('Neville 2024', 'Neville 2024 · 耶路撒冷毁坏与人子', nevilleLukeTwentyOneUrl, '背景'),
+    source('WP · 21:25–36', 'Working Preacher · 路 21:25–36', eschatologyWorkingPreacherUrl, '解读'),
+  ],
+  '21:37–38': [
+    source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
   '22:1–6': [
+    source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
     source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '背景'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
   '22:7–23': [
+    source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
+    source('James 2024', 'James 2024 · 路 22:15–20 文本异文', jamesLukeTwentyTwoUrl, '解读'),
     source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
-  '22:24–30': [source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读')],
-  '22:31–38': [source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读')],
+  '22:24–30': [
+    source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
+    source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读'),
+  ],
+  '22:31–38': [
+    source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
+    source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读'),
+  ],
   '22:39–46': [
+    source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
+    source('James 2024', 'James 2024 · 路 22:15–20 文本异文', jamesLukeTwentyTwoUrl, '背景'),
     source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
   '22:47–71': [
+    source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
     source('WP · 受难审判', 'Working Preacher · 路 22:47–71', passionTrialWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
-  '23:1–25': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读')],
-  '23:26–31': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景')],
-  '23:32–43': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读')],
-  '23:44–49': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读')],
-  '23:50–56': [source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景')],
+  '23:1–25': [
+    source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
+  ],
+  '23:26–31': [
+    source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
+    source('Closterman 2024', 'Closterman 2024 · 走向各各他的葬礼行列', clostermanLukeTwentyThreeUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
+  ],
+  '23:32–43': [
+    source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
+  ],
+  '23:44–49': [
+    source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
+  ],
+  '23:50–56': [
+    source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
+    source('Closterman 2024', 'Closterman 2024 · 走向各各他的葬礼行列', clostermanLukeTwentyThreeUrl, '背景'),
+    source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
+  ],
   '24:1–12': [
+    source('NET · 路 24', 'NET · 路 24 原文注释', netLukeTwentyFourUrl, '解读'),
     source('WP · 空坟墓', 'Working Preacher · 空坟墓', emptyTombWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
   ],
   '24:13–35': [
+    source('NET · 路 24', 'NET · 路 24 原文注释', netLukeTwentyFourUrl, '解读'),
+    source('Thompson 2023', 'Thompson 2023 · 路 24 的辨认与复活显现', thompsonLukeTwentyFourUrl, '解读'),
     source('WP · 以马忤斯', 'Working Preacher · 以马忤斯', emmausWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
   ],
   '24:36–49': [
+    source('NET · 路 24', 'NET · 路 24 原文注释', netLukeTwentyFourUrl, '解读'),
+    source('Clark-Howard 2025', 'Clark-Howard 2025 · 复活身体的连续与不可简化', clarkHowardLukeTwentyFourUrl, '解读'),
     source('WP · 升天', 'Working Preacher · 路 24:44–53（后半）', ascensionWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
   ],
   '24:50–53': [
+    source('NET · 路 24', 'NET · 路 24 原文注释', netLukeTwentyFourUrl, '解读'),
+    source('Thompson 2023', 'Thompson 2023 · 路 24 的辨认与复活显现', thompsonLukeTwentyFourUrl, '背景'),
     source('WP · 升天', 'Working Preacher · 路 24:44–53', ascensionWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
   ],
@@ -366,6 +425,72 @@ export const chapterTwentyReferences: ChapterReference[] = [
     text: 'Bryan, Steven M. “What Kind of Life Is Raised? Luke’s Account of the Dispute Between Jesus and the Sadducees (Luke 20:27–40).” Journal of Theological Studies, 2026.',
     url: bryanResurrectionJtsUrl,
     note: '近期同行评审研究；用于进一步检验撒都该人的设问、婚姻律例、死亡之后的生命与复活之间的关系。此处采用其解释进路，同时保留不同传统解读的空间。',
+  },
+];
+
+export const chapterTwentyOneReferences: ChapterReference[] = [
+  {
+    id: 'NET · 路 21',
+    text: 'NET Bible. Luke 21: text, translation notes, and study notes.',
+    url: netLukeTwentyOneUrl,
+    note: '用于核对寡妇奉献、圣殿毁坏、逼迫、人子来临与警醒祷告等段落的经文与注释。',
+  },
+  {
+    id: 'Neville 2024',
+    text: 'Neville, David J. “Jerusalem’s Destruction and the Coming of the Son of Man: Assessing an Alleged Lukan Association.” Currents in Biblical Research, 2024.',
+    url: nevilleLukeTwentyOneUrl,
+    note: '同行评审研究；用于呈现圣殿毁坏、公元 70 年历史背景与人子来临之间的多种解释，避免把路加 21 章压成单一末日时间表。',
+  },
+];
+
+export const chapterTwentyTwoReferences: ChapterReference[] = [
+  {
+    id: 'NET · 路 22',
+    text: 'NET Bible. Luke 22: text, translation notes, and study notes.',
+    url: netLukeTwentyTwoUrl,
+    note: '用于核对逾越节、圣餐、彼得被筛、橄榄山祷告、被捕与审问等段落。',
+  },
+  {
+    id: 'James 2024',
+    text: 'James, Rob. “Variant Readings of Luke 22:15–20 and the Relationship of Codex Bezae to Curetonian Syriac.” Journal of Theological Studies 75/2 (2024): 336.',
+    url: jamesLukeTwentyTwoUrl,
+    note: '同行评审的文本校勘研究；用于说明 22:15–20 不宜只简化为“长式／短式”二分，并支持页面对 22:19 下–20 异文的谨慎标注。',
+  },
+];
+
+export const chapterTwentyThreeReferences: ChapterReference[] = [
+  {
+    id: 'NET · 路 23',
+    text: 'NET Bible. Luke 23: text, translation notes, and study notes.',
+    url: netLukeTwentyThreeUrl,
+    note: '用于核对彼拉多、希律、古利奈人西门、十字架、百夫长与安葬等段落。',
+  },
+  {
+    id: 'Closterman 2024',
+    text: 'Closterman, Wendy E. “Reading the Gospel of Luke’s Walk to Calvary as a Funeral Procession: A Study of Luke 23.27–8.” New Testament Studies 70/1 (2024): 51–60.',
+    url: clostermanLukeTwentyThreeUrl,
+    note: '同行评审研究；用于补充妇女哀哭、走向各各他与安葬叙事之间的反向葬礼意象，同时保持这是文学解释进路，而非经文唯一含义。',
+  },
+];
+
+export const chapterTwentyFourReferences: ChapterReference[] = [
+  {
+    id: 'NET · 路 24',
+    text: 'NET Bible. Luke 24: text, translation notes, and study notes.',
+    url: netLukeTwentyFourUrl,
+    note: '用于核对空坟墓、以马忤斯、身体显现、使命与升天等段落。',
+  },
+  {
+    id: 'Thompson 2023',
+    text: 'Thompson, Alexander Phillip. Recognition and the Resurrection Appearances of Luke 24. De Gruyter, 2023.',
+    url: thompsonLukeTwentyFourUrl,
+    note: '用于理解路加 24 章中“看见却未认出、经文开启、擘饼后认出”的辨认叙事，以及它如何收束整卷福音书。',
+  },
+  {
+    id: 'Clark-Howard 2025',
+    text: 'Clark-Howard, Andrew. “A Disabled Lord? Continuity and Legibility in the Resurrection.” Journal of Disability & Religion 30/1 (2025): 22–33.',
+    url: clarkHowardLukeTwentyFourUrl,
+    note: '开放获取的近期研究；用于提醒我们既承认复活身体与受难身体的连续性，也不把复活简化为可以被人完全掌控的“标准身体”图像。',
   },
 ];
 

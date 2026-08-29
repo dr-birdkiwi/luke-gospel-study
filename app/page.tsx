@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, type ChapterReference } from './academicCitations';
+import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
 
@@ -41,10 +41,10 @@ const chapterThemes = [
   ['祷告、谦卑与跟随', '我用什么姿态来到主前？'],
   ['救恩进入耶路撒冷', '救恩如何落在一个家庭和一座城？'],
   ['圣殿中的权柄与受托', '谁真正拥有神的殿、人的生命与未来？'],
-  ['末世警醒', '盼望怎样塑造今天的清醒？'],
-  ['最后晚餐与橄榄山', '在被爱与被筛之间如何忠心？'],
-  ['十字架上的王', '受苦、赦免与死亡如何相连？'],
-  ['复活显现与差遣', '见证从哪里开始？'],
+  ['在震动中作见证', '末世盼望怎样塑造今天的清醒？'],
+  ['桌边的主与失败的门徒', '被爱、被筛与被差遣之间如何忠心？'],
+  ['无罪受苦的王', '十字架如何显明王权、赦免与真实死亡？'],
+  ['复活、开启与差遣', '失望者如何成为见证人？'],
 ];
 
 const chapterGuidesByChapter: Record<number, string[]> = {
@@ -95,10 +95,10 @@ const chapterSummaries = [
   '寡妇的祷告、税吏的谦卑、孩子的领受和富足官的挣扎，都汇入前往耶路撒冷的道路。',
   '耶稣先把“今天”的救恩带进撒该的家，又纠正人以为神的国会立刻公开完成的期待；祂走近耶路撒冷，以和平、眼泪和圣殿行动显明自己是哪一种王。',
   '在耶路撒冷圣殿，耶稣逐一揭露谁在拒绝神、谁只是受托管理，以及真正的王权如何面对税收、死亡与弱者。',
-  '圣殿的奉献、将来的毁坏、逼迫与人子降临，使门徒学习在混乱中清醒见证。',
-  '逾越节的桌边、门徒的争大、彼得的筛选和橄榄山的祷告，把忠心带到受难前夜。',
-  '耶稣在政治与宗教权力之间被交付，在十字架上赦免、受死，并被安放在坟墓。',
-  '空坟墓、以马忤斯、经文开启、身体复活与升天，把失望的门徒转成喜乐的见证人。',
+  '圣殿的奉献、将来的毁坏、逼迫与人子来临，使门徒学习在混乱中保持清醒、辨认真相并作见证。',
+  '逾越节的桌边、门徒的争大、彼得的失败和橄榄山的祷告，把“主为你们舍己”带进受难前夜的忠心与软弱。',
+  '耶稣在政治与宗教权力之间被交付；祂在十字架上赦免、受死，并被安放在坟墓，显明一种不靠暴力自证的王权。',
+  '空坟墓、以马忤斯、经文开启、身体复活与升天，把失望、疑惑的门徒转成回到耶路撒冷的见证人。',
 ];
 
 const chapterSettings = [
@@ -122,10 +122,10 @@ const chapterSettings = [
   '旅程接近耶路撒冷；祷告场景、孩子、税吏、富足者与瞎子共同显示谁能看见神国。',
   '从耶利哥到耶路撒冷的路上，撒该的家、王权比喻、橄榄山、圣城和圣殿连成一条叙事线。',
   '耶路撒冷圣殿成为权柄争议的中心；在同一片公共空间里，宗教领袖、罗马税制、复活盼望和弱者的处境彼此交锋。',
-  '圣殿与橄榄山之间，奉献、毁坏、战争、逼迫和人子盼望共同塑造门徒的警醒。',
-  '耶路撒冷逾越节夜晚、门徒聚集的房间、橄榄山与大祭司院落组成受难前夜。',
-  '耶路撒冷的审判场、各各他与新坟墓，把罗马刑罚、宗教指控和赦免的王权并置。',
-  '耶路撒冷、以马忤斯道路与伯大尼附近，把空坟墓、经文解释、显现和升天连成见证起点。',
+  '圣殿与橄榄山之间，奉献、毁坏、战争、逼迫和人子盼望共同塑造门徒的警醒；这里既连着公元 70 年的历史创伤，也保留最终盼望的张力。',
+  '耶路撒冷逾越节夜晚、门徒聚集的房间、橄榄山与大祭司的家组成受难前夜；节期的救赎记忆与黑暗中的背叛彼此交锋。',
+  '耶路撒冷的审判场、各各他与新坟墓，把罗马刑罚、宗教指控、受害者的哀恸和赦免的王权并置。',
+  '耶路撒冷、以马忤斯道路与伯大尼附近，把空坟墓、经文解释、身体显现和升天连成从失望到见证的道路。',
 ];
 
 const chapterCrossRefs: Record<number, string[]> = {
@@ -256,7 +256,10 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     ...academicReferences,
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
     ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
-    ...(chapter.no >= 21 && chapter.no <= 24 ? chapterTwentyToTwentyFourReferences : []),
+    ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...chapterTwentyToTwentyFourReferences] : []),
+    ...(chapter.no === 22 ? [...chapterTwentyTwoReferences, ...chapterTwentyToTwentyFourReferences] : []),
+    ...(chapter.no === 23 ? [...chapterTwentyThreeReferences, ...chapterTwentyToTwentyFourReferences] : []),
+    ...(chapter.no === 24 ? [...chapterTwentyFourReferences, ...chapterTwentyToTwentyFourReferences] : []),
     ...pastoralReferences,
     ...(relatedPassages.length ? [{
       id: '互文',
