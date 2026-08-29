@@ -33,6 +33,8 @@ const nevilleLukeTwentyOneUrl = 'https://journals.sagepub.com/doi/10.1177/147699
 const jamesLukeTwentyTwoUrl = 'https://openurl.ebsco.com/contentitem/gcd%3A180950284';
 const swordLukeTwentyTwoUrl = 'https://brill.com/view/journals/evqu/92/4/article-p351_4.xml';
 const clostermanLukeTwentyThreeUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/reading-the-gospel-of-lukes-walk-to-calvary-as-a-funeral-procession-a-study-of-luke-23278/1C72C42AE96F64344D934FB044D92DD4';
+const byuLukeTwentyThreeUrl = 'https://byustudies.byu.edu/online-book/the-testimony-of-luke/luke-chapter-23-104';
+const paradiseLukeTwentyThreeUrl = 'https://doi.org/10.31982/KNTS.2023.3.30.1.111';
 const thompsonLukeTwentyFourUrl = 'https://www.degruyterbrill.com/document/doi/10.1515/9783110773743/html';
 const clarkHowardLukeTwentyFourUrl = 'https://www.tandfonline.com/doi/full/10.1080/23312521.2025.2495004';
 const deJongeAscensionUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/chronology-of-the-ascension-stories-in-luke-and-acts/B42A5255A306DBBF260E02C2C402C688';
@@ -320,15 +322,18 @@ export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCita
   ],
   '23:1–25': [
     source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
+    source('BYU · 路 23', 'BYU Studies · 路 23 章节注释', byuLukeTwentyThreeUrl, '背景'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
   ],
   '23:26–31': [
     source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
     source('Closterman 2024', 'Closterman 2024 · 走向各各他的葬礼行列', clostermanLukeTwentyThreeUrl, '解读'),
+    source('BYU · 路 23', 'BYU Studies · 路 23 章节注释', byuLukeTwentyThreeUrl, '背景'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
   ],
   '23:32–43': [
     source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
+    source('Jeong 2023', 'Jeong 2023 · 路 23:39–43 “今日”与“乐园”', paradiseLukeTwentyThreeUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
   ],
   '23:44–49': [
@@ -500,10 +505,22 @@ export const chapterTwentyThreeReferences: ChapterReference[] = [
     note: '用于核对彼拉多、希律、古利奈人西门、十字架、百夫长与安葬等段落。',
   },
   {
+    id: 'BYU · 路 23',
+    text: 'BYU Studies. “Luke Chapter 23: The Testimony of Luke.”',
+    url: byuLukeTwentyThreeUrl,
+    note: '章节注释；用于补充政治控告、彼拉多与希律、青绿树与枯干树等历史和叙事观察。',
+  },
+  {
     id: 'Closterman 2024',
     text: 'Closterman, Wendy E. “Reading the Gospel of Luke’s Walk to Calvary as a Funeral Procession: A Study of Luke 23.27–8.” New Testament Studies 70/1 (2024): 51–60.',
     url: clostermanLukeTwentyThreeUrl,
     note: '同行评审研究；用于补充妇女哀哭、走向各各他与安葬叙事之间的反向葬礼意象，同时保持这是文学解释进路，而非经文唯一含义。',
+  },
+  {
+    id: 'Jeong 2023',
+    text: 'Jeong, Chang-Kyo. “Luke 23:39–43: Luke’s Personal Eschatology and Salvation—Focus on ‘Today’ and ‘Paradise’.” Korean New Testament Studies 30/1 (2023): 111–138.',
+    url: paradiseLukeTwentyThreeUrl,
+    note: '同行评审研究；用于说明“今日”“乐园”、行恶者的称谓与临终回转等解释问题，并保留不同教会传统的讨论空间。',
   },
 ];
 
