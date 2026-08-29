@@ -39,6 +39,7 @@ const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/
 const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=luk+19';
 const templeWitnessWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-33-3/commentary-on-luke-215-19';
 const eschatologyWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-of-advent-3/commentary-on-luke-2125-36-6';
+const ivpLukeTwentyOneUrl = 'https://www.biblegateway.com/resources/ivp-nt/Jerusalems-Destruction-End';
 const lastSupperWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/narrative-lectionary/last-supper/commentary-on-luke-221-27-4';
 const passionTrialWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-2214-2356-2';
 const passionResurrectionYaleUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/the-passion-and-resurrection-study-guide/';
@@ -252,15 +253,26 @@ export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCita
     source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
-  '21:5–24': [
+  '21:5–6': [
+    source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
+    source('Wendel 2025', 'Wendel 2025 · 路加与圣殿毁坏', templeHtrUrl, '背景'),
+    source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
+  ],
+  '21:7–19': [
+    source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
+    source('WP · 21:5–19', 'Working Preacher · 路 21:5–19（前半）', templeWitnessWorkingPreacherUrl, '解读'),
+  ],
+  '21:20–24': [
     source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
     source('Neville 2024', 'Neville 2024 · 耶路撒冷毁坏与人子', nevilleLukeTwentyOneUrl, '解读'),
-    source('WP · 21:5–19', 'Working Preacher · 路 21:5–19（前半）', templeWitnessWorkingPreacherUrl, '解读'),
+    source('IVP · 路 21', 'IVP · 耶路撒冷的毁坏与终局', ivpLukeTwentyOneUrl, '解读'),
+    source('Wendel 2025', 'Wendel 2025 · 路加与圣殿毁坏', templeHtrUrl, '背景'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
   '21:25–28': [
     source('NET · 路 21', 'NET · 路 21 原文注释', netLukeTwentyOneUrl, '解读'),
     source('Neville 2024', 'Neville 2024 · 耶路撒冷毁坏与人子', nevilleLukeTwentyOneUrl, '解读'),
+    source('IVP · 路 21', 'IVP · 耶路撒冷的毁坏与终局', ivpLukeTwentyOneUrl, '解读'),
     source('WP · 21:25–36', 'Working Preacher · 路 21:25–36', eschatologyWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
@@ -361,7 +373,7 @@ export const chapterTwentyToTwentyFourReferences: ChapterReference[] = [
     id: 'WP · 21:5–19',
     text: 'Working Preacher. “Commentary on Luke 21:5–19.”',
     url: templeWitnessWorkingPreacherUrl,
-    note: '用于 21:5–19 的圣殿毁坏、逼迫与见证解读；21:20–24 另以 Yale 章节综述支持，链接为公开释经资源。',
+    note: '用于 21:5–19 的圣殿毁坏、逼迫与见证解读；21:20–24 的历史背景和解释争议另由 Neville、Wendel 与 Yale 章节综述共同支持。',
   },
   {
     id: 'WP · 21:25–36',
@@ -440,6 +452,18 @@ export const chapterTwentyOneReferences: ChapterReference[] = [
     text: 'Neville, David J. “Jerusalem’s Destruction and the Coming of the Son of Man: Assessing an Alleged Lukan Association.” Currents in Biblical Research, 2024.',
     url: nevilleLukeTwentyOneUrl,
     note: '同行评审研究；用于呈现圣殿毁坏、公元 70 年历史背景与人子来临之间的多种解释，避免把路加 21 章压成单一末日时间表。',
+  },
+  {
+    id: 'IVP · 路 21',
+    text: 'IVP New Testament Commentary. “Jerusalem’s Destruction and the End (Luke 21:5–38).”',
+    url: ivpLukeTwentyOneUrl,
+    note: '主流福音派释经综述；用于交叉核对本章从圣殿毁坏、耶路撒冷危机到人子来临与警醒祷告的整体结构。',
+  },
+  {
+    id: 'Wendel 2025',
+    text: 'Wendel, Jason S. “Weeping Over Jerusalem: Luke’s Response to the Destruction of the Temple.” Harvard Theological Review 118/4 (2025): 691–712.',
+    url: templeHtrUrl,
+    note: '近期研究；用于理解路加一方面继续把圣殿写成敬拜与听道的空间，另一方面又正视圣殿和耶路撒冷所遭遇的毁坏与哀恸。',
   },
 ];
 
