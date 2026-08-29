@@ -37,6 +37,7 @@ const byuLukeTwentyThreeUrl = 'https://byustudies.byu.edu/online-book/the-testim
 const paradiseLukeTwentyThreeUrl = 'https://doi.org/10.31982/KNTS.2023.3.30.1.111';
 const thompsonLukeTwentyFourUrl = 'https://www.degruyterbrill.com/document/doi/10.1515/9783110773743/html';
 const clarkHowardLukeTwentyFourUrl = 'https://www.tandfonline.com/doi/full/10.1080/23312521.2025.2495004';
+const princeLukeTwentyFourUrl = 'https://journals.sagepub.com/doi/10.1177/0142064X07076309';
 const deJongeAscensionUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/chronology-of-the-ascension-stories-in-luke-and-acts/B42A5255A306DBBF260E02C2C402C688';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
@@ -359,6 +360,7 @@ export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCita
   '24:36–49': [
     source('NET · 路 24', 'NET · 路 24 原文注释', netLukeTwentyFourUrl, '解读'),
     source('Clark-Howard 2025', 'Clark-Howard 2025 · 复活身体的连续与不可简化', clarkHowardLukeTwentyFourUrl, '解读'),
+    source('Prince 2007', 'Prince 2007 · 路 24 与古代死者显现叙事', princeLukeTwentyFourUrl, '背景'),
     source('WP · 升天', 'Working Preacher · 路 24:44–53（后半）', ascensionWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
   ],
@@ -542,6 +544,12 @@ export const chapterTwentyFourReferences: ChapterReference[] = [
     text: 'Clark-Howard, Andrew. “A Disabled Lord? Continuity and Legibility in the Resurrection.” Journal of Disability & Religion 30/1 (2026): 22–33. First published online 2025.',
     url: clarkHowardLukeTwentyFourUrl,
     note: '开放获取的近期研究；用于提醒我们既承认复活身体与受难身体的连续性，也不把复活简化为可以被人完全掌控的“标准身体”图像。',
+  },
+  {
+    id: 'Prince 2007',
+    text: 'Prince, Deborah Thompson. “The ‘Ghost’ of Jesus: Luke 24 in Light of Ancient Narratives of Post-Mortem Apparitions.” Journal for the Study of the New Testament 29/3 (2007): 287–301.',
+    url: princeLukeTwentyFourUrl,
+    note: '同行评审研究；用于把路 24:36–43 放回古代死者显现叙事的语境，避免把触摸和进食简单写成现代实验式证明。',
   },
   {
     id: 'de Jonge 2013',
