@@ -24,16 +24,16 @@ const netLukeTwentyOneUrl = 'https://classic.net.bible.org/bible.php?book=Luk&ch
 const netLukeTwentyTwoUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=22';
 const netLukeTwentyThreeUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=23';
 const netLukeTwentyFourUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=24';
-const bryanResurrectionJtsUrl = 'https://doi.org/10.1093/jts/flag032';
-const bovonLukeTwentyVineyardUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.9';
-const bovonLukeTwentyTaxesUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.10';
-const bovonLukeTwentyResurrectionUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.11';
-const bovonLukeTwentyMessiahUrl = 'https://doi.org/10.2307/j.ctvb6v8bq.12';
+const bryanResurrectionJtsUrl = 'https://academic.oup.com/jts/advance-article/doi/10.1093/jts/flag032/8751201';
+const bovonLukeTwentyVineyardUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.9';
+const bovonLukeTwentyTaxesUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.10';
+const bovonLukeTwentyResurrectionUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.11';
+const bovonLukeTwentyMessiahUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.12';
 const nevilleLukeTwentyOneUrl = 'https://journals.sagepub.com/doi/10.1177/1476993X241229158';
-const jamesLukeTwentyTwoUrl = 'https://doi.org/10.1093/jts/flae045';
+const jamesLukeTwentyTwoUrl = 'https://openurl.ebsco.com/contentitem/gcd%3A180950284';
 const clostermanLukeTwentyThreeUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/reading-the-gospel-of-lukes-walk-to-calvary-as-a-funeral-procession-a-study-of-luke-23278/1C72C42AE96F64344D934FB044D92DD4';
-const thompsonLukeTwentyFourUrl = 'https://doi.org/10.1515/9783110773743';
-const clarkHowardLukeTwentyFourUrl = 'https://doi.org/10.1080/23312521.2025.2495004';
+const thompsonLukeTwentyFourUrl = 'https://www.degruyterbrill.com/document/doi/10.1515/9783110773743/html';
+const clarkHowardLukeTwentyFourUrl = 'https://www.tandfonline.com/doi/full/10.1080/23312521.2025.2495004';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
 const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=luk+19';
@@ -512,7 +512,7 @@ export const chapterTwentyFourReferences: ChapterReference[] = [
   },
   {
     id: 'Clark-Howard 2025',
-    text: 'Clark-Howard, Andrew. “A Disabled Lord? Continuity and Legibility in the Resurrection.” Journal of Disability & Religion 30/1 (2025): 22–33.',
+    text: 'Clark-Howard, Andrew. “A Disabled Lord? Continuity and Legibility in the Resurrection.” Journal of Disability & Religion 30/1 (2026): 22–33. First published online 2025.',
     url: clarkHowardLukeTwentyFourUrl,
     note: '开放获取的近期研究；用于提醒我们既承认复活身体与受难身体的连续性，也不把复活简化为可以被人完全掌控的“标准身体”图像。',
   },
