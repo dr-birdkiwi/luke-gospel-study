@@ -31,9 +31,11 @@ const bovonLukeTwentyResurrectionUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq
 const bovonLukeTwentyMessiahUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.12';
 const nevilleLukeTwentyOneUrl = 'https://journals.sagepub.com/doi/10.1177/1476993X241229158';
 const jamesLukeTwentyTwoUrl = 'https://openurl.ebsco.com/contentitem/gcd%3A180950284';
+const swordLukeTwentyTwoUrl = 'https://brill.com/view/journals/evqu/92/4/article-p351_4.xml';
 const clostermanLukeTwentyThreeUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/reading-the-gospel-of-lukes-walk-to-calvary-as-a-funeral-procession-a-study-of-luke-23278/1C72C42AE96F64344D934FB044D92DD4';
 const thompsonLukeTwentyFourUrl = 'https://www.degruyterbrill.com/document/doi/10.1515/9783110773743/html';
 const clarkHowardLukeTwentyFourUrl = 'https://www.tandfonline.com/doi/full/10.1080/23312521.2025.2495004';
+const deJongeAscensionUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/chronology-of-the-ascension-stories-in-luke-and-acts/B42A5255A306DBBF260E02C2C402C688';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
 const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=luk+19';
@@ -302,6 +304,7 @@ export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCita
   ],
   '22:31–38': [
     source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
+    source('EvQ 2021', 'Evangelical Quarterly 2021 · 路 22:36 买刀', swordLukeTwentyTwoUrl, '解读'),
     source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读'),
   ],
   '22:39–46': [
@@ -357,6 +360,7 @@ export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCita
   '24:50–53': [
     source('NET · 路 24', 'NET · 路 24 原文注释', netLukeTwentyFourUrl, '解读'),
     source('Thompson 2023', 'Thompson 2023 · 路 24 的辨认与复活显现', thompsonLukeTwentyFourUrl, '背景'),
+    source('de Jonge 2013', 'de Jonge 2013 · 路加与使徒行传的升天叙事时间', deJongeAscensionUrl, '解读'),
     source('WP · 升天', 'Working Preacher · 路 24:44–53', ascensionWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
   ],
@@ -480,6 +484,12 @@ export const chapterTwentyTwoReferences: ChapterReference[] = [
     url: jamesLukeTwentyTwoUrl,
     note: '同行评审的文本校勘研究；用于说明 22:15–20 不宜只简化为“长式／短式”二分，并支持页面对 22:19 下–20 异文的谨慎标注。',
   },
+  {
+    id: 'EvQ 2021',
+    text: '“Does Jesus Endorse Armed Self-Defense in Luke 22:36?” Evangelical Quarterly 92/4 (2021).',
+    url: swordLukeTwentyTwoUrl,
+    note: '呈现将“买刀”理解为武装自卫的学术进路；本页面将其与 22:49–51 耶稣制止暴力的叙事并读，不把它扩展为教会武装或报复命令。',
+  },
 ];
 
 export const chapterTwentyThreeReferences: ChapterReference[] = [
@@ -515,6 +525,12 @@ export const chapterTwentyFourReferences: ChapterReference[] = [
     text: 'Clark-Howard, Andrew. “A Disabled Lord? Continuity and Legibility in the Resurrection.” Journal of Disability & Religion 30/1 (2026): 22–33. First published online 2025.',
     url: clarkHowardLukeTwentyFourUrl,
     note: '开放获取的近期研究；用于提醒我们既承认复活身体与受难身体的连续性，也不把复活简化为可以被人完全掌控的“标准身体”图像。',
+  },
+  {
+    id: 'de Jonge 2013',
+    text: 'de Jonge, Henk Jan. “The Chronology of the Ascension Stories in Luke and Acts.” New Testament Studies 59/2 (2013): 151–171.',
+    url: deJongeAscensionUrl,
+    note: '同行评审研究；用于呈现路加福音 24 章与使徒行传 1 章之间的升天叙事和时间安排问题，避免把两处简单压成一份逐日行程表。',
   },
 ];
 
