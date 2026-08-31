@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { academicSourceCitation, bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
+import { bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
+import { chapterFrames, getBookMovement, lukeBookMovements, readingLayers, type ChapterFrame } from './chapterFramework';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
 
@@ -21,30 +22,30 @@ type Chapter = {
 };
 
 const chapterThemes = [
-  ['序言与应许的开端', '确据从哪里来？'],
-  ['降生与天国的记号', '神如何住在人的日常？'],
-  ['旷野中的预备', '悔改怎样成为新生活？'],
-  ['受试探与开始服事', '在压力中，什么定义我们的身份？'],
-  ['呼召、赦罪与新酒', '被主呼召的人怎样离开旧路？'],
-  ['安息日与十二使徒', '谁是有福的人？'],
-  ['怜悯、疑问与赦免', '被赦免的人如何去爱？'],
-  ['撒种、风浪与生命恢复', '我怎样听道，也怎样在风浪中信靠主？'],
-  ['十字架道路上的弥赛亚', '我所跟随的是怎样的基督？'],
-  ['差遣、邻舍与聆听', '爱神与爱人怎样成为一条路？'],
-  ['祷告、圣灵与里面的光', '我的祷告和敬虔是否从里面真实？'],
-  ['警醒与财富', '在忧虑、拥有与等待中，谁掌管我的心？'],
-  ['悔改与神国的窄门', '我如何回应神的忍耐与邀请？'],
-  ['宴席与门徒代价', '恩典如何重排我的座位和优先次序？'],
-  ['父的喜乐与失而复得', '我是在回家，还是站在门外？'],
-  ['金钱与永恒的眼光', '我如何使用受托的资源？'],
-  ['感恩与神国的临在', '我是否在恩典中回到主面前？'],
-  ['祷告、谦卑与跟随', '我用什么姿态来到主前？'],
-  ['救恩进入耶路撒冷', '救恩如何落在一个家庭和一座城？'],
-  ['圣殿中的权柄与受托', '谁真正拥有神的殿、人的生命与未来？'],
-  ['在震动中作见证', '末世盼望怎样塑造今天的清醒？'],
-  ['桌边的主与失败的门徒', '被爱、被筛与被差遣之间如何忠心？'],
-  ['无罪受苦的王', '十字架如何显明王权、赦免与真实死亡？'],
-  ['复活、开启与差遣', '失望者如何成为见证人？'],
+  ['应许开始：神亲自预备救恩', '在等待中，怎样认出神的信实？'],
+  ['救主进入人的日常', '神如何住进家庭、成长与等候？'],
+  ['为主预备道路', '真实悔改怎样进入生活？'],
+  ['圣子在圣灵里展开使命', '在压力中，谁定义我们的身份？'],
+  ['赦罪并呼召人的主', '蒙赦免的人怎样离开旧路？'],
+  ['怜悯人的安息日之主', '蒙天父怜悯的人怎样生活？'],
+  ['回应哀伤、疑问与罪人的主', '我是否在真实处境中认出耶稣？'],
+  ['主的话、权柄与恢复', '我怎样听道，也怎样在风浪中信靠主？'],
+  ['受苦与荣耀的基督', '我所跟随的是怎样的弥赛亚？'],
+  ['被差遣者与真正的邻舍', '爱神与爱人怎样成为一条路？'],
+  ['祷告的儿女与更强的主', '我的祷告和敬虔是否从里面真实？'],
+  ['天父看顾警醒的门徒', '在忧虑、拥有与等待中，谁掌管我的心？'],
+  ['悔改、释放与生长的神国', '我如何回应神的忍耐与邀请？'],
+  ['恩典筵席与门徒代价', '恩典如何重排座位和优先次序？'],
+  ['寻找失丧者的父', '我是在回家，还是站在门外？'],
+  ['在钱财上忠于神国', '我如何使用主人所托付的资源？'],
+  ['已经临到、仍要完成的神国', '我是否在恩典中回到主面前？'],
+  ['空手领受并跟随', '我用什么姿态来到主前？'],
+  ['寻找失丧者的王进入圣城', '救恩如何进入家庭、金钱与城市？'],
+  ['圣殿中真正的主', '谁真正拥有神的殿、人的生命与未来？'],
+  ['震动中仍掌权的人子', '末世盼望怎样塑造今天的清醒？'],
+  ['为门徒舍己的新约之主', '被爱、被筛与被恢复的人怎样忠心？'],
+  ['为罪人受死的无罪君王', '十字架怎样成就赦免与救恩？'],
+  ['身体复活并差遣人的主', '失望者如何成为见证人？'],
 ];
 
 const chapterGuidesByChapter: Record<number, string[]> = {
@@ -183,8 +184,6 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
     ...note,
     citations: [
       { id: `路 ${note.range}`, label: `路 ${note.range} 原文`, url: chapterOnePassageUrl(note.range), scope: '经文' as const },
-      academicSourceCitation('Lanier 2025', '解读'),
-      academicSourceCitation('Johnson 2018', '背景'),
       ...(chapterNineteenCitationsByRange[note.range] ?? []),
       ...(chapterTwentyToTwentyFourCitationsByRange[note.range] ?? []),
       ...(note.citations ?? []),
@@ -217,18 +216,16 @@ function getPracticeText(life: string) {
   return practice ? practice.replace(/[。！？]+$/, '') : '';
 }
 
-function SuggestedLifeAnswer({ note }: { note: StudyNote }) {
-  const practice = note.life ? getPracticeText(note.life) : '';
-  return <CollapsedAnswer>
-    <p>可以先这样回应：这段经文让我看见，{note.literal}</p>
-    {practice && <p>因此我不只停在认同上，也愿意具体操练：{practice}。</p>}
-  </CollapsedAnswer>;
+function getDiscussionText(life: string) {
+  return life.replace(/操练：.+$/, '').replace(/^讨论：/, '').trim();
 }
 
-function SuggestedPauseAnswer({ chapter }: { chapter: Chapter }) {
-  const firstNote = chapter.notes?.[0];
-  return <CollapsedAnswer>
-    {firstNote ? <p>我先注意到 {firstNote.range}“{firstNote.title}”中的这个重点：{firstNote.literal}。这帮助我先说出经文实际写了什么，再进入解释；带回生活时，我要特别留意“{chapter.focus}”在一个具体关系或选择中如何出现。</p> : <p>我先从本章第一段开始，指出一个真实出现的人物、词语或动作，再说明它怎样连接到“{chapter.focus}”。我暂时不急着把经文变成口号，而是让观察先受经文本身约束。</p>}
+function SuggestedLifeAnswer({ note, frame }: { note: StudyNote; frame: ChapterFrame }) {
+  const practice = note.life ? getPracticeText(note.life) : '';
+  return <CollapsedAnswer label="带领者参考回应（不是唯一答案）">
+    <p><strong>先回答经文：</strong>{note.scripture} {note.literal}</p>
+    <p><strong>再回到福音：</strong>{frame.response.gospel}</p>
+    <p><strong>最后进入回应：</strong>{frame.response.trust}{practice ? ` 这一段提出的具体操练是：${practice}。` : ''}</p>
   </CollapsedAnswer>;
 }
 
@@ -242,9 +239,12 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
       .map((passage) => [passage.reference, passage] as const),
   ).values()].slice(0, 12);
 
-  const academicReferences = chapterOneReferences.filter((reference) =>
-    ['Lanier 2025', 'Sterling 2023', 'Johnson 2018', 'Bird'].includes(reference.id),
-  );
+  const academicReferences = chapterOneReferences
+    .filter((reference) => ['Lanier 2025', 'Sterling 2023', 'Johnson 2018', 'Bird'].includes(reference.id))
+    .map((reference) => ({
+      ...reference,
+      note: `整章综合参考，不等于对本页每一句具体判断的逐项背书。${reference.note}`,
+    }));
 
   return [
     {
@@ -285,6 +285,7 @@ export function Home({ initialChapter = 1 }: { initialChapter?: number }) {
   const [selectedChapter, setSelectedChapter] = useState(initialChapter);
   const [search, setSearch] = useState('');
   const chapter = chapterData[selectedChapter - 1] ?? chapterData[0];
+  const frame = chapterFrames[chapter.no];
   useEffect(() => {
     const handlePopState = () => setSelectedChapter(chapterFromPath(window.location.pathname));
     window.addEventListener('popstate', handlePopState);
@@ -299,16 +300,121 @@ export function Home({ initialChapter = 1 }: { initialChapter?: number }) {
   }
 
   return <main className="site-shell">
-    <header className="topbar"><div className="brand-lockup"><div className="brand-mark" aria-hidden="true"><span>✦</span></div><div><p className="brand-kicker">小组查经</p><p className="brand-name">在福音的路上</p></div></div><div className="topbar-center"><span className="topbar-line" /><span>路加福音</span><span className="topbar-line" /></div><div className="topbar-actions" aria-hidden="true" /></header>
-    <div className="mobile-chapter-strip" aria-label="选择章节"><span className="mobile-strip-label">章节</span><div className="mobile-chapters">{chapterData.map((item) => <button key={item.no} className={item.no === chapter.no ? 'chapter-pill active' : 'chapter-pill'} onClick={() => selectChapter(item.no)} type="button">{String(item.no).padStart(2, '0')}</button>)}</div></div>
+    <header className="topbar">
+      <div className="brand-lockup">
+        <div className="brand-mark" aria-hidden="true"><span>✦</span></div>
+        <div><p className="brand-kicker">小组查经</p><p className="brand-name">在福音的路上</p></div>
+      </div>
+      <div className="topbar-center"><span className="topbar-line" /><span>路加福音</span><span className="topbar-line" /></div>
+      <div className="topbar-actions" aria-hidden="true" />
+    </header>
+    <div className="mobile-chapter-strip" aria-label="选择章节">
+      <span className="mobile-strip-label">章节</span>
+      <div className="mobile-chapters">{chapterData.map((item) => <button key={item.no} className={item.no === chapter.no ? 'chapter-pill active' : 'chapter-pill'} onClick={() => selectChapter(item.no)} type="button">{String(item.no).padStart(2, '0')}</button>)}</div>
+    </div>
     <div className="page-grid">
-      <aside className="sidebar"><div className="sidebar-intro"><h2>章节导航</h2></div><label className="search-box"><span aria-hidden="true">⌕</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="寻找章节或主题" aria-label="寻找章节或主题" />{search && <button type="button" onClick={() => setSearch('')} aria-label="清除搜索">×</button>}</label><nav className="chapter-list" aria-label="路加福音章节">{filteredChapters.map((item) => <button key={item.no} type="button" className={item.no === chapter.no ? 'chapter-row selected' : 'chapter-row'} onClick={() => selectChapter(item.no)}><span className="chapter-number">{String(item.no).padStart(2, '0')}</span><span className="chapter-copy"><strong>{item.title}</strong><small>{item.focus}</small></span></button>)}</nav></aside>
-      <section className="content-column"><div className="chapter-hero"><div className="chapter-hero-top"><span className="chapter-tag">第 {chapter.no} 章</span><div className="chapter-nav-controls" aria-label="章节导航"><button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no - 1)} disabled={chapter.no === 1} aria-label="上一章">上一章</button><button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no + 1)} disabled={chapter.no === chapterData.length} aria-label="下一章">下一章</button></div></div><h1>{chapter.title}</h1><p className="hero-summary">{chapter.summary}</p></div><div className="tab-panel"><PastoralGuidePanel guide={pastoralGuides[chapter.no]} /><div className="reading-map"><span className="map-kicker">本章路线</span><div className="map-steps">{chapter.sections.map((section, index) => <div className="map-step" key={section}><span>{String(index + 1).padStart(2, '0')}</span><p>{section}</p></div>)}</div></div><div className="notes-list">{(chapter.notes ?? chapter.sections.map((section, index) => ({ range: `本章 · ${String(index + 1).padStart(2, '0')}`, title: section, scene: `先把自己放进${chapter.setting}，再完整朗读这一段，想象人物怎样说、怎样做，以及叙事何处发生转折。`, scripture: '先完整朗读这一段，留意人物怎样说、怎样做，以及叙事何处发生转折。', literal: '把观察写成一句不带解释的事实：谁在什么处境中回应了谁。', context: chapter.setting, connection: `可与本章的${chapter.crossRefs[index % chapter.crossRefs.length]}互相参照，留意同一主题在不同经文中的展开。`, life: chapter.questions[index % chapter.questions.length] }))).map((note, index) => <StudyNoteCard key={note.range} note={note} index={index} />)}</div><div className="pause-card"><span className="pause-symbol">⌁</span><div><p className="section-label">停一下</p><p>哪一个词、哪一个人物或哪一个动作反复出现在你眼前？先不要急着解释，和组员分享你实际看见了什么。</p><SuggestedPauseAnswer chapter={chapter} /></div></div><ChapterReferences chapter={chapter} /></div></section>
-    </div><footer className="site-footer"><span>在福音的路上</span><span>路加福音 01—24</span></footer>
+      <aside className="sidebar">
+        <div className="sidebar-intro"><h2>章节导航</h2></div>
+        <label className="search-box"><span aria-hidden="true">⌕</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="寻找章节或主题" aria-label="寻找章节或主题" />{search && <button type="button" onClick={() => setSearch('')} aria-label="清除搜索">×</button>}</label>
+        <nav className="chapter-list" aria-label="路加福音章节">{filteredChapters.map((item) => <button key={item.no} type="button" className={item.no === chapter.no ? 'chapter-row selected' : 'chapter-row'} onClick={() => selectChapter(item.no)}><span className="chapter-number">{String(item.no).padStart(2, '0')}</span><span className="chapter-copy"><strong>{item.title}</strong><small>{item.focus}</small></span></button>)}</nav>
+      </aside>
+      <section className="content-column">
+        <div className="chapter-hero">
+          <div className="chapter-hero-top">
+            <span className="chapter-tag">第 {chapter.no} 章</span>
+            <div className="chapter-nav-controls" aria-label="章节导航">
+              <button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no - 1)} disabled={chapter.no === 1} aria-label="上一章">上一章</button>
+              <button type="button" className="chapter-nav-button" onClick={() => selectChapter(chapter.no + 1)} disabled={chapter.no === chapterData.length} aria-label="下一章">下一章</button>
+            </div>
+          </div>
+          <h1>{chapter.title}</h1>
+          <p className="hero-summary">{chapter.summary}</p>
+        </div>
+        <div className="tab-panel">
+          <WholeBookMap currentChapter={chapter.no} />
+          <ChapterFramePanel frame={frame} chapter={chapter} />
+          <PastoralGuidePanel guide={pastoralGuides[chapter.no]} />
+          <div className="reading-map">
+            <span className="map-kicker">本章路线</span>
+            <div className="map-steps">{frame.movements.map((movement, index) => <div className="map-step" key={movement.range}><span>{String(index + 1).padStart(2, '0')}</span><p><strong>{movement.range}</strong>{movement.title}</p></div>)}</div>
+          </div>
+          <ChapterMovementGroups chapter={chapter} frame={frame} />
+          <ChapterResponsePanel frame={frame} />
+          <ChapterReferences chapter={chapter} />
+        </div>
+      </section>
+    </div>
+    <footer className="site-footer"><span>在福音的路上</span><span>路加福音 01—24</span></footer>
   </main>;
 }
 
 export default Home;
+
+function WholeBookMap({ currentChapter }: { currentChapter: number }) {
+  const activeMovement = getBookMovement(currentChapter);
+  return <section className="whole-book-map" aria-labelledby="whole-book-map-title">
+    <div className="whole-book-map-head">
+      <div><span className="section-label">整卷路线</span><h2 id="whole-book-map-title">沿着耶稣的道路读路加福音</h2></div>
+      <p>当前：第 {activeMovement.id} 幕 · {activeMovement.title}</p>
+    </div>
+    <div className="whole-book-movements">{lukeBookMovements.map((movement) => <article className={movement.id === activeMovement.id ? 'book-movement active' : 'book-movement'} key={movement.id}>
+      <span>{String(movement.id).padStart(2, '0')}</span>
+      <div><small>{movement.range}</small><h3>{movement.title}</h3><p>{movement.summary}</p></div>
+    </article>)}</div>
+    <details className="reading-layers">
+      <summary><span>阅读约定：什么必须持守，什么可以讨论</span><span>展开</span></summary>
+      <div className="reading-layer-grid">{readingLayers.map((layer) => <article key={layer.label}><h3>{layer.label}</h3><p>{layer.text}</p></article>)}</div>
+    </details>
+  </section>;
+}
+
+function ChapterFramePanel({ frame, chapter }: { frame: ChapterFrame; chapter: Chapter }) {
+  return <section className="chapter-frame" aria-labelledby="chapter-frame-title">
+    <div className="chapter-frame-kicker"><span>本章中心</span><span>第 {frame.actId} 幕中的第 {chapter.no} 章</span></div>
+    <h2 id="chapter-frame-title">{frame.center}</h2>
+    <p className="chapter-placement"><strong>在整卷中的位置</strong>{frame.placement}</p>
+    <div className="motif-list" aria-label="本章贯穿主题">{frame.motifs.map((motif) => <span key={motif}>{motif}</span>)}</div>
+  </section>;
+}
+
+function ChapterMovementGroups({ chapter, frame }: { chapter: Chapter; frame: ChapterFrame }) {
+  const notes = chapter.notes ?? chapter.sections.map((section, index) => ({
+    range: `本章 · ${String(index + 1).padStart(2, '0')}`,
+    title: section,
+    scene: `先把自己放进${chapter.setting}，再完整朗读这一段，留意人物怎样说、怎样做，以及叙事何处发生转折。`,
+    scripture: '先完整朗读这一段，留意人物怎样说、怎样做，以及叙事何处发生转折。',
+    literal: '把观察写成一句不带解释的事实：谁在什么处境中回应了谁。',
+    context: chapter.setting,
+    connection: `可与本章的${chapter.crossRefs[index % chapter.crossRefs.length]}互相参照，留意同一主题在不同经文中的展开。`,
+    life: chapter.questions[index % chapter.questions.length],
+  }));
+
+  return <div className="notes-list">{frame.movements.map((movement, movementIndex) => {
+    const nextStart = frame.movements[movementIndex + 1]?.startNoteIndex ?? notes.length;
+    const movementNotes = notes.slice(movement.startNoteIndex, nextStart);
+    if (!movementNotes.length) return null;
+    return <section className="chapter-movement-group" key={movement.range} aria-labelledby={`movement-${chapter.no}-${movementIndex}`}>
+      <div className="movement-intro">
+        <span>{String(movementIndex + 1).padStart(2, '0')}</span>
+        <div><p>{movement.range}</p><h2 id={`movement-${chapter.no}-${movementIndex}`}>{movement.title}</h2><p>{movement.center}</p></div>
+      </div>
+      {movementNotes.map((note, noteIndex) => <StudyNoteCard key={note.range} note={note} index={movement.startNoteIndex + noteIndex} frame={frame} />)}
+    </section>;
+  })}</div>;
+}
+
+function ChapterResponsePanel({ frame }: { frame: ChapterFrame }) {
+  return <section className="chapter-response" aria-labelledby="chapter-response-title">
+    <div className="chapter-response-head"><span className="section-label">章末回应</span><h2 id="chapter-response-title">从明白经文走向信靠与敬拜</h2></div>
+    <div className="gospel-restatement"><span>福音重述</span><p>{frame.response.gospel}</p></div>
+    <div className="response-grid">
+      <article><span>承认</span><p>{frame.response.confess}</p></article>
+      <article><span>信靠</span><p>{frame.response.trust}</p></article>
+      <article><span>祷告</span><p>{frame.response.prayer}</p></article>
+      <article><span>两周操练</span><p>{frame.response.practice}</p></article>
+    </div>
+  </section>;
+}
 
 function PastoralGuidePanel({ guide }: { guide: PastoralGuide }) {
   const methodReferences = pastoralMethodReferences.filter((reference) =>
@@ -316,29 +422,34 @@ function PastoralGuidePanel({ guide }: { guide: PastoralGuide }) {
   );
   return <section className="pastoral-guide" aria-labelledby="pastoral-guide-title">
     <div className="pastoral-guide-head"><span>PASTORAL READING</span><h3 id="pastoral-guide-title">本章牧养导读</h3></div>
-    <div className="pastoral-guide-grid">
+    <div className="pastoral-guide-grid compact">
       <div><span className="pastoral-guide-label">福音核心</span><p>{guide.gospel}</p></div>
       <div><span className="pastoral-guide-label">教会塑造</span><p>{guide.church}</p></div>
-      <div className="pastoral-guardrail"><span className="pastoral-guide-label">牧养边界</span><p>{guide.guardrail}</p></div>
     </div>
+    {guide.safeguarding && <details className="pastoral-guardrail"><summary><span>牧养提醒</span><span>需要时展开</span></summary><p>{guide.guardrail}</p></details>}
     <div className="pastoral-guide-sources"><span>牧养依据</span>{guide.references.map((reference) => <a key={reference.label} href={bibleGatewayUrl(reference.query)} target="_blank" rel="noreferrer">[{reference.label}]</a>)}{methodReferences.map((reference) => <a key={reference.id} href={reference.url} target="_blank" rel="noreferrer">[{reference.id}]</a>)}</div>
   </section>;
 }
 
-function StudyNoteCard({ note, index }: { note: StudyNote; index: number }) {
+function StudyNoteCard({ note, index, frame }: { note: StudyNote; index: number; frame: ChapterFrame }) {
   return <article className="study-note">
     <div className="note-index">{String(index + 1).padStart(2, '0')}</div>
     <div className="note-body">
       <div className="note-heading"><span className="verse-range">{note.range}</span><h3>{note.title}</h3></div>
       <ScriptureBlock passage={getLukePassage(note.range)} sourceUrl={note.range.includes(':') ? chapterOnePassageUrl(note.range) : undefined} />
       <div className="note-scene"><span className="note-label">进入现场</span><p>{note.scene}</p></div>
-      <div className="note-thesis"><span className="note-label">本段主旨</span><p>{note.scripture}</p><CitationLinks citations={note.citations} scope="经文" /></div>
+      <div className="note-thesis"><span className="note-label">经文直意 · 本段发生了什么</span><p>{note.scripture}</p><CitationLinks citations={note.citations} scope="经文" /></div>
       <VerseWalkthrough insights={note.verseInsights} citations={note.citations} />
-      <div className="note-observation"><span className="note-label">{note.verseInsights?.length ? '整段综合 · 深层意义' : '经文观察 · 初步解读'}</span><p>{note.literal}</p>{!note.verseInsights?.length && <CitationLinks citations={note.citations} scope="解读" />}</div>
-      <InterpretationNotes notes={note.interpretationNotes} />
-      <div className="note-supporting"><div className="note-context"><span className="note-label">历史窗口</span><p>{note.context}</p><CitationLinks citations={note.citations} scope="背景" /></div>{note.connection && <div className="note-connection"><span className="note-label">旧约／新约回声</span><p>{note.connection}</p><CitationLinks citations={note.citations} scope="串联" /></div>}</div>
-      <RelatedScriptures connection={note.connection} />
-      {note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{note.life}</p><CitationLinks citations={note.citations} scope="应用" /><SuggestedLifeAnswer note={note} /></div>}
+      <div className="note-observation"><span className="note-label">{note.verseInsights?.length ? '这段显明什么 · 深层意义' : '经文观察 · 初步解读'}</span><p>{note.literal}</p>{!note.verseInsights?.length && <CitationLinks citations={note.citations} scope="解读" />}</div>
+      <details className="deep-study">
+        <summary><span>深入查考：历史、解释与经文串联</span><span>展开</span></summary>
+        <div className="deep-study-body">
+          <InterpretationNotes notes={note.interpretationNotes} />
+          <div className="note-supporting"><div className="note-context"><span className="note-label">历史窗口</span><p>{note.context}</p><CitationLinks citations={note.citations} scope="背景" /></div>{note.connection && <div className="note-connection"><span className="note-label">旧约／新约回声</span><p>{note.connection}</p><CitationLinks citations={note.citations} scope="串联" /></div>}</div>
+          <RelatedScriptures connection={note.connection} />
+        </div>
+      </details>
+      {note.life && <div className="note-life"><span className="note-label">信仰生活讨论</span><p>{getDiscussionText(note.life)}</p><CitationLinks citations={note.citations} scope="应用" /><SuggestedLifeAnswer note={note} frame={frame} /></div>}
     </div>
   </article>;
 }
@@ -373,4 +484,4 @@ function RelatedScriptures({ connection }: { connection?: string }) { const pass
 
 function CitationLinks({ citations, scope }: { citations?: StudyCitation[]; scope: CitationScope }) { const items = (citations ?? []).filter((citation) => citation.scope === scope); if (!items.length) return null; return <div className="citation-links"><span className="citation-label">出处</span>{items.map((citation) => <a key={`${citation.id}-${citation.scope}`} href={citation.url} target="_blank" rel="noreferrer" title={`打开：${citation.label}`}>[{citation.label}]</a>)}</div>; }
 
-function ChapterReferences({ chapter }: { chapter: Chapter }) { const references = getChapterReferences(chapter); return <section className="chapter-references" aria-labelledby="chapter-references-title"><div className="chapter-references-head"><p className="section-label">学术与牧养出处 · 第{chapter.no}章</p><h3 id="chapter-references-title">参考文献与经文索引</h3></div><p className="chapter-references-intro">本章把出处放在相应解读旁，方便边读边核对；以下列出主要学术与牧养参考。书籍链接指向出版社书目页或试读 PDF，正式论文若使用纸本或电子版，请按实际版本补上页码。</p><ol className="chapter-reference-list">{references.map((reference) => <li key={reference.id}><span className="reference-index">{reference.id}</span><div><a href={reference.url} target="_blank" rel="noreferrer">{reference.text}</a><p>{reference.note}</p></div></li>)}</ol></section>; }
+function ChapterReferences({ chapter }: { chapter: Chapter }) { const references = getChapterReferences(chapter); return <section className="chapter-references" aria-labelledby="chapter-references-title"><div className="chapter-references-head"><p className="section-label">学术与牧养出处 · 第{chapter.no}章</p><h3 id="chapter-references-title">参考文献与经文索引</h3></div><p className="chapter-references-intro">段落旁只显示已经核对、能够直接支持该处经文或解释的链接；本节另列整章综合参考，不把一本书的总体帮助误当成对每一句判断的逐项背书。书籍链接多指向出版社书目页或试读资料，正式论文若使用纸本或电子版，请按实际版本补上页码。</p><ol className="chapter-reference-list">{references.map((reference) => <li key={reference.id}><span className="reference-index">{reference.id}</span><div><a href={reference.url} target="_blank" rel="noreferrer">{reference.text}</a><p>{reference.note}</p></div></li>)}</ol></section>; }

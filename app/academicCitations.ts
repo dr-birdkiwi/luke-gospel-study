@@ -8,7 +8,7 @@ export function chapterOnePassageUrl(range: string) {
   return bibleGatewayUrl(`Luke ${range.replace('–', '-')}`);
 }
 
-const lanierUrl = 'https://www.bhpublishinggroup.com/product/luke-the-christian-standard-commentary-2/';
+const lanierUrl = 'https://www.bhpublishinggroup.com/series/the-christian-standard-commentary/';
 const sterlingUrl = 'https://www.eerdmans.com/9780802848734/shaping-the-past-to-define-the-present/';
 const johnsonUrl = 'https://litpress.org/Products/E8331/Sacra-Pagina-The-Gospel-of-Luke';
 const birdUrl = 'https://www.ivpress.com/Media/Default/Downloads/Excerpts-and-Samples/A0809-excerpt.pdf';
@@ -17,13 +17,13 @@ const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
 const travelNarrativeJblUrl = 'https://doi.org/10.15699/jbl.1441.2025.8';
 const templeHtrUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/weeping-over-jerusalem-lukes-response-to-the-destruction-of-the-temple/D0E1B13425A79861FE941F673AD8F258';
-const entryKinmanUrl = 'https://doi.org/10.53751/001c.30428190';
+const entryKinmanUrl = 'https://www.tyndalebulletin.org/article/30428-the-a-triumphal-entry-luke-19-28-48-historical-backgrounds-theological-motifs-and-the-purpose-of-luke';
 const minasIvpUrl = 'https://www.biblegateway.com/resources/ivp-nt/Parable-Stewardship-Minas';
-const netLukeTwentyUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=20';
-const netLukeTwentyOneUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=21';
-const netLukeTwentyTwoUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=22';
-const netLukeTwentyThreeUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=23';
-const netLukeTwentyFourUrl = 'https://classic.net.bible.org/bible.php?book=Luk&chapter=24';
+const netLukeTwentyUrl = 'https://netbible.org/bible/Luke+20';
+const netLukeTwentyOneUrl = 'https://netbible.org/bible/Luke+21';
+const netLukeTwentyTwoUrl = 'https://netbible.org/bible/Luke+22';
+const netLukeTwentyThreeUrl = 'https://netbible.org/bible/Luke+23';
+const netLukeTwentyFourUrl = 'https://netbible.org/bible/Luke+24';
 const bryanResurrectionJtsUrl = 'https://academic.oup.com/jts/advance-article/doi/10.1093/jts/flag032/8751201';
 const bovonLukeTwentyVineyardUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.9';
 const bovonLukeTwentyTaxesUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.10';
@@ -41,7 +41,7 @@ const princeLukeTwentyFourUrl = 'https://journals.sagepub.com/doi/10.1177/014206
 const deJongeAscensionUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/chronology-of-the-ascension-stories-in-luke-and-acts/B42A5255A306DBBF260E02C2C402C688';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
-const netLukeNineteenUrl = 'https://classic.net.bible.org/passage.php?passage=luk+19';
+const netLukeNineteenUrl = 'https://netbible.org/bible/Luke+19';
 const templeWitnessWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-33-3/commentary-on-luke-215-19';
 const eschatologyWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-of-advent-3/commentary-on-luke-2125-36-6';
 const ivpLukeTwentyOneUrl = 'https://www.biblegateway.com/resources/ivp-nt/Jerusalems-Destruction-End';

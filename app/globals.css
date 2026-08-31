@@ -202,3 +202,118 @@ button,input { font:inherit; } button { cursor:pointer; }
   .interpretation-note p { font-size:12px; }
   .pause-card p:last-child { font-size:14px; }
 }
+
+/* Whole-book and chapter-level pastoral structure. */
+.whole-book-map { margin:0 0 22px; padding:20px 22px 18px; border:1px solid var(--line); background:rgba(255,255,255,.58); }
+.whole-book-map-head { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:15px; }
+.whole-book-map-head h2 { margin:7px 0 0; font-size:20px; letter-spacing:-.045em; }
+.whole-book-map-head>p { margin:0; color:var(--sage-deep); font-size:10px; font-weight:800; text-align:right; }
+.whole-book-movements { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.book-movement { min-width:0; display:flex; gap:9px; padding:13px 12px 14px; border-left:1px solid var(--line); opacity:.55; }
+.book-movement:first-child { border-left:0; }
+.book-movement>span { color:var(--faint); font-size:9px; font-weight:800; padding-top:2px; }
+.book-movement small { display:block; color:var(--faint); font-size:8px; font-weight:700; }
+.book-movement h3 { margin:4px 0 5px; font-size:11px; line-height:1.45; }
+.book-movement p { margin:0; color:var(--muted); font-size:9px; line-height:1.6; }
+.book-movement.active { background:#eef4ed; opacity:1; box-shadow:inset 0 3px 0 var(--sage-deep); }
+.book-movement.active>span,.book-movement.active small { color:var(--sage-deep); }
+.reading-layers { margin-top:12px; }
+.reading-layers>summary,.deep-study>summary,.pastoral-guardrail>summary { display:flex; align-items:center; justify-content:space-between; gap:14px; list-style:none; cursor:pointer; color:var(--sage-deep); font-size:10px; font-weight:800; }
+.reading-layers>summary::-webkit-details-marker,.deep-study>summary::-webkit-details-marker,.pastoral-guardrail>summary::-webkit-details-marker { display:none; }
+.reading-layers>summary::after,.deep-study>summary::after,.pastoral-guardrail>summary::after { content:'＋'; font-size:15px; font-weight:400; line-height:1; }
+.reading-layers[open]>summary::after,.deep-study[open]>summary::after,.pastoral-guardrail[open]>summary::after { content:'−'; }
+.reading-layers>summary span:last-child,.deep-study>summary span:last-child,.pastoral-guardrail>summary span:last-child { margin-left:auto; color:var(--faint); font-size:8px; font-weight:600; }
+.reading-layer-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding-top:14px; }
+.reading-layer-grid article { border-top:2px solid var(--line-strong); padding:10px 11px 2px; }
+.reading-layer-grid h3 { margin:0 0 5px; color:var(--ink); font-size:10px; }
+.reading-layer-grid p { margin:0; color:var(--muted); font-size:10px; line-height:1.7; }
+
+.chapter-frame { margin:0 0 22px; padding:22px 24px 21px; border:1px solid #cfded2; border-left:4px solid var(--sage-deep); background:linear-gradient(135deg,#f7faf5 0%,#edf4ec 100%); }
+.chapter-frame-kicker { display:flex; align-items:center; justify-content:space-between; gap:18px; color:var(--sage-deep); font-size:9px; font-weight:800; letter-spacing:.08em; }
+.chapter-frame-kicker span:last-child { color:var(--faint); letter-spacing:.04em; }
+.chapter-frame h2 { max-width:920px; margin:13px 0 13px; color:var(--ink); font-family:Georgia,"Noto Serif TC",serif; font-size:22px; font-weight:600; line-height:1.65; letter-spacing:-.03em; }
+.chapter-placement { margin:0; color:var(--muted); font-size:12px; line-height:1.8; }
+.chapter-placement strong { margin-right:10px; color:var(--sage-deep); font-size:9px; letter-spacing:.08em; }
+.motif-list { display:flex; flex-wrap:wrap; gap:7px; margin-top:15px; }
+.motif-list span { border:1px solid #cbd9ce; background:rgba(255,255,255,.62); color:var(--sage-deep); border-radius:999px; padding:5px 9px; font-size:8px; font-weight:700; }
+
+.pastoral-guide-grid.compact { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.pastoral-guardrail { margin-top:12px; padding-top:11px; border-top:1px solid #e5d8d0; }
+.pastoral-guardrail>summary { color:var(--clay-deep); }
+.pastoral-guardrail>p { margin:10px 0 0; padding:11px 13px; background:#fff8f3; color:var(--clay-deep); font-size:11px; line-height:1.78; }
+
+.chapter-movement-group { margin-top:34px; }
+.chapter-movement-group:first-child { margin-top:24px; }
+.movement-intro { display:grid; grid-template-columns:42px minmax(0,1fr); gap:15px; align-items:start; padding:17px 0 18px; border-top:3px solid var(--night); border-bottom:1px solid var(--line); }
+.movement-intro>span { color:var(--clay-deep); font-size:12px; font-weight:800; padding-top:2px; }
+.movement-intro p:first-child { margin:0 0 4px; color:var(--sage-deep); font-size:9px; font-weight:800; }
+.movement-intro h2 { margin:0 0 7px; color:var(--ink); font-size:22px; letter-spacing:-.05em; }
+.movement-intro p:last-child { max-width:860px; margin:0; color:var(--muted); font-size:12px; line-height:1.75; }
+
+.deep-study { margin-top:2px; border:1px solid var(--line); background:#fbfcfa; }
+.deep-study>summary { padding:12px 14px; }
+.deep-study-body { padding:0 14px 14px; border-top:1px solid var(--line); }
+.deep-study .interpretation-notes { margin-top:14px; }
+.deep-study .note-supporting { margin-top:14px; }
+.deep-study .related-scriptures { margin-top:13px; }
+
+.chapter-response { margin:38px 0 12px; padding:24px 25px 25px; border:1px solid #d8e2da; background:linear-gradient(135deg,#f8fbf7 0%,#f0f6ef 58%,#fff9f5 100%); }
+.chapter-response-head h2 { margin:8px 0 18px; font-size:24px; letter-spacing:-.05em; }
+.gospel-restatement { display:grid; grid-template-columns:98px minmax(0,1fr); gap:15px; padding:16px 0; border-top:1px solid #d5e0d7; border-bottom:1px solid #d5e0d7; }
+.gospel-restatement span,.response-grid article>span { color:var(--sage-deep); font-size:9px; font-weight:800; letter-spacing:.08em; }
+.gospel-restatement p { margin:0; color:var(--ink); font-family:Georgia,"Noto Serif TC",serif; font-size:16px; line-height:1.75; }
+.response-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+.response-grid article { min-width:0; padding:16px 17px 3px 0; }
+.response-grid article:nth-child(even) { border-left:1px solid #d5e0d7; padding-left:17px; }
+.response-grid article:nth-child(n+3) { border-top:1px solid #d5e0d7; }
+.response-grid p { margin:7px 0 0; color:var(--muted); font-size:12px; line-height:1.8; }
+
+@media (min-width:761px) {
+  .whole-book-map-head h2 { font-size:23px; }
+  .whole-book-map-head>p { font-size:11px; }
+  .book-movement h3 { font-size:13px; }
+  .book-movement p { font-size:10px; }
+  .reading-layers>summary,.deep-study>summary,.pastoral-guardrail>summary { font-size:12px; }
+  .reading-layer-grid h3 { font-size:12px; }
+  .reading-layer-grid p { font-size:11px; }
+  .chapter-frame-kicker { font-size:10px; }
+  .chapter-frame h2 { font-size:25px; }
+  .chapter-placement { font-size:14px; }
+  .chapter-placement strong { font-size:10px; }
+  .motif-list span { font-size:10px; }
+  .pastoral-guardrail>p { font-size:13px; }
+  .movement-intro>span { font-size:13px; }
+  .movement-intro p:first-child { font-size:10px; }
+  .movement-intro h2 { font-size:25px; }
+  .movement-intro p:last-child { font-size:14px; }
+  .chapter-response-head h2 { font-size:27px; }
+  .gospel-restatement span,.response-grid article>span { font-size:10px; }
+  .gospel-restatement p { font-size:18px; }
+  .response-grid p { font-size:14px; }
+}
+
+@media (max-width:980px) {
+  .whole-book-movements { grid-template-columns:1fr; border-bottom:0; }
+  .book-movement { border-left:0; border-bottom:1px solid var(--line); }
+  .book-movement p { display:none; }
+}
+
+@media (max-width:760px) {
+  .whole-book-map { padding:17px 15px 15px; }
+  .whole-book-map-head { display:block; }
+  .whole-book-map-head>p { margin-top:8px; text-align:left; }
+  .reading-layer-grid,.pastoral-guide-grid.compact,.response-grid { grid-template-columns:1fr; }
+  .reading-layer-grid { gap:8px; }
+  .chapter-frame { padding:18px 17px; }
+  .chapter-frame-kicker { align-items:flex-start; flex-direction:column; gap:5px; }
+  .chapter-frame h2 { font-size:20px; line-height:1.6; }
+  .chapter-placement strong { display:block; margin-bottom:5px; }
+  .pastoral-guide-grid.compact>div+div { border-left:0; border-top:1px solid #dce5de; padding-left:0; }
+  .movement-intro { grid-template-columns:27px minmax(0,1fr); gap:9px; }
+  .movement-intro h2 { font-size:20px; }
+  .deep-study-body { padding:0 11px 11px; }
+  .chapter-response { padding:20px 17px; }
+  .gospel-restatement { grid-template-columns:1fr; gap:7px; }
+  .response-grid article { padding:14px 0 12px; border-top:1px solid #d5e0d7; }
+  .response-grid article:nth-child(even) { border-left:0; padding-left:0; }
+}
