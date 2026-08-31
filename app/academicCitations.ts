@@ -12,6 +12,9 @@ const lanierUrl = 'https://www.bhpublishinggroup.com/series/the-christian-standa
 const sterlingUrl = 'https://www.eerdmans.com/9780802848734/shaping-the-past-to-define-the-present/';
 const johnsonUrl = 'https://litpress.org/Products/E8331/Sacra-Pagina-The-Gospel-of-Luke';
 const birdUrl = 'https://www.ivpress.com/Media/Default/Downloads/Excerpts-and-Samples/A0809-excerpt.pdf';
+const edwardsUrl = 'https://www.eerdmans.com/9780802837356/the-gospel-according-to-luke/';
+const praiseInLukeNtsUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/miracle-stories-and-praise-two-neglected-topics-in-luke/5F318F14D300B2E0C4047735003CB967';
+const benedictusNtsUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/abraham-geschworen-uns-gegeben-syntax-und-sinn-im-benediktus-lukas-16879/0709FE5108EF5C1257FC4F3896E85F8D';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
 const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
@@ -78,46 +81,49 @@ const lanier = (scope: StudyCitation['scope'] = '解读') => source('Lanier 2025
 const sterling = (scope: StudyCitation['scope'] = '背景') => source('Sterling 2023', 'Sterling 2023', sterlingUrl, scope);
 const johnson = (scope: StudyCitation['scope'] = '解读') => source('Johnson 2018', 'Johnson 2018', johnsonUrl, scope);
 const bird = (scope: StudyCitation['scope'] = '背景') => source('Bird', 'Bird · Luke-Acts', birdUrl, scope);
+const edwards = (scope: StudyCitation['scope'] = '解读') => source('Edwards 2015', 'Edwards 2015 · 路加福音', edwardsUrl, scope);
+const praiseInLuke = (scope: StudyCitation['scope'] = '解读') => source('Wasiak 2024', 'Wasiak 2024 · 路加叙事中的赞美', praiseInLukeNtsUrl, scope);
+const benedictusStudy = (scope: StudyCitation['scope'] = '解读') => source('Lang 2010', 'Lang 2010 · 撒迦利亚颂歌', benedictusNtsUrl, scope);
 
 export const chapterOneCitationsByRange: Record<string, StudyCitation[]> = {
   '1:1–4': [
-    text('1:1–4', '解读'), lanier(), johnson(), sterling(),
-    newTestament('徒 1:1–3', 'Acts 1:1-3'), oldTestament('申 19:15', 'Deuteronomy 19:15'),
+    text('1:1–4', '解读'), lanier(), johnson(), sterling(), edwards(),
+    newTestament('徒 1:1–3', 'Acts 1:1-3'), newTestament('约 20:30–31', 'John 20:30-31'),
   ],
   '1:5–25': [
-    text('1:5–25', '解读'), lanier(), johnson('背景'),
+    text('1:5–25', '解读'), lanier(), johnson('背景'), edwards(),
     oldTestament('玛 3:1；4:5–6', 'Malachi 3:1; Malachi 4:5-6'), oldTestament('赛 40:3', 'Isaiah 40:3'),
-    newTestament('启 8:3–4', 'Revelation 8:3-4'),
+    oldTestament('撒上 1', '1 Samuel 1'),
   ],
   '1:26–38': [
-    text('1:26–38', '解读'), lanier(), johnson('背景'),
+    text('1:26–38', '解读'), lanier(), johnson('背景'), edwards(),
     oldTestament('撒下 7:12–16', '2 Samuel 7:12-16'), oldTestament('诗 2:7', 'Psalm 2:7'),
     oldTestament('赛 9:6–7', 'Isaiah 9:6-7'), newTestament('太 1:18–25', 'Matthew 1:18-25'),
   ],
   '1:39–45': [
-    text('1:39–45', '解读'), johnson('背景'), bird(),
+    text('1:39–45', '解读'), johnson('背景'), bird(), edwards(),
     oldTestament('创 18:1–15', 'Genesis 18:1-15'), oldTestament('创 21:1–7', 'Genesis 21:1-7'),
-    oldTestament('撒上 1–2', '1 Samuel 1-2'), text('1:15', '串联'), text('1:41', '串联'),
+    oldTestament('撒下 6:2–15', '2 Samuel 6:2-15'), text('1:15', '串联'), text('1:41', '串联'),
   ],
   '1:46–56': [
-    text('1:46–56', '解读'), lanier(), johnson('背景'),
+    text('1:46–56', '解读'), lanier(), johnson('背景'), praiseInLuke(),
     oldTestament('撒上 2:1–10', '1 Samuel 2:1-10'), oldTestament('诗 113:5–9', 'Psalm 113:5-9'),
     oldTestament('诗 146:5–9', 'Psalm 146:5-9'), newTestament('路 4:18–19', 'Luke 4:18-19'),
   ],
   '1:57–66': [
-    text('1:57–66', '解读'), lanier('背景'), johnson('背景'),
+    text('1:57–66', '解读'), lanier('背景'), johnson('背景'), praiseInLuke(),
     text('1:13', '串联'), text('1:20', '串联'), oldTestament('士 13:2–14', 'Judges 13:2-14'),
   ],
   '1:67–79': [
-    text('1:67–79', '解读'), lanier(), johnson('背景'), sterling('背景'),
-    oldTestament('撒下 7:8–16', '2 Samuel 7:8-16'), oldTestament('诗 132:17', 'Psalm 132:17'),
+    text('1:67–79', '解读'), lanier(), johnson('背景'), sterling('背景'), praiseInLuke(), benedictusStudy(),
+    oldTestament('撒下 7:8–16', '2 Samuel 7:8-16'), oldTestament('创 22:16–18', 'Genesis 22:16-18'), oldTestament('诗 132:17', 'Psalm 132:17'),
     oldTestament('赛 9:2', 'Isaiah 9:2'), oldTestament('玛 3:1；4:5–6', 'Malachi 3:1; Malachi 4:5-6'),
     newTestament('路 24:27', 'Luke 24:27'),
   ],
   '1:80': [
-    text('1:80', '解读'), johnson('背景'), lanier('背景'),
+    text('1:80', '解读'), johnson('背景'), lanier('背景'), edwards(),
     oldTestament('玛 4:5–6', 'Malachi 4:5-6'), oldTestament('赛 40:3–5', 'Isaiah 40:3-5'),
-    newTestament('路 3:1–6', 'Luke 3:1-6'), newTestament('加 1:15–18', 'Galatians 1:15-18'),
+    newTestament('路 3:1–6', 'Luke 3:1-6'),
   ],
 };
 
@@ -589,6 +595,24 @@ export const chapterOneReferences: ChapterReference[] = [
     text: 'Bird, Michael F. A Bird’s-Eye View of Luke and Acts: Context, Story, and Themes. IVP Academic, 2023.',
     url: birdUrl,
     note: '用于路加—使徒行传整体叙事与救赎历史脉络的辅助阅读；链接为出版方试读 PDF。',
+  },
+  {
+    id: 'Edwards 2015',
+    text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.',
+    url: edwardsUrl,
+    note: '用于第一章降生叙事的历史处境、文学推进与基督论解读；出版方说明本书特别讨论路加的降生叙事。',
+  },
+  {
+    id: 'Wasiak 2024',
+    text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.',
+    url: praiseInLukeNtsUrl,
+    note: '同行评审研究；用于理解路加一至二章密集出现的赞美，及其如何在叙事关键时刻解释神的作为。',
+  },
+  {
+    id: 'Lang 2010',
+    text: 'Lang, Friedrich Gustav. “Abraham geschworen – uns gegeben: Syntax und Sinn im Benediktus (Lukas 1.68–79).” New Testament Studies 56/4 (2010): 491–512.',
+    url: benedictusNtsUrl,
+    note: '同行评审研究；用于撒迦利亚颂歌的结构、亚伯拉罕之约中心，以及弥赛亚、圣约和罪得赦免三层推进。',
   },
   {
     id: '互文',
