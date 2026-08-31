@@ -15,6 +15,10 @@ const birdUrl = 'https://www.ivpress.com/Media/Default/Downloads/Excerpts-and-Sa
 const edwardsUrl = 'https://www.eerdmans.com/9780802837356/the-gospel-according-to-luke/';
 const praiseInLukeNtsUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/miracle-stories-and-praise-two-neglected-topics-in-luke/5F318F14D300B2E0C4047735003CB967';
 const benedictusNtsUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/abraham-geschworen-uns-gegeben-syntax-und-sinn-im-benediktus-lukas-16879/0709FE5108EF5C1257FC4F3896E85F8D';
+const armitageCensusUrl = 'https://www.tyndalebulletin.org/article/27652-detaching-the-census-an-alternative-reading-of-luke-2-1-7';
+const carlsonAccommodationUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/accommodations-of-joseph-and-mary-in-bethlehem-in-luke-27/E60EB9AEE5215FC0C989DE635DC80A7B';
+const kozitzaLegalExegesisUrl = 'https://doi.org/10.1093/jts/flaa097';
+const davisAmbiguityUrl = 'https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/how-to-read-ambiguity-well-reading-ambiguity-in-luke-and-acts/DC603DBA2EB820237FB7E5C5CCD34A0F';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
 const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
@@ -127,12 +131,78 @@ export const chapterOneCitationsByRange: Record<string, StudyCitation[]> = {
   ],
 };
 
+export const chapterTwoCitationsByRange: Record<string, StudyCitation[]> = {
+  '2:1–7': [
+    edwards(),
+    source('Armitage 2018', 'Armitage 2018 · 居里扭登记', armitageCensusUrl, '背景'),
+    source('Carlson 2010', 'Carlson 2010 · 伯利恒住宿处', carlsonAccommodationUrl, '背景'),
+  ],
+  '2:8–20': [
+    edwards(),
+    praiseInLuke(),
+  ],
+  '2:21': [
+    edwards(),
+  ],
+  '2:22–24': [
+    edwards(),
+    source('Kozitza 2020', 'Kozitza 2020 · 洁净与献长子', kozitzaLegalExegesisUrl, '背景'),
+  ],
+  '2:25–40': [
+    edwards(),
+    praiseInLuke(),
+  ],
+  '2:41–52': [
+    edwards(),
+    source('Davis 2025', 'Davis 2025 · 路 2:49 的歧义', davisAmbiguityUrl, '解读'),
+  ],
+};
+
 export type ChapterReference = {
   id: string;
   text: string;
   url: string;
   note: string;
 };
+
+export const chapterTwoReferences: ChapterReference[] = [
+  {
+    id: 'Edwards 2015',
+    text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.',
+    url: edwardsUrl,
+    note: '用于第二章的历史处境、文学推进、以色列应许与普世救恩；出版方说明本书专门讨论路加的降生叙事。',
+  },
+  {
+    id: 'Armitage 2018',
+    text: 'Armitage, David J. “Detaching the Census: An Alternative Reading of Luke 2:1–7.” Tyndale Bulletin 69/1 (2018): 75–95.',
+    url: armitageCensusUrl,
+    note: '用于呈现居里扭登记的编年难题与一种替代读法；作者自己也说明该方案只是可行解释之一，因此本页不把它当成定论。',
+  },
+  {
+    id: 'Carlson 2010',
+    text: 'Carlson, Stephen C. “The Accommodations of Joseph and Mary in Bethlehem: Κατάλυμα in Luke 2.7.” New Testament Studies 56/3 (2010): 326–342.',
+    url: carlsonAccommodationUrl,
+    note: '同行评审研究；用于说明 κατάλυμα 不必等同现代商业旅馆，并提醒读者区分经文所说与后来的圣诞场景重建。',
+  },
+  {
+    id: 'Kozitza 2020',
+    text: 'Kozitza, Evangeline M. “Legal Exegesis and Historical Narrative in Luke 2:22–4.” Journal of Theological Studies 71/2 (2020): 542–580.',
+    url: kozitzaLegalExegesisUrl,
+    note: '同行评审研究；用于区分产后洁净与头生子归主，并把路加的律法表述放回第二圣殿时期多样的犹太律法解释中。',
+  },
+  {
+    id: 'Davis 2025',
+    text: 'Davis, Kendall A. “How to Read Ambiguity Well: Reading Ambiguity in Luke and Acts.” Scottish Journal of Theology 78/2 (2025): 91–103.',
+    url: davisAmbiguityUrl,
+    note: '开放获取的同行评审研究；用于路 2:49 “在我父的家里／以我父的事为念”两种读法，以及该歧义在路加叙事中的作用。',
+  },
+  {
+    id: 'Wasiak 2024',
+    text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.',
+    url: praiseInLukeNtsUrl,
+    note: '同行评审研究；用于理解路加一至二章中的赞美如何解释神的作为，并把个人经历带进群体见证。',
+  },
+];
 
 export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = {
   '19:1–10': [
