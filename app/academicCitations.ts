@@ -28,6 +28,10 @@ const pattonGenealogyUrl = 'https://academic.oup.com/jts/article-abstract/77/1/6
 const netLukeFourUrl = 'https://www.bible.com/bible/107/LUK.4.NET';
 const netLukeFiveUrl = 'https://www.bible.com/bible/107/LUK.5.NET';
 const netLukeSixUrl = 'https://www.bible.com/bible/107/LUK.6.NET';
+const netLukeSevenUrl = 'https://www.bible.com/bible/107/LUK.7.NET';
+const netLukeEightUrl = 'https://www.bible.com/bible/107/LUK.8.NET';
+const netLukeNineUrl = 'https://www.bible.com/bible/107/LUK.9.NET';
+const netLukeTenUrl = 'https://www.bible.com/bible/107/LUK.10.NET';
 const seccombeLukeIsaiahUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/luke-and-isaiah/90A53C7EEB1013CF553160237B679B24';
 const rudmanLukeFourAuthorityUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/authority-and-right-of-disposal-in-luke-46/ECB998BC87B911C06416A9EF77DDD6FB';
 const meadOldNewWineUrl = 'https://journals.sagepub.com/doi/abs/10.1177/001452468809900804';
@@ -35,6 +39,14 @@ const fowlLukeSixUrl = 'https://www.cambridge.org/core/journals/new-testament-st
 const allisonSermonPlainUrl = 'https://www.cambridge.org/core/books/abs/gospel-reading-and-reception-in-early-christian-literature/luke-rewriting-matthew/FFDAF8B4EAF6EAAECB5CCE3D489D6E7B';
 const vanDerWattLoveUrl = 'https://scielo.org.za/scielo.php?pid=S2305-08532021000100024&script=sci_abstract';
 const ndekhaPoorRichUrl = 'https://hts.org.za/index.php/hts/article/view/6065/16219';
+const ravensLukeSevenSettingUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/setting-of-lukes-account-of-the-anointing-luke-7283/20522225734E6D611E6733D0C518C9A4';
+const millerWomenPatronsUrl = 'https://journals.sagepub.com/doi/10.1177/0034637317705104';
+const klutzLukeEightExorcismUrl = 'https://www.cambridge.org/core/books/abs/exorcism-stories-in-lukeacts/purity-and-the-exorcism-in-luke-82639/342351A2FAB1F27B842AD0413144D20B';
+const ravensLukeNinePropheticUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/luke-9762-and-the-prophetic-role-of-jesus/43DEF1B7AA513D9F52F1D1FC9BD6F19F';
+const dochhornSamaritanVillageUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/die-verschonung-des-samaritanischen-dorfes-lk-95455-eine-kritische-reflexion-von-eliauberlieferung-im-lukasevangelium-und-eine-fruhjudische-parallele-im-testament-abrahams/3527909A8D85378BCF62AA7FDFF72D7C';
+const coleSeventyTwoUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/p45-and-the-problem-of-the-seventytwo-a-case-for-the-longer-reading-in-luke-101-and-17/5CD287736140F1A33AF3F30D0781D778';
+const dowlingSamaritansUrl = 'https://www.cambridge.org/core/books/abs/tolerance-intolerance-and-recognition-in-early-christianity-and-early-judaism/learning-from-others-reading-two-samaritan-stories-in-the-gospel-of-luke-from-an-ecological-perspective/5146E0BE6C544BD5C99D7B4408A2074A';
+const henningMarthaUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/manufacturing-marthas-madness-enslavement-anxiety-and-distraction-in-luke-103842/E23B2C0723DF681A6DE72A6A8DDEFAC2';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
 const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
@@ -380,6 +392,126 @@ export const chapterSixReferences: ChapterReference[] = [
   { id: 'Allison 2022', text: 'Allison, Dale C. “Luke Rewriting Matthew? The Case of the Sermon on the Plain.” In Gospel Reading and Reception in Early Christian Literature. Cambridge University Press, 2022.', url: allisonSermonPlainUrl, note: '用于平原讲论与马太登山宝训的文学关系；相关共观福音来源问题仍属学术争论，本页不把其中一个模型当成信仰结论。' },
   { id: 'Ndekha 2020', text: 'Ndekha, Louis W. “Praising the Poor and Blaming the Rich: A Panegyric Reading of Luke 6:20–49 in Malawian Context.” HTS Teologiese Studies 76/4 (2020).', url: ndekhaPoorRichUrl, note: '开放获取研究；用于保留福与祸的经济社会力度，并说明神国盼望会塑造富人与穷人共同生活，而不是浪漫化贫穷。' },
   { id: 'Van der Watt 2021', text: 'Van der Watt, Jan G. “You Must Love Your Neighbour as Well as Your Enemy: Love in Luke 6:27–38 and 10:25–37.” In die Skriflig 55/1 (2021).', url: vanDerWattLoveUrl, note: '同行评审开放研究；用于理解路加如何以慈悲、善行、不报复和帮助弱者具体展开“爱”。' },
+];
+
+export const chapterSevenCitationsByRange: Record<string, StudyCitation[]> = {
+  '7:1–10': [
+    edwards(),
+    source('NET · 路 7', 'NET · 原文注释', netLukeSevenUrl, '解读'),
+  ],
+  '7:11–17': [
+    edwards(),
+    source('Ravens 1988', 'Ravens 1988 · 路 7:2—8:3 的叙事安排', ravensLukeSevenSettingUrl, '解读'),
+    source('NET · 路 7', 'NET · 原文注释', netLukeSevenUrl, '解读'),
+  ],
+  '7:18–35': [
+    edwards(),
+    source('Ravens 1988', 'Ravens 1988 · 约翰、筵席与妇女段落', ravensLukeSevenSettingUrl, '解读'),
+    source('NET · 路 7', 'NET · 原文注释', netLukeSevenUrl, '解读'),
+  ],
+  '7:36–50': [
+    edwards(),
+    source('Ravens 1988', 'Ravens 1988 · 抹香叙事的上下文', ravensLukeSevenSettingUrl, '解读'),
+    source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '背景'),
+    source('NET · 路 7', 'NET · 原文注释', netLukeSevenUrl, '解读'),
+  ],
+};
+
+export const chapterEightCitationsByRange: Record<string, StudyCitation[]> = {
+  '8:1–3': [
+    edwards(),
+    source('Miller 2017', 'Miller 2017 · 路加—使徒行传中的妇女恩主', millerWomenPatronsUrl, '背景'),
+    source('Ravens 1988', 'Ravens 1988 · 路 7:2—8:3 的叙事安排', ravensLukeSevenSettingUrl, '解读'),
+    source('NET · 路 8', 'NET · 原文注释', netLukeEightUrl, '解读'),
+  ],
+  '8:4–15': [edwards(), source('NET · 路 8', 'NET · 原文注释', netLukeEightUrl, '解读')],
+  '8:16–25': [edwards(), source('NET · 路 8', 'NET · 原文注释', netLukeEightUrl, '解读')],
+  '8:26–39': [
+    edwards(),
+    source('Klutz 2004', 'Klutz · 路 8:26–39 的洁净与释放', klutzLukeEightExorcismUrl, '背景'),
+    source('NET · 路 8', 'NET · 地名与文本注释', netLukeEightUrl, '解读'),
+  ],
+  '8:40–56': [
+    edwards(),
+    source('Wasiak 2024', 'Wasiak 2024 · 路加叙事中的神迹与赞美', praiseInLukeNtsUrl, '解读'),
+    source('NET · 路 8', 'NET · 原文注释', netLukeEightUrl, '解读'),
+  ],
+};
+
+export const chapterNineCitationsByRange: Record<string, StudyCitation[]> = {
+  '9:1–9': [edwards(), source('NET · 路 9', 'NET · 原文注释', netLukeNineUrl, '解读')],
+  '9:10–17': [edwards(), source('NET · 路 9', 'NET · 原文注释', netLukeNineUrl, '解读')],
+  '9:18–27': [
+    edwards(),
+    source('Ravens 1990', 'Ravens 1990 · 路 9:7–62 与耶稣的先知身份', ravensLukeNinePropheticUrl, '解读'),
+    source('NET · 路 9', 'NET · 原文注释', netLukeNineUrl, '解读'),
+  ],
+  '9:28–36': [
+    edwards(),
+    source('Ravens 1990', 'Ravens 1990 · 变像、出路与耶路撒冷', ravensLukeNinePropheticUrl, '解读'),
+    source('NET · 路 9', 'NET · 原文注释', netLukeNineUrl, '解读'),
+  ],
+  '9:37–50': [
+    edwards(),
+    source('Ravens 1990', 'Ravens 1990 · 山上与山下的基督论推进', ravensLukeNinePropheticUrl, '解读'),
+    source('NET · 路 9', 'NET · 原文注释', netLukeNineUrl, '解读'),
+  ],
+  '9:51–62': [
+    edwards(),
+    source('Dochhorn 2007', 'Dochhorn 2007 · 撒玛利亚村庄与拒绝降火', dochhornSamaritanVillageUrl, '解读'),
+    source('Dowling 2022', 'Dowling 2022 · 路加的撒玛利亚人叙事', dowlingSamaritansUrl, '背景'),
+    source('NET · 路 9', 'NET · 文本异文注释', netLukeNineUrl, '解读'),
+  ],
+};
+
+export const chapterTenCitationsByRange: Record<string, StudyCitation[]> = {
+  '10:1–20': [
+    edwards(),
+    source('Cole 2017', 'Cole 2017 · 七十／七十二的文本问题', coleSeventyTwoUrl, '解读'),
+    source('NET · 路 10', 'NET · 原文注释', netLukeTenUrl, '解读'),
+  ],
+  '10:21–24': [edwards(), source('NET · 路 10', 'NET · 原文注释', netLukeTenUrl, '解读')],
+  '10:25–37': [
+    edwards(),
+    source('Dowling 2022', 'Dowling 2022 · 撒玛利亚人与“他者”', dowlingSamaritansUrl, '背景'),
+    source('NET · 路 10', 'NET · 原文注释', netLukeTenUrl, '解读'),
+  ],
+  '10:38–42': [
+    edwards(),
+    source('Henning 2025', 'Henning 2025 · 马大的劳动、焦虑与分心', henningMarthaUrl, '解读'),
+    source('NET · 路 10', 'NET · 原文与文本注释', netLukeTenUrl, '解读'),
+  ],
+};
+
+export const chapterSevenReferences: ChapterReference[] = [
+  { id: 'NET · 路 7', text: 'NET Bible, Luke 7. Biblical Studies Press. Translation and study notes.', url: netLukeSevenUrl, note: '用于核对百夫长的奴仆、拿因送葬、约翰提问、路 7:29–30 的旁白问题，以及席间女人的语言细节。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于第七章从权柄、怜悯与弥赛亚辨认推进到赦罪筵席的整体阅读。' },
+  { id: 'Ravens 1988', text: 'Ravens, D. A. S. “The Setting of Luke’s Account of the Anointing: Luke 7.2–8.3.” New Testament Studies 34/2 (1988): 282–292.', url: ravensLukeSevenSettingUrl, note: '同行评审研究；用于把抹香女人放回百夫长、拿因、施洗约翰及随后妇女同行的叙事脉络，并避免用反法利赛人的刻板对照代替细读。' },
+  { id: 'Levine & Witherington 2018', text: 'Levine, Amy-Jill, and Ben Witherington III. The Gospel of Luke. New Cambridge Bible Commentary. Cambridge University Press, 2018.', url: levineWitheringtonLukeUrl, note: '用于筵席、待客、罪人标签与犹太历史背景；链接为出版方书目信息与前置页。' },
+];
+
+export const chapterEightReferences: ChapterReference[] = [
+  { id: 'NET · 路 8', text: 'NET Bible, Luke 8. Biblical Studies Press. Translation and study notes.', url: netLukeEightUrl, note: '用于核对妇女同行、撒种、风浪、湖东地名异文、血漏与睚鲁女儿的原文和文本细节。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于第八章“听道—危机—恢复—见证”的整体叙事推进。' },
+  { id: 'Miller 2017', text: 'Miller, Amanda C. “Cut from the Same Cloth: A Study of Female Patrons in Luke–Acts and the Roman Empire.” Review & Expositor 114/2 (2017): 203–210.', url: millerWomenPatronsUrl, note: '同行评审研究；用于路 8:1–3 的妇女、资源、恩主关系与使命参与，避免把她们缩减为无名后勤人员。' },
+  { id: 'Klutz 2004', text: 'Klutz, Todd. The Exorcism Stories in Luke–Acts: A Sociostylistic Reading. Cambridge University Press, 2004, chapter 2, 82–151.', url: klutzLukeEightExorcismUrl, note: '用于路 8:26–39 的洁净、文化边界和恢复；本页同时明确拒绝把现代精神疾病自动等同鬼附。' },
+  { id: 'Wasiak 2024', text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.', url: praiseInLukeNtsUrl, note: '开放获取同行评审研究；用于理解神迹怎样引导人辨认耶稣并归荣耀给神。' },
+];
+
+export const chapterNineReferences: ChapterReference[] = [
+  { id: 'NET · 路 9', text: 'NET Bible, Luke 9. Biblical Studies Press. Translation and study notes.', url: netLukeNineUrl, note: '用于核对差遣、喂饱群众、受难预告、变像中的 exodos、撒玛利亚村庄与跟随呼召。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于第九章从“祂是谁”转向十字架、荣耀和耶路撒冷旅程的整体推进。' },
+  { id: 'Ravens 1990', text: 'Ravens, D. A. S. “Luke 9.7–62 and the Prophetic Role of Jesus.” New Testament Studies 36/1 (1990): 119–129.', url: ravensLukeNinePropheticUrl, note: '同行评审研究；用于第九章作为全卷转折、耶稣身份称号、变像和耶路撒冷道路之间的关系。' },
+  { id: 'Dochhorn 2007', text: 'Dochhorn, Jan. “Die Verschonung des samaritanischen Dorfes (Lk 9.54–55).” New Testament Studies 53/3 (2007): 359–378.', url: dochhornSamaritanVillageUrl, note: '同行评审研究；用于理解雅各、约翰求降火的以利亚背景，以及耶稣为何拒绝以宗教热心实行报复。' },
+  { id: 'Dowling 2022', text: 'Dowling, Elizabeth V. “Learning from ‘Others’: Reading Two Samaritan Stories in the Gospel of Luke.” In Tolerance, Intolerance, and Recognition in Early Christianity and Early Judaism. Cambridge University Press, 2022.', url: dowlingSamaritansUrl, note: '用于路加如何呈现犹太人与撒玛利亚人的张力，并让门徒从被视为“他者”的人身上重新学习。' },
+];
+
+export const chapterTenReferences: ChapterReference[] = [
+  { id: 'NET · 路 10', text: 'NET Bible, Luke 10. Biblical Studies Press. Translation and study notes.', url: netLukeTenUrl, note: '用于核对七十／七十二异文、差遣、律法师问答、撒玛利亚人比喻与马大马利亚段落。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于第十章差遣、启示、爱邻舍与聆听主之间的整体连接。' },
+  { id: 'Cole 2017', text: 'Cole, Zachary J. “P45 and the Problem of the ‘Seventy(-two)’: A Case for the Longer Reading in Luke 10.1 and 17.” New Testament Studies 63/2 (2017): 203–221.', url: coleSeventyTwoUrl, note: '同行评审文本校勘研究；对“七十二”提出较强理由，同时本页保留中文译本常见的两种读法。' },
+  { id: 'Dowling 2022', text: 'Dowling, Elizabeth V. “Learning from ‘Others’: Reading Two Samaritan Stories in the Gospel of Luke.” In Tolerance, Intolerance, and Recognition in Early Christianity and Early Judaism. Cambridge University Press, 2022.', url: dowlingSamaritansUrl, note: '用于撒玛利亚人的历史边界与叙事功能；避免把比喻变成反犹太人的“宗教领袖都冷漠”故事。' },
+  { id: 'Henning 2025', text: 'Henning, Meghan R. “Manufacturing Martha’s Madness: Enslavement, Anxiety, and Distraction in Luke 10:38–42.” Harvard Theological Review 118/1 (2025): 19–40.', url: henningMarthaUrl, note: '最新同行评审研究；用于重新看见马大的劳动负担，避免把焦虑、女性或照顾工作本身写成属灵失败。' },
 ];
 
 export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = {

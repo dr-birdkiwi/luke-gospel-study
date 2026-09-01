@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { bibleGatewayUrl, chapterFiveCitationsByRange, chapterFiveReferences, chapterFourCitationsByRange, chapterFourReferences, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterSixCitationsByRange, chapterSixReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
+import { bibleGatewayUrl, chapterEightCitationsByRange, chapterEightReferences, chapterFiveCitationsByRange, chapterFiveReferences, chapterFourCitationsByRange, chapterFourReferences, chapterNineCitationsByRange, chapterNineReferences, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterSevenCitationsByRange, chapterSevenReferences, chapterSixCitationsByRange, chapterSixReferences, chapterTenCitationsByRange, chapterTenReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
 import { chapterFrames, getBookMovement, lukeBookMovements, readingLayers, type ChapterFrame } from './chapterFramework';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
@@ -58,7 +58,7 @@ const chapterGuidesByChapter: Record<number, string[]> = {
   7: ['百夫长的信心与拿因寡妇的哀伤', '约翰在疑问中重新辨认弥赛亚', '被赦免的女人与自义的饭桌'],
   8: ['妇女同行、撒种比喻与听道', '风浪与湖东释放：耶稣是谁', '血漏妇人与睚鲁女儿：两种等候'],
   9: ['十二门徒被差、群众得饱与彼得认信', '受苦的基督、登山变像与山下需要', '接待微小者，定意走向耶路撒冷'],
-  10: ['七十人带着平安被差遣', '好撒玛利亚人：成为受伤者的邻舍', '马大与马利亚：服事从聆听主开始'],
+  10: ['七十／七十二人带着平安被差遣', '撒玛利亚人的怜悯：成为受伤者的邻舍', '马大与马利亚：服事从聆听主开始'],
   11: ['主祷文、恒切祈求与父赐圣灵', '神国胜过黑暗，听道并遵守才有福', '约拿的记号、里面的光与宗教重担'],
   12: ['假冒与恐惧、无知财主', '不要忧虑、警醒等候、分辨时代', '从财物与日常忧虑进入天国的忠心'],
   13: ['悔改与无花果树、安息日医治', '芥菜种、面酵、窄门', '耶稣为耶路撒冷哀哭'],
@@ -82,10 +82,10 @@ const chapterSummaries = [
   '父所喜爱的儿子拒绝三条使命捷径，在拿撒勒说明自己为何受膏，又在迦百农以教导、释放、医治和传讲神国展开使命。',
   '耶稣在人的劳作、疾病、罪疚与社会标签中施行洁净和赦免，呼召渔夫与税吏起来跟随，并借筵席、禁食和新酒说明祂所带来的更新。',
   '安息日的主选择行善与恢复；祂在整夜祷告后召聚十二人，又以福与祸、爱仇敌、自省和遵行塑造门徒群体。',
-  '外邦百夫长、寡妇、施洗约翰和被称为罪人的女人，都在追问耶稣究竟是谁。',
-  '神的话在不同土壤中生长；耶稣在湖上、湖东和人群中显明祂对自然、污鬼与疾病的权柄。',
-  '门徒被差遣、群众得饱、彼得认信；山上荣耀之后，耶稣定意走向耶路撒冷。',
-  '七十人被差遣，邻舍在路旁被重新定义，忙乱的家也成为聆听主的地方。',
+  '百夫长、寡妇、施洗约翰和席间被称为罪人的女人，都在耶稣的权柄、怜悯与赦免中面对“祂究竟是谁”。',
+  '神的话呼召人持守；耶稣又在湖上、湖东和人群中胜过风浪、辖制、长期疾病与死亡，使人恢复关系和见证。',
+  '门徒被差遣、群众得饱、彼得认信；耶稣以十字架解释弥赛亚的荣耀，并定意走向耶路撒冷。',
+  '七十／七十二人被差遣，撒玛利亚人的怜悯打破责任边界，马利亚在主脚前的聆听则校正忙乱的服事。',
   '耶稣教导祷告、应许圣灵、显明神国胜过黑暗，并揭露里面没有光的宗教假冒。',
   '在忧虑、财富、等候与家庭分裂中，耶稣要求门徒把忠心落实在日常选择。',
   '灾难不是优越感的证据；耶稣以悔改、怜悯、神国成长和窄门回应耶路撒冷的危机。',
@@ -109,8 +109,8 @@ const chapterSettings = [
   '旷野、拿撒勒会堂与迦百农的会堂、家庭和城门，构成耶稣公开事奉的起点。',
   '革尼撒勒湖、加利利城镇、住宅屋顶与税关，把劳作、疾病、罪疚和社会边界带到耶稣面前。',
   '麦地、会堂、山上祷告和平地人群连成一条路：从安息日争议，到十二使徒被召，再到门徒共同生活的教导。',
-  '迦百农、拿因和加利利的筵席，让罗马秩序、死亡、债务与赦免彼此相遇。',
-  '加利利各城、湖上航行、湖东的外邦地区与会堂家庭，成为神的话被听见和拒绝的现场。',
+  '迦百农、拿因和加利利的筵席，让军事权柄、死亡、债务与赦免彼此相遇；百夫长所属军队的具体性质仍有讨论。',
+  '加利利各城、湖上航行、湖东地区与会堂家庭，成为神的话被听见、人在危机中被恢复的现场。',
   '本章从加利利事工转向耶路撒冷旅程；山上、山下与撒玛利亚村庄都在这条路上。',
   '耶稣从加利利南行，经过乡镇道路、撒玛利亚边界和普通家庭，教导门徒怎样成为邻舍。',
   '旅程中的住宅、饭桌与公共空间，让祷告、神国冲突、内在的光和宗教权力彼此碰撞。',
@@ -189,6 +189,10 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
       ...(chapterFourCitationsByRange[note.range] ?? []),
       ...(chapterFiveCitationsByRange[note.range] ?? []),
       ...(chapterSixCitationsByRange[note.range] ?? []),
+      ...(chapterSevenCitationsByRange[note.range] ?? []),
+      ...(chapterEightCitationsByRange[note.range] ?? []),
+      ...(chapterNineCitationsByRange[note.range] ?? []),
+      ...(chapterTenCitationsByRange[note.range] ?? []),
       ...(chapterNineteenCitationsByRange[note.range] ?? []),
       ...(chapterTwentyToTwentyFourCitationsByRange[note.range] ?? []),
       ...(note.citations ?? []),
@@ -264,6 +268,10 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     ...(chapter.no === 4 ? chapterFourReferences : []),
     ...(chapter.no === 5 ? chapterFiveReferences : []),
     ...(chapter.no === 6 ? chapterSixReferences : []),
+    ...(chapter.no === 7 ? chapterSevenReferences : []),
+    ...(chapter.no === 8 ? chapterEightReferences : []),
+    ...(chapter.no === 9 ? chapterNineReferences : []),
+    ...(chapter.no === 10 ? chapterTenReferences : []),
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
     ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
     ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...chapterTwentyToTwentyFourReferences] : []),
