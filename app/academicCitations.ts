@@ -19,6 +19,12 @@ const armitageCensusUrl = 'https://www.tyndalebulletin.org/article/27652-detachi
 const carlsonAccommodationUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/accommodations-of-joseph-and-mary-in-bethlehem-in-luke-27/E60EB9AEE5215FC0C989DE635DC80A7B';
 const kozitzaLegalExegesisUrl = 'https://doi.org/10.1093/jts/flaa097';
 const davisAmbiguityUrl = 'https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/how-to-read-ambiguity-well-reading-ambiguity-in-luke-and-acts/DC603DBA2EB820237FB7E5C5CCD34A0F';
+const netLukeThreeUrl = 'https://netbible.org/bible/Luke+3';
+const levineWitheringtonLukeUrl = 'https://assets.cambridge.org/97805218/59509/frontmatter/9780521859509_frontmatter.pdf';
+const marcusBaptismUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/jesus-baptismal-vision/38CA5D68C522A1D73AAD5BFCD66422EC';
+const spiritAndBaptismUrl = 'https://www.mdpi.com/2077-1444/16/6/763';
+const kochenashAdamUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/adam-son-of-god-luke-338-another-jesusaugustus-parallel-in-lukes-gospel/52CB545BB1D17611C50C3D63BFCDEC7D';
+const pattonGenealogyUrl = 'https://academic.oup.com/jts/article-abstract/77/1/60/8540415';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
 const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
@@ -201,6 +207,82 @@ export const chapterTwoReferences: ChapterReference[] = [
     text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.',
     url: praiseInLukeNtsUrl,
     note: '同行评审研究；用于理解路加一至二章中的赞美如何解释神的作为，并把个人经历带进群体见证。',
+  },
+];
+
+export const chapterThreeCitationsByRange: Record<string, StudyCitation[]> = {
+  '3:1–6': [
+    edwards(),
+    source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '解读'),
+    source('NET · 路 3', 'NET · 原文注释', netLukeThreeUrl, '背景'),
+  ],
+  '3:7–14': [
+    edwards(),
+    source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '解读'),
+    source('NET · 路 3', 'NET · 原文注释', netLukeThreeUrl, '解读'),
+  ],
+  '3:15–20': [
+    edwards(),
+    source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '解读'),
+    source('Hofmann 2025', 'Hofmann 2025 · 洗礼与领受圣灵', spiritAndBaptismUrl, '解读'),
+    source('NET · 路 3', 'NET · 原文注释', netLukeThreeUrl, '解读'),
+  ],
+  '3:21–22': [
+    edwards(),
+    source('Marcus 1995', 'Marcus 1995 · 耶稣受洗', marcusBaptismUrl, '解读'),
+    source('Hofmann 2025', 'Hofmann 2025 · 洗礼与领受圣灵', spiritAndBaptismUrl, '解读'),
+    source('NET · 路 3', 'NET · 原文注释', netLukeThreeUrl, '背景'),
+  ],
+  '3:23–38': [
+    edwards(),
+    source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '解读'),
+    source('Kochenash 2018', 'Kochenash 2018 · 亚当是神的儿子', kochenashAdamUrl, '解读'),
+    source('Patton 2026', 'Patton 2026 · 路加家谱的抄传', pattonGenealogyUrl, '背景'),
+  ],
+};
+
+export const chapterThreeReferences: ChapterReference[] = [
+  {
+    id: 'NET · 路 3',
+    text: 'NET Bible, Luke 3. Biblical Studies Press. Translation and study notes.',
+    url: netLukeThreeUrl,
+    note: '用于核对第三章原文、历史名称和翻译选项；技术注释提供可复查的语言资料，但具体神学判断仍与同行评审研究及整卷叙事互相核对。',
+  },
+  {
+    id: 'Edwards 2015',
+    text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.',
+    url: edwardsUrl,
+    note: '用于第三章的历史处境、叙事推进、以色列背景与普世救恩；本页采用其重视路加文学结构与神学信息的解经方向。',
+  },
+  {
+    id: 'Levine & Witherington 2018',
+    text: 'Levine, Amy-Jill, and Ben Witherington III. The Gospel of Luke. New Cambridge Bible Commentary. Cambridge University Press, 2018.',
+    url: levineWitheringtonLukeUrl,
+    note: '用于施洗约翰、悔改伦理、耶稣受洗与家谱；两位作者也提醒读者区分历史重建、文学观察与神学判断。',
+  },
+  {
+    id: 'Marcus 1995',
+    text: 'Marcus, Joel. “Jesus’ Baptismal Vision.” New Testament Studies 41/4 (1995): 512–521.',
+    url: marcusBaptismUrl,
+    note: '同行评审研究；用于说明耶稣接受约翰之洗所产生的历史与神学张力，以及“与以色列认同”是一种解释，而不是路加逐字给出的说明。',
+  },
+  {
+    id: 'Hofmann 2025',
+    text: 'Hofmann, Matthias. “The Connection Between Baptism and the Reception of the Spirit in Becoming a Christian in Luke–Acts.” Religions 16/6 (2025): 763.',
+    url: spiritAndBaptismUrl,
+    note: '开放获取研究；用于比较约翰之洗、耶稣受洗、圣灵与火，以及路加福音和使徒行传中的基督徒洗礼；“火”的具体解释仍须保留分辨空间。',
+  },
+  {
+    id: 'Kochenash 2018',
+    text: 'Kochenash, Michael. “Adam, Son of God (Luke 3.38): Another Jesus–Augustus Parallel in Luke’s Gospel.” New Testament Studies 64/3 (2018): 307–325.',
+    url: kochenashAdamUrl,
+    note: '同行评审研究；用于理解家谱末尾“亚当是神的儿子”在路加叙事和罗马帝国处境中的可能意义；该论文的帝国平行读法属于学术论证，不当作经文唯一解释。',
+  },
+  {
+    id: 'Patton 2026',
+    text: 'Patton, Andrew J. “The Transmission of the Genealogy of Jesus in Greek New Testament Manuscripts: Variation in Format and Text.” Journal of Theological Studies 77/1 (2026): 60–73.',
+    url: pattonGenealogyUrl,
+    note: '最新同行评审研究；用于说明路加家谱在希腊抄本中的分栏格式曾造成较多抄传差异，提醒读者不要把复杂名单当成毫无文本历史的现代户籍表。',
   },
 ];
 

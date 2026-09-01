@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
+import { bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
 import { chapterFrames, getBookMovement, lukeBookMovements, readingLayers, type ChapterFrame } from './chapterFramework';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
@@ -185,6 +185,7 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
     citations: [
       { id: `路 ${note.range}`, label: `路 ${note.range} 原文`, url: chapterOnePassageUrl(note.range), scope: '经文' as const },
       ...(chapterTwoCitationsByRange[note.range] ?? []),
+      ...(chapterThreeCitationsByRange[note.range] ?? []),
       ...(chapterNineteenCitationsByRange[note.range] ?? []),
       ...(chapterTwentyToTwentyFourCitationsByRange[note.range] ?? []),
       ...(note.citations ?? []),
@@ -256,6 +257,7 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     },
     ...academicReferences,
     ...(chapter.no === 2 ? chapterTwoReferences : []),
+    ...(chapter.no === 3 ? chapterThreeReferences : []),
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
     ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
     ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...chapterTwentyToTwentyFourReferences] : []),
