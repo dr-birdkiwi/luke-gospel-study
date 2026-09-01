@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { bibleGatewayUrl, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
+import { bibleGatewayUrl, chapterFiveCitationsByRange, chapterFiveReferences, chapterFourCitationsByRange, chapterFourReferences, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterSixCitationsByRange, chapterSixReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
 import { chapterFrames, getBookMovement, lukeBookMovements, readingLayers, type ChapterFrame } from './chapterFramework';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
@@ -52,9 +52,9 @@ const chapterGuidesByChapter: Record<number, string[]> = {
   1: ['可靠的序言、撒迦利亚的迟疑与约翰的应许', '马利亚的回应、两位母亲相遇与尊主颂', '约翰出生、撒迦利亚颂歌与预备主的道路'],
   2: ['约瑟与马利亚、牧羊人、献上婴孩耶稣', '西面与亚拿的等候、少年耶稣在圣殿', '神的儿子也在家庭、成长与等候中显明'],
   3: ['约翰的悔改信息、耶稣受洗、家谱', '悔改的果子与圣灵的见证', '从身份被确认到进入旷野预备'],
-  4: ['旷野试探：忠信的儿子拒绝错误道路', '拿撒勒的恩年宣告与被拒绝的恩典', '迦百农的权柄、祷告与继续传扬神国'],
-  5: ['在深水处呼召渔夫跟从', '洁净、赦罪与利未的筵席', '新郎、新酒与被更新的群体'],
-  6: ['安息日与十二使徒', '平原上的福与祸、爱仇敌', '省察、果子与把房屋建在磐石上'],
+  4: ['旷野试探：忠信的爱子拒绝捷径', '拿撒勒的恩年宣告与不受占有的恩典', '迦百农的权柄、受差遣与继续传扬神国'],
+  5: ['空网、满网与渔夫的新呼召', '洁净、赦罪与利未的筵席', '新郎、新酒与敬虔生活的新时机'],
+  6: ['安息日之主与十二使徒', '平原上的福与祸、爱仇敌', '省察、果子与听道实行的根基'],
   7: ['百夫长的信心与拿因寡妇的哀伤', '约翰在疑问中重新辨认弥赛亚', '被赦免的女人与自义的饭桌'],
   8: ['妇女同行、撒种比喻与听道', '风浪与湖东释放：耶稣是谁', '血漏妇人与睚鲁女儿：两种等候'],
   9: ['十二门徒被差、群众得饱与彼得认信', '受苦的基督、登山变像与山下需要', '接待微小者，定意走向耶路撒冷'],
@@ -79,9 +79,9 @@ const chapterSummaries = [
   '路加从可靠见证写起；神的话临到两个家庭，圣灵使人相信、赞美，并预备迎接救主。',
   '耶稣在伯利恒、圣殿与拿撒勒之间进入人的家庭，也进入以色列的敬拜与盼望。',
   '约翰在帝国权力的年代呼召悔改；耶稣受洗、被确认，并以家谱进入全人类的历史。',
-  '耶稣在旷野胜过试探，在拿撒勒宣告释放，又在迦百农以权柄医治和传讲神国。',
-  '耶稣呼召渔夫与税吏，在洁净、赦罪、同席和新酒的图像中显明新的群体秩序。',
-  '从安息日争议到平原宝训，耶稣把天国伦理落在怜悯、仇敌、金钱与心的根基上。',
+  '父所喜爱的儿子拒绝三条使命捷径，在拿撒勒说明自己为何受膏，又在迦百农以教导、释放、医治和传讲神国展开使命。',
+  '耶稣在人的劳作、疾病、罪疚与社会标签中施行洁净和赦免，呼召渔夫与税吏起来跟随，并借筵席、禁食和新酒说明祂所带来的更新。',
+  '安息日的主选择行善与恢复；祂在整夜祷告后召聚十二人，又以福与祸、爱仇敌、自省和遵行塑造门徒群体。',
   '外邦百夫长、寡妇、施洗约翰和被称为罪人的女人，都在追问耶稣究竟是谁。',
   '神的话在不同土壤中生长；耶稣在湖上、湖东和人群中显明祂对自然、污鬼与疾病的权柄。',
   '门徒被差遣、群众得饱、彼得认信；山上荣耀之后，耶稣定意走向耶路撒冷。',
@@ -107,8 +107,8 @@ const chapterSettings = [
   '伯利恒的出生地、耶路撒冷圣殿与加利利的拿撒勒，交织出家庭、礼仪与成长的空间。',
   '提庇留在位第十五年，约旦河与旷野成为帝国地图之外、却承载神话语的地方。',
   '旷野、拿撒勒会堂与迦百农的会堂、家庭和城门，构成耶稣公开事奉的起点。',
-  '加利利湖、迦百农和税关把渔业、疾病、罪疚与社会边缘带到同一条道路上。',
-  '加利利平原与湖边人群聚集；安息日、会堂和十二使徒形成新群体的背景。',
+  '革尼撒勒湖、加利利城镇、住宅屋顶与税关，把劳作、疾病、罪疚和社会边界带到耶稣面前。',
+  '麦地、会堂、山上祷告和平地人群连成一条路：从安息日争议，到十二使徒被召，再到门徒共同生活的教导。',
   '迦百农、拿因和加利利的筵席，让罗马秩序、死亡、债务与赦免彼此相遇。',
   '加利利各城、湖上航行、湖东的外邦地区与会堂家庭，成为神的话被听见和拒绝的现场。',
   '本章从加利利事工转向耶路撒冷旅程；山上、山下与撒玛利亚村庄都在这条路上。',
@@ -186,6 +186,9 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
       { id: `路 ${note.range}`, label: `路 ${note.range} 原文`, url: chapterOnePassageUrl(note.range), scope: '经文' as const },
       ...(chapterTwoCitationsByRange[note.range] ?? []),
       ...(chapterThreeCitationsByRange[note.range] ?? []),
+      ...(chapterFourCitationsByRange[note.range] ?? []),
+      ...(chapterFiveCitationsByRange[note.range] ?? []),
+      ...(chapterSixCitationsByRange[note.range] ?? []),
       ...(chapterNineteenCitationsByRange[note.range] ?? []),
       ...(chapterTwentyToTwentyFourCitationsByRange[note.range] ?? []),
       ...(note.citations ?? []),
@@ -258,6 +261,9 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     ...academicReferences,
     ...(chapter.no === 2 ? chapterTwoReferences : []),
     ...(chapter.no === 3 ? chapterThreeReferences : []),
+    ...(chapter.no === 4 ? chapterFourReferences : []),
+    ...(chapter.no === 5 ? chapterFiveReferences : []),
+    ...(chapter.no === 6 ? chapterSixReferences : []),
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
     ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
     ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...chapterTwentyToTwentyFourReferences] : []),

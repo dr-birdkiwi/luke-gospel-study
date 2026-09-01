@@ -19,12 +19,22 @@ const armitageCensusUrl = 'https://www.tyndalebulletin.org/article/27652-detachi
 const carlsonAccommodationUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/accommodations-of-joseph-and-mary-in-bethlehem-in-luke-27/E60EB9AEE5215FC0C989DE635DC80A7B';
 const kozitzaLegalExegesisUrl = 'https://doi.org/10.1093/jts/flaa097';
 const davisAmbiguityUrl = 'https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/how-to-read-ambiguity-well-reading-ambiguity-in-luke-and-acts/DC603DBA2EB820237FB7E5C5CCD34A0F';
-const netLukeThreeUrl = 'https://netbible.org/bible/Luke+3';
+const netLukeThreeUrl = 'https://www.bible.com/bible/107/LUK.3.NET';
 const levineWitheringtonLukeUrl = 'https://assets.cambridge.org/97805218/59509/frontmatter/9780521859509_frontmatter.pdf';
 const marcusBaptismUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/jesus-baptismal-vision/38CA5D68C522A1D73AAD5BFCD66422EC';
 const spiritAndBaptismUrl = 'https://www.mdpi.com/2077-1444/16/6/763';
 const kochenashAdamUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/adam-son-of-god-luke-338-another-jesusaugustus-parallel-in-lukes-gospel/52CB545BB1D17611C50C3D63BFCDEC7D';
 const pattonGenealogyUrl = 'https://academic.oup.com/jts/article-abstract/77/1/60/8540415';
+const netLukeFourUrl = 'https://www.bible.com/bible/107/LUK.4.NET';
+const netLukeFiveUrl = 'https://www.bible.com/bible/107/LUK.5.NET';
+const netLukeSixUrl = 'https://www.bible.com/bible/107/LUK.6.NET';
+const seccombeLukeIsaiahUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/luke-and-isaiah/90A53C7EEB1013CF553160237B679B24';
+const rudmanLukeFourAuthorityUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/authority-and-right-of-disposal-in-luke-46/ECB998BC87B911C06416A9EF77DDD6FB';
+const meadOldNewWineUrl = 'https://journals.sagepub.com/doi/abs/10.1177/001452468809900804';
+const fowlLukeSixUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/jesus-is-driving-them-crazy-language-and-context-for-luke-6611/76BAAC6D3C701E18B5FD5D2871B0602D';
+const allisonSermonPlainUrl = 'https://www.cambridge.org/core/books/abs/gospel-reading-and-reception-in-early-christian-literature/luke-rewriting-matthew/FFDAF8B4EAF6EAAECB5CCE3D489D6E7B';
+const vanDerWattLoveUrl = 'https://scielo.org.za/scielo.php?pid=S2305-08532021000100024&script=sci_abstract';
+const ndekhaPoorRichUrl = 'https://hts.org.za/index.php/hts/article/view/6065/16219';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
 const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
@@ -32,11 +42,11 @@ const travelNarrativeJblUrl = 'https://doi.org/10.15699/jbl.1441.2025.8';
 const templeHtrUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/weeping-over-jerusalem-lukes-response-to-the-destruction-of-the-temple/D0E1B13425A79861FE941F673AD8F258';
 const entryKinmanUrl = 'https://www.tyndalebulletin.org/article/30428-the-a-triumphal-entry-luke-19-28-48-historical-backgrounds-theological-motifs-and-the-purpose-of-luke';
 const minasIvpUrl = 'https://www.biblegateway.com/resources/ivp-nt/Parable-Stewardship-Minas';
-const netLukeTwentyUrl = 'https://netbible.org/bible/Luke+20';
-const netLukeTwentyOneUrl = 'https://netbible.org/bible/Luke+21';
-const netLukeTwentyTwoUrl = 'https://netbible.org/bible/Luke+22';
-const netLukeTwentyThreeUrl = 'https://netbible.org/bible/Luke+23';
-const netLukeTwentyFourUrl = 'https://netbible.org/bible/Luke+24';
+const netLukeTwentyUrl = 'https://www.bible.com/bible/107/LUK.20.NET';
+const netLukeTwentyOneUrl = 'https://www.bible.com/bible/107/LUK.21.NET';
+const netLukeTwentyTwoUrl = 'https://www.bible.com/bible/107/LUK.22.NET';
+const netLukeTwentyThreeUrl = 'https://www.bible.com/bible/107/LUK.23.NET';
+const netLukeTwentyFourUrl = 'https://www.bible.com/bible/107/LUK.24.NET';
 const bryanResurrectionJtsUrl = 'https://academic.oup.com/jts/advance-article/doi/10.1093/jts/flag032/8751201';
 const bovonLukeTwentyVineyardUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.9';
 const bovonLukeTwentyTaxesUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.10';
@@ -54,7 +64,7 @@ const princeLukeTwentyFourUrl = 'https://journals.sagepub.com/doi/10.1177/014206
 const deJongeAscensionUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/chronology-of-the-ascension-stories-in-luke-and-acts/B42A5255A306DBBF260E02C2C402C688';
 const entryWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2';
 const yaleJerusalemUrl = 'https://yalebiblestudy.org/courses/the-gospel-of-luke/lessons/in-jerusalem-study-guide/';
-const netLukeNineteenUrl = 'https://netbible.org/bible/Luke+19';
+const netLukeNineteenUrl = 'https://www.bible.com/bible/107/LUK.19.NET';
 const templeWitnessWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-33-3/commentary-on-luke-215-19';
 const eschatologyWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-of-advent-3/commentary-on-luke-2125-36-6';
 const ivpLukeTwentyOneUrl = 'https://www.biblegateway.com/resources/ivp-nt/Jerusalems-Destruction-End';
@@ -284,6 +294,92 @@ export const chapterThreeReferences: ChapterReference[] = [
     url: pattonGenealogyUrl,
     note: '最新同行评审研究；用于说明路加家谱在希腊抄本中的分栏格式曾造成较多抄传差异，提醒读者不要把复杂名单当成毫无文本历史的现代户籍表。',
   },
+];
+
+export const chapterFourCitationsByRange: Record<string, StudyCitation[]> = {
+  '4:1–13': [
+    edwards(),
+    source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '解读'),
+    source('Rudman 2004', 'Rudman 2004 · 路 4:6 的权柄', rudmanLukeFourAuthorityUrl, '解读'),
+    source('NET · 路 4', 'NET · 原文注释', netLukeFourUrl, '背景'),
+  ],
+  '4:14–21': [
+    edwards(),
+    source('Seccombe 1981', 'Seccombe · 路加与以赛亚', seccombeLukeIsaiahUrl, '解读'),
+    source('Wasiak 2024', 'Wasiak 2024 · 神迹与赞美', praiseInLukeNtsUrl, '解读'),
+    source('NET · 路 4', 'NET · 原文注释', netLukeFourUrl, '背景'),
+  ],
+  '4:22–30': [
+    edwards(),
+    source('Seccombe 1981', 'Seccombe · 路加与以赛亚', seccombeLukeIsaiahUrl, '解读'),
+    source('NET · 路 4', 'NET · 原文注释', netLukeFourUrl, '解读'),
+  ],
+  '4:31–44': [
+    edwards(),
+    source('Wasiak 2024', 'Wasiak 2024 · 神迹与赞美', praiseInLukeNtsUrl, '解读'),
+    source('NET · 路 4', 'NET · 原文注释', netLukeFourUrl, '解读'),
+  ],
+};
+
+export const chapterFiveCitationsByRange: Record<string, StudyCitation[]> = {
+  '5:1–11': [edwards(), source('Wasiak 2024', 'Wasiak 2024 · 神迹与赞美', praiseInLukeNtsUrl, '解读'), source('NET · 路 5', 'NET · 原文注释', netLukeFiveUrl, '背景')],
+  '5:12–16': [edwards(), source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '背景'), source('NET · 路 5', 'NET · 原文注释', netLukeFiveUrl, '背景')],
+  '5:17–26': [edwards(), source('Wasiak 2024', 'Wasiak 2024 · 神迹与赞美', praiseInLukeNtsUrl, '解读'), source('NET · 路 5', 'NET · 原文注释', netLukeFiveUrl, '解读')],
+  '5:27–32': [edwards(), source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '解读'), source('NET · 路 5', 'NET · 原文注释', netLukeFiveUrl, '背景')],
+  '5:33–39': [edwards(), source('Mead 1988', 'Mead · 陈酒与新酒', meadOldNewWineUrl, '解读'), source('NET · 路 5', 'NET · 原文注释', netLukeFiveUrl, '解读')],
+};
+
+export const chapterSixCitationsByRange: Record<string, StudyCitation[]> = {
+  '6:1–11': [
+    edwards(),
+    source('Fowl 2026', 'Fowl 2026 · 路 6:6–11', fowlLukeSixUrl, '解读'),
+    source('NET · 路 6', 'NET · 原文注释', netLukeSixUrl, '背景'),
+  ],
+  '6:12–16': [edwards(), source('Levine & Witherington 2018', 'Levine & Witherington 2018 · 路加福音', levineWitheringtonLukeUrl, '解读'), source('NET · 路 6', 'NET · 原文注释', netLukeSixUrl, '背景')],
+  '6:17–26': [
+    edwards(),
+    source('Allison 2022', 'Allison 2022 · 平原讲论', allisonSermonPlainUrl, '解读'),
+    source('Ndekha 2020', 'Ndekha 2020 · 贫穷与富足', ndekhaPoorRichUrl, '解读'),
+    source('NET · 路 6', 'NET · 原文注释', netLukeSixUrl, '解读'),
+  ],
+  '6:27–36': [
+    edwards(),
+    source('Van der Watt 2021', 'Van der Watt 2021 · 爱邻舍与仇敌', vanDerWattLoveUrl, '解读'),
+    source('Allison 2022', 'Allison 2022 · 平原讲论', allisonSermonPlainUrl, '解读'),
+    source('NET · 路 6', 'NET · 原文注释', netLukeSixUrl, '解读'),
+  ],
+  '6:37–49': [
+    edwards(),
+    source('Allison 2022', 'Allison 2022 · 平原讲论', allisonSermonPlainUrl, '解读'),
+    source('Ndekha 2020', 'Ndekha 2020 · 贫穷与富足', ndekhaPoorRichUrl, '解读'),
+    source('NET · 路 6', 'NET · 原文注释', netLukeSixUrl, '解读'),
+  ],
+};
+
+export const chapterFourReferences: ChapterReference[] = [
+  { id: 'NET · 路 4', text: 'NET Bible, Luke 4. Biblical Studies Press. Translation and study notes.', url: netLukeFourUrl, note: '用于核对试探次序、关键词、文本差异和翻译选择；神学结论仍与整卷路加及同行评审研究互相核对。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于第四章的叙事结构、试探、拿撒勒宣讲与迦百农事工。' },
+  { id: 'Levine & Witherington 2018', text: 'Levine, Amy-Jill, and Ben Witherington III. The Gospel of Luke. New Cambridge Bible Commentary. Cambridge University Press, 2018.', url: levineWitheringtonLukeUrl, note: '用于把耶稣的试探与会堂争议放回犹太经文和历史语境，避免反犹太化概括；链接为出版方书目信息与前置页。' },
+  { id: 'Rudman 2004', text: 'Rudman, Dominic. “Authority and Right of Disposal in Luke 4.6.” New Testament Studies 50/1 (2004): 77–86.', url: rudmanLukeFourAuthorityUrl, note: '同行评审研究；用于路 4:6 中魔鬼关于万国权柄的宣称。该论文提出特定但非唯一的但以理书背景解释，本页不把试探者的话直接当成完整政治神学。' },
+  { id: 'Seccombe 1981', text: 'Seccombe, David. “Luke and Isaiah.” New Testament Studies 27/2 (1981): 252–259.', url: seccombeLukeIsaiahUrl, note: '同行评审研究；用于以赛亚 61 章怎样塑造路加对耶稣使命、传福音与受差遣的叙述。' },
+  { id: 'Wasiak 2024', text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.', url: praiseInLukeNtsUrl, note: '开放获取同行评审研究；用于连接拿撒勒的纲领性宣讲与随后在路 4–7 章展开的神迹、神国和赞美。' },
+];
+
+export const chapterFiveReferences: ChapterReference[] = [
+  { id: 'NET · 路 5', text: 'NET Bible, Luke 5. Biblical Studies Press. Translation and study notes.', url: netLukeFiveUrl, note: '用于核对革尼撒勒湖、洁净、赦罪、人子、利未及新酒比喻的语言细节。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于第五章各呼召与争议段落的文学推进和基督论中心。' },
+  { id: 'Levine & Witherington 2018', text: 'Levine, Amy-Jill, and Ben Witherington III. The Gospel of Luke. New Cambridge Bible Commentary. Cambridge University Press, 2018.', url: levineWitheringtonLukeUrl, note: '用于洁净制度、税吏、筵席与禁食的犹太历史背景，避免把耶稣与犹太传统写成粗糙的新旧对立；链接为出版方书目信息与前置页。' },
+  { id: 'Wasiak 2024', text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.', url: praiseInLukeNtsUrl, note: '用于瘫子医治后众人赞美神，以及神迹怎样逐步引导群众辨认耶稣。' },
+  { id: 'Mead 1988', text: 'Mead, A. H. “Old and New Wine: St Luke 5:39.” The Expository Times 99/8 (1988).', url: meadOldNewWineUrl, note: '用于保留路 5:39 “陈的好”所造成的解释张力，避免把新酒比喻写成简单的旧约／犹太教淘汰论。' },
+];
+
+export const chapterSixReferences: ChapterReference[] = [
+  { id: 'NET · 路 6', text: 'NET Bible, Luke 6. Biblical Studies Press. Translation and study notes.', url: netLukeSixUrl, note: '用于核对安息日争议、十二使徒、福与祸及平原讲论的原文和翻译选项。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于第六章从安息日、人子权柄、十二使徒到平原讲论的整体推进。' },
+  { id: 'Fowl 2026', text: 'Fowl, Stephen. “Jesus is Driving Them Crazy: Language and Context for Luke 6.6–11.” New Testament Studies, 333–336. Published online 2026.', url: fowlLukeSixUrl, note: '最新同行评审短论；用于修正 ἄνοια 被简单译作怒气或狂怒的问题，并保留“失去理智的愚妄”这一词义重点。' },
+  { id: 'Allison 2022', text: 'Allison, Dale C. “Luke Rewriting Matthew? The Case of the Sermon on the Plain.” In Gospel Reading and Reception in Early Christian Literature. Cambridge University Press, 2022.', url: allisonSermonPlainUrl, note: '用于平原讲论与马太登山宝训的文学关系；相关共观福音来源问题仍属学术争论，本页不把其中一个模型当成信仰结论。' },
+  { id: 'Ndekha 2020', text: 'Ndekha, Louis W. “Praising the Poor and Blaming the Rich: A Panegyric Reading of Luke 6:20–49 in Malawian Context.” HTS Teologiese Studies 76/4 (2020).', url: ndekhaPoorRichUrl, note: '开放获取研究；用于保留福与祸的经济社会力度，并说明神国盼望会塑造富人与穷人共同生活，而不是浪漫化贫穷。' },
+  { id: 'Van der Watt 2021', text: 'Van der Watt, Jan G. “You Must Love Your Neighbour as Well as Your Enemy: Love in Luke 6:27–38 and 10:25–37.” In die Skriflig 55/1 (2021).', url: vanDerWattLoveUrl, note: '同行评审开放研究；用于理解路加如何以慈悲、善行、不报复和帮助弱者具体展开“爱”。' },
 ];
 
 export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = {
