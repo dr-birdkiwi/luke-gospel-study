@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { bibleGatewayUrl, chapterEightCitationsByRange, chapterEightReferences, chapterFiveCitationsByRange, chapterFiveReferences, chapterFourCitationsByRange, chapterFourReferences, chapterNineCitationsByRange, chapterNineReferences, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterSevenCitationsByRange, chapterSevenReferences, chapterSixCitationsByRange, chapterSixReferences, chapterTenCitationsByRange, chapterTenReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
+import { bibleGatewayUrl, chapterEightCitationsByRange, chapterEightReferences, chapterElevenCitationsByRange, chapterElevenReferences, chapterFiveCitationsByRange, chapterFiveReferences, chapterFourCitationsByRange, chapterFourReferences, chapterFourteenCitationsByRange, chapterFourteenReferences, chapterNineCitationsByRange, chapterNineReferences, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterSevenCitationsByRange, chapterSevenReferences, chapterSixCitationsByRange, chapterSixReferences, chapterTenCitationsByRange, chapterTenReferences, chapterThirteenCitationsByRange, chapterThirteenReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwelveCitationsByRange, chapterTwelveReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
 import { chapterFrames, getBookMovement, lukeBookMovements, readingLayers, type ChapterFrame } from './chapterFramework';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
@@ -193,6 +193,10 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
       ...(chapterEightCitationsByRange[note.range] ?? []),
       ...(chapterNineCitationsByRange[note.range] ?? []),
       ...(chapterTenCitationsByRange[note.range] ?? []),
+      ...(chapterElevenCitationsByRange[note.range] ?? []),
+      ...(chapterTwelveCitationsByRange[note.range] ?? []),
+      ...(chapterThirteenCitationsByRange[note.range] ?? []),
+      ...(chapterFourteenCitationsByRange[note.range] ?? []),
       ...(chapterNineteenCitationsByRange[note.range] ?? []),
       ...(chapterTwentyToTwentyFourCitationsByRange[note.range] ?? []),
       ...(note.citations ?? []),
@@ -272,6 +276,10 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     ...(chapter.no === 8 ? chapterEightReferences : []),
     ...(chapter.no === 9 ? chapterNineReferences : []),
     ...(chapter.no === 10 ? chapterTenReferences : []),
+    ...(chapter.no === 11 ? chapterElevenReferences : []),
+    ...(chapter.no === 12 ? chapterTwelveReferences : []),
+    ...(chapter.no === 13 ? chapterThirteenReferences : []),
+    ...(chapter.no === 14 ? chapterFourteenReferences : []),
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
     ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
     ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...chapterTwentyToTwentyFourReferences] : []),

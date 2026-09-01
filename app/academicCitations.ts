@@ -32,6 +32,10 @@ const netLukeSevenUrl = 'https://www.bible.com/bible/107/LUK.7.NET';
 const netLukeEightUrl = 'https://www.bible.com/bible/107/LUK.8.NET';
 const netLukeNineUrl = 'https://www.bible.com/bible/107/LUK.9.NET';
 const netLukeTenUrl = 'https://www.bible.com/bible/107/LUK.10.NET';
+const netLukeElevenUrl = 'https://www.bible.com/bible/107/LUK.11.NET';
+const netLukeTwelveUrl = 'https://www.bible.com/bible/107/LUK.12.NET';
+const netLukeThirteenUrl = 'https://www.bible.com/bible/107/LUK.13.NET';
+const netLukeFourteenUrl = 'https://www.bible.com/bible/107/LUK.14.NET';
 const seccombeLukeIsaiahUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/luke-and-isaiah/90A53C7EEB1013CF553160237B679B24';
 const rudmanLukeFourAuthorityUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/authority-and-right-of-disposal-in-luke-46/ECB998BC87B911C06416A9EF77DDD6FB';
 const meadOldNewWineUrl = 'https://journals.sagepub.com/doi/abs/10.1177/001452468809900804';
@@ -47,6 +51,14 @@ const dochhornSamaritanVillageUrl = 'https://www.cambridge.org/core/journals/new
 const coleSeventyTwoUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/p45-and-the-problem-of-the-seventytwo-a-case-for-the-longer-reading-in-luke-101-and-17/5CD287736140F1A33AF3F30D0781D778';
 const dowlingSamaritansUrl = 'https://www.cambridge.org/core/books/abs/tolerance-intolerance-and-recognition-in-early-christianity-and-early-judaism/learning-from-others-reading-two-samaritan-stories-in-the-gospel-of-luke-from-an-ecological-perspective/5146E0BE6C544BD5C99D7B4408A2074A';
 const henningMarthaUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/manufacturing-marthas-madness-enslavement-anxiety-and-distraction-in-luke-103842/E23B2C0723DF681A6DE72A6A8DDEFAC2';
+const gibsonLordsPrayerUrl = 'https://journals.sagepub.com/doi/10.1177/014610790103100304';
+const jonesLiliesUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/think-of-the-lilies-and-prov-6611/6414DC5E403F063F2DCB18E4A99D0416';
+const geminnAnxietyUrl = 'https://www.mdpi.com/2077-1444/17/1/36';
+const skinnerDisasterUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/third-sunday-in-lent-3/commentary-on-luke-131-9';
+const hammBentWomanUrl = 'https://journals.sagepub.com/doi/10.1177/0142064X8701003102';
+const solevagIdealMealUrl = 'https://journals.sagepub.com/doi/10.1177/01461079231210850';
+const llewelynHyperboleUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/hyperbole-and-the-cost-of-discipleship-a-case-study-of-luke-1426/2EE5C01E16DAF1A395D1F0D9E471EFCA';
+const zamfirTwoKingsUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/suing-for-peace-at-any-cost-reading-the-parable-of-the-two-kings-luke-14312-in-times-of-war/2BFA870724748BCE4778032B620B8B82';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
 const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
@@ -512,6 +524,91 @@ export const chapterTenReferences: ChapterReference[] = [
   { id: 'Cole 2017', text: 'Cole, Zachary J. “P45 and the Problem of the ‘Seventy(-two)’: A Case for the Longer Reading in Luke 10.1 and 17.” New Testament Studies 63/2 (2017): 203–221.', url: coleSeventyTwoUrl, note: '同行评审文本校勘研究；对“七十二”提出较强理由，同时本页保留中文译本常见的两种读法。' },
   { id: 'Dowling 2022', text: 'Dowling, Elizabeth V. “Learning from ‘Others’: Reading Two Samaritan Stories in the Gospel of Luke.” In Tolerance, Intolerance, and Recognition in Early Christianity and Early Judaism. Cambridge University Press, 2022.', url: dowlingSamaritansUrl, note: '用于撒玛利亚人的历史边界与叙事功能；避免把比喻变成反犹太人的“宗教领袖都冷漠”故事。' },
   { id: 'Henning 2025', text: 'Henning, Meghan R. “Manufacturing Martha’s Madness: Enslavement, Anxiety, and Distraction in Luke 10:38–42.” Harvard Theological Review 118/1 (2025): 19–40.', url: henningMarthaUrl, note: '最新同行评审研究；用于重新看见马大的劳动负担，避免把焦虑、女性或照顾工作本身写成属灵失败。' },
+];
+
+export const chapterElevenCitationsByRange: Record<string, StudyCitation[]> = {
+  '11:1–4': [
+    edwards(),
+    source('Gibson 2001', 'Gibson 2001 · 主祷文与门徒忠信', gibsonLordsPrayerUrl, '解读'),
+    source('NET · 路 11', 'NET · 原文与文本注释', netLukeElevenUrl, '解读'),
+  ],
+  '11:5–13': [edwards(), source('NET · 路 11', 'NET · 第 8 节词义与祷告应许', netLukeElevenUrl, '解读')],
+  '11:14–28': [edwards(), source('NET · 路 11', 'NET · 原文注释', netLukeElevenUrl, '解读')],
+  '11:29–36': [edwards(), source('NET · 路 11', 'NET · 约拿记号与眼睛比喻', netLukeElevenUrl, '解读')],
+  '11:37–54': [edwards(), source('NET · 路 11', 'NET · 第 41 节译法与祸语', netLukeElevenUrl, '解读')],
+};
+
+export const chapterTwelveCitationsByRange: Record<string, StudyCitation[]> = {
+  '12:1–12': [edwards(), source('NET · 路 12', 'NET · 原文注释', netLukeTwelveUrl, '解读')],
+  '12:13–21': [edwards(), source('NET · 路 12', 'NET · 无知财主', netLukeTwelveUrl, '解读')],
+  '12:22–34': [
+    edwards(),
+    source('Jones 1995', 'Jones 1995 · 百合花与智慧传统', jonesLiliesUrl, '背景'),
+    source('Geminn 2026', 'Geminn 2026 · 焦虑处境中的路 12', geminnAnxietyUrl, '应用'),
+    source('NET · 路 12', 'NET · “寿数／身量”与原文注释', netLukeTwelveUrl, '解读'),
+  ],
+  '12:35–48': [edwards(), source('NET · 路 12', 'NET · 警醒与管家', netLukeTwelveUrl, '解读')],
+  '12:49–59': [edwards(), source('NET · 路 12', 'NET · 火、洗礼与分裂', netLukeTwelveUrl, '解读')],
+};
+
+export const chapterThirteenCitationsByRange: Record<string, StudyCitation[]> = {
+  '13:1–9': [
+    edwards(),
+    source('Skinner 2010', 'Skinner · 灾难、受害者与悔改', skinnerDisasterUrl, '解读'),
+    source('NET · 路 13', 'NET · 原文注释', netLukeThirteenUrl, '解读'),
+  ],
+  '13:10–17': [
+    edwards(),
+    source('Hamm 1987', 'Hamm 1987 · 弯腰女人与以色列恢复', hammBentWomanUrl, '解读'),
+    source('NET · 路 13', 'NET · 安息日与“亚伯拉罕的女儿”', netLukeThirteenUrl, '解读'),
+  ],
+  '13:18–21': [edwards(), source('NET · 路 13', 'NET · 芥菜种与面酵', netLukeThirteenUrl, '解读')],
+  '13:22–30': [edwards(), source('NET · 路 13', 'NET · 窄门与神国筵席', netLukeThirteenUrl, '解读')],
+  '13:31–35': [edwards(), source('NET · 路 13', 'NET · 希律、第三天与耶路撒冷', netLukeThirteenUrl, '解读')],
+};
+
+export const chapterFourteenCitationsByRange: Record<string, StudyCitation[]> = {
+  '14:1–6': [edwards(), source('NET · 路 14', 'NET · 水臌、安息日与抄本异文', netLukeFourteenUrl, '解读')],
+  '14:7–14': [
+    edwards(),
+    source('Solevåg & Kartzow 2023', 'Solevåg & Kartzow 2023 · 宴席、残障与互惠', solevagIdealMealUrl, '背景'),
+    source('NET · 路 14', 'NET · 座位与宾客名单', netLukeFourteenUrl, '解读'),
+  ],
+  '14:15–24': [edwards(), source('NET · 路 14', 'NET · 大筵席与“勉强”', netLukeFourteenUrl, '解读')],
+  '14:25–35': [
+    edwards(),
+    source('Llewelyn & Robinson 2023', 'Llewelyn & Robinson 2023 · 路 14:26 的夸张语', llewelynHyperboleUrl, '解读'),
+    source('Zamfir 2024', 'Zamfir 2024 · 两王比喻与战争', zamfirTwoKingsUrl, '解读'),
+    source('NET · 路 14', 'NET · “恨”、十字架与放下一切', netLukeFourteenUrl, '解读'),
+  ],
+};
+
+export const chapterElevenReferences: ChapterReference[] = [
+  { id: 'NET · 路 11', text: 'NET Bible, Luke 11. Biblical Studies Press. Translation and study notes.', url: netLukeElevenUrl, note: '用于核对主祷文的文本差异、第 8 节的关键词、约拿记号、眼睛比喻以及 11:41 的译法。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于把祷告、圣灵、更强者、听道遵行与饭桌祸语读成一条连续的门徒道路。' },
+  { id: 'Gibson 2001', text: 'Gibson, Jeffrey B. “Matthew 6:9–13//Luke 11:2–4: An Eschatological Prayer?” Biblical Theology Bulletin 31/3 (2001): 96–105.', url: gibsonLordsPrayerUrl, note: '同行评审研究；用于主祷文怎样把神国、顺服与求神保守门徒忠信连在一起。本文提出的是一种学术论证，本页不把它当成排除其他解释的定论。' },
+];
+
+export const chapterTwelveReferences: ChapterReference[] = [
+  { id: 'NET · 路 12', text: 'NET Bible, Luke 12. Biblical Studies Press. Translation and study notes.', url: netLukeTwelveUrl, note: '用于核对假冒、无知财主、“寿数／身量”、警醒管家、火与受苦之洗的原文和译法。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于全章从天父看顾推进到财富、忧虑、警醒和分辨时候的整体结构。' },
+  { id: 'Jones 1995', text: 'Jones, John N. “Think of the Lilies” and Prov 6:6–11. Harvard Theological Review 88/1 (1995): 175–177.', url: jonesLiliesUrl, note: '同行评审短论；用于把“思想百合花”放进智慧传统的比较中，并提醒读者耶稣不是赞美不负责任。' },
+  { id: 'Geminn 2026', text: 'Geminn, Scott. “Ancient Wisdom for This Anxious Age: Luke 12:22–34’s Imperatives in Anxious Perspective.” Religions 17/1 (2026): 36.', url: geminnAnxietyUrl, note: '开放获取的跨学科研究；作者同时以焦虑症康复经验阅读本段。用于避免把“不要忧虑”变成责备患者的口号，并强调注意力、群体支持和渐进操练。' },
+];
+
+export const chapterThirteenReferences: ChapterReference[] = [
+  { id: 'NET · 路 13', text: 'NET Bible, Luke 13. Biblical Studies Press. Translation and study notes.', url: netLukeThirteenUrl, note: '用于核对两起灾难、无花果树、安息日医治、窄门、希律警告与耶路撒冷哀歌。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于把悔改、释放、神国生长、窄门和为城哀哭连成一条走向耶路撒冷的主线。' },
+  { id: 'Skinner 2010', text: 'Skinner, Matt. “Commentary on Luke 13:1–9.” Working Preacher, Luther Seminary, 2010.', url: skinnerDisasterUrl, note: '由新约学者撰写的释经资源；用于确认路加是两起灾难的唯一现存来源，并拒绝把受害者的死亡解释为他们特别有罪。' },
+  { id: 'Hamm 1987', text: 'Hamm, M. Dennis. “The Freeing of the Bent Woman and the Restoration of Israel: Luke 13.10–17 as Narrative Theology.” Journal for the Study of the New Testament 10/31 (1987): 23–44.', url: hammBentWomanUrl, note: '同行评审研究；用于重视“亚伯拉罕的女儿”、弯腰与站直、安息日释放及以色列恢复的叙事关系；本页不据此为现代疾病作属灵诊断。' },
+];
+
+export const chapterFourteenReferences: ChapterReference[] = [
+  { id: 'NET · 路 14', text: 'NET Bible, Luke 14. Biblical Studies Press. Translation and study notes.', url: netLukeFourteenUrl, note: '用于核对水臌、安息日问答、座位、宴席邀请、“勉强”、恨父母、计算代价和放下一切。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于理解整章怎样从一张安息日餐桌推进到恩典邀请和门徒代价。' },
+  { id: 'Solevåg & Kartzow 2023', text: 'Solevåg, Anna Rebecca, and Marianne Bjelland Kartzow. “The Ideal Meal: Masculinity and Disability among Host and Guests in Luke.” Biblical Theology Bulletin 53/4 (2023): 272–282.', url: solevagIdealMealUrl, note: '开放获取的同行评审研究；用于辨认宾客名单中的身体、经济能力和社会网络，避免把不同处境的人压缩成同一种被动对象。' },
+  { id: 'Llewelyn & Robinson 2023', text: 'Llewelyn, Stephen Robert, and Will Robinson. “Hyperbole and the Cost of Discipleship: A Case Study of Luke 14:26.” Harvard Theological Review 116/1 (2023): 44–65.', url: llewelynHyperboleUrl, note: '开放获取的同行评审研究；用于说明路 14:26 的“恨”是需要结合上下文理解的夸张语，不可据此合理化仇恨家庭或属灵控制。' },
+  { id: 'Zamfir 2024', text: 'Zamfir, Korinna. “Suing for Peace at Any Cost? Reading the Parable of the Two Kings (Luke 14.31–2) in Times of War.” New Testament Studies 70/1 (2024): 1–22.', url: zamfirTwoKingsUrl, note: '开放获取的同行评审研究；用于提醒两王比喻首先服务于计算门徒代价，不能单独承担完整的现代战争与和平伦理。' },
 ];
 
 export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = {
