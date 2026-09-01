@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { applyDeepStudyEnhancement, applyResearchReview, chapterNotesByChapter, type CitationScope, type StudyCitation, type StudyNote } from './chapterNotes';
-import { bibleGatewayUrl, chapterEightCitationsByRange, chapterEightReferences, chapterElevenCitationsByRange, chapterElevenReferences, chapterFiveCitationsByRange, chapterFiveReferences, chapterFourCitationsByRange, chapterFourReferences, chapterFourteenCitationsByRange, chapterFourteenReferences, chapterNineCitationsByRange, chapterNineReferences, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterSevenCitationsByRange, chapterSevenReferences, chapterSixCitationsByRange, chapterSixReferences, chapterTenCitationsByRange, chapterTenReferences, chapterThirteenCitationsByRange, chapterThirteenReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwelveCitationsByRange, chapterTwelveReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
+import { bibleGatewayUrl, chapterEightCitationsByRange, chapterEightReferences, chapterEighteenCitationsByRange, chapterEighteenReferences, chapterElevenCitationsByRange, chapterElevenReferences, chapterFifteenCitationsByRange, chapterFifteenReferences, chapterFiveCitationsByRange, chapterFiveReferences, chapterFourCitationsByRange, chapterFourReferences, chapterFourteenCitationsByRange, chapterFourteenReferences, chapterNineCitationsByRange, chapterNineReferences, chapterNineteenCitationsByRange, chapterNineteenReferences, chapterOneCitationsByRange, chapterOnePassageUrl, chapterOneReferences, chapterSevenCitationsByRange, chapterSevenReferences, chapterSeventeenCitationsByRange, chapterSeventeenReferences, chapterSixCitationsByRange, chapterSixReferences, chapterSixteenCitationsByRange, chapterSixteenReferences, chapterTenCitationsByRange, chapterTenReferences, chapterThirteenCitationsByRange, chapterThirteenReferences, chapterThreeCitationsByRange, chapterThreeReferences, chapterTwelveCitationsByRange, chapterTwelveReferences, chapterTwoCitationsByRange, chapterTwoReferences, chapterTwentyFourReferences, chapterTwentyOneReferences, chapterTwentyReferences, chapterTwentyThreeReferences, chapterTwentyToTwentyFourCitationsByRange, chapterTwentyToTwentyFourReferences, chapterTwentyTwoReferences, type ChapterReference } from './academicCitations';
 import { chapterFrames, getBookMovement, lukeBookMovements, readingLayers, type ChapterFrame } from './chapterFramework';
 import { pastoralGuides, pastoralMethodReferences, type PastoralGuide } from './pastoralGuides';
 import { getLukePassage, getRelatedPassages, SCRIPTURE_SOURCE, SCRIPTURE_VERSION, type Passage } from './scripture';
@@ -36,10 +36,10 @@ const chapterThemes = [
   ['天父看顾警醒的门徒', '在忧虑、拥有与等待中，谁掌管我的心？'],
   ['悔改、释放与生长的神国', '我如何回应神的忍耐与邀请？'],
   ['恩典筵席与门徒代价', '恩典如何重排座位和优先次序？'],
-  ['寻找失丧者的父', '我是在回家，还是站在门外？'],
+  ['寻找失丧者并一同欢喜', '我是在回家，还是站在门外？'],
   ['在钱财上忠于神国', '我如何使用主人所托付的资源？'],
   ['已经临到、仍要完成的神国', '我是否在恩典中回到主面前？'],
-  ['空手领受并跟随', '我用什么姿态来到主前？'],
+  ['呼求公义，空手领受并跟随', '我用什么姿态来到主前？'],
   ['寻找失丧者的王进入圣城', '救恩如何进入家庭、金钱与城市？'],
   ['圣殿中真正的主', '谁真正拥有神的殿、人的生命与未来？'],
   ['震动中仍掌权的人子', '末世盼望怎样塑造今天的清醒？'],
@@ -65,8 +65,8 @@ const chapterGuidesByChapter: Record<number, string[]> = {
   14: ['安息日宴席、谦卑与怜悯', '大筵席的邀请、计算跟随代价', '从座位、餐桌到十字架的门徒生活'],
   15: ['失羊与失钱的比喻', '小儿子回家与父亲的拥抱', '大儿子站在门外：恩典如何成为共同喜乐'],
   16: ['不义管家与钱财的忠心', '法利赛人爱钱、律法与神国', '财主与拉撒路：看见门口的贫穷'],
-  17: ['绊倒、饶恕与信心', '十个麻风病人与感恩', '神的国已经临在，也将完全显明'],
-  18: ['寡妇与不义的官、恒切祷告', '法利赛人与税吏、小孩子', '富足的官、受难预告、瞎子得看见'],
+  17: ['绊倒、饶恕与信心', '十人得洁净，撒玛利亚人回来感谢', '神的国已经临在，也将完全显明'],
+  18: ['寡妇与不义的官：恒切祷告并求公义', '法利赛人与税吏、小孩子', '富足的官、受难预告、瞎子得看见'],
   19: ['王先进入人的家：撒该与“今天”的救恩（19:1–10）', '神的国不会按人的时间表立刻完成：十锭银子与等候中的忠心（19:11–27）', '王走近圣城：和平的欢呼、为城的眼泪与圣殿的审判（19:28–48）'],
   20: ['权柄不是头衔：约翰的洗礼与凶恶园户', '该撒的银币与神所要的人', '复活的生命、大卫的主与受托者'],
   21: ['寡妇的两个小钱与圣殿', '圣殿与耶路撒冷的震动：从预告毁坏到门徒见证', '人子来临、无花果树与警醒祷告'],
@@ -92,8 +92,8 @@ const chapterSummaries = [
   '宴席中的座位、邀请与计算代价，重新安排门徒如何看待尊荣、资源和跟随。',
   '失羊、失钱和失子共同揭开父的喜乐，也把站在门外的自义带到光中。',
   '管家、律法、财主与拉撒路把钱财问题推进到永恒：我们如何使用受托的一切？',
-  '从绊倒、饶恕、麻风病人的感恩到神国的临在，信心在关系和等待中被检验。',
-  '寡妇的祷告、税吏的谦卑、孩子的领受和富足官的挣扎，都汇入前往耶路撒冷的道路。',
+  '从绊倒、饶恕、十人得洁净到神国已经临到而仍要显明，信心在关系、感恩和等待中被检验。',
+  '寡妇为公义恒切呼求，税吏与孩子空手领受，富足的官却陷入忧愁；耶稣继续走向受难，也使路旁呼求的人得以看见并跟随。',
   '耶稣先把“今天”的救恩带进撒该的家，又纠正人以为神的国会立刻公开完成的期待；从这里开始，王将以和平进入圣城、在十字架上作王，并在复活后把见证带向万邦。',
   '在耶路撒冷圣殿，耶稣逐一揭露谁在拒绝神、谁只是受托管理，以及真正的王权如何面对税收、死亡与弱者。',
   '在圣殿的宏伟、城市的震动和末世的未知之间，耶稣教门徒不靠恐惧或日期，而靠清醒、忍耐、祷告和见证等候神国。',
@@ -197,6 +197,10 @@ function addLaterChapterCitations(note: StudyNote): StudyNote {
       ...(chapterTwelveCitationsByRange[note.range] ?? []),
       ...(chapterThirteenCitationsByRange[note.range] ?? []),
       ...(chapterFourteenCitationsByRange[note.range] ?? []),
+      ...(chapterFifteenCitationsByRange[note.range] ?? []),
+      ...(chapterSixteenCitationsByRange[note.range] ?? []),
+      ...(chapterSeventeenCitationsByRange[note.range] ?? []),
+      ...(chapterEighteenCitationsByRange[note.range] ?? []),
       ...(chapterNineteenCitationsByRange[note.range] ?? []),
       ...(chapterTwentyToTwentyFourCitationsByRange[note.range] ?? []),
       ...(note.citations ?? []),
@@ -280,6 +284,10 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     ...(chapter.no === 12 ? chapterTwelveReferences : []),
     ...(chapter.no === 13 ? chapterThirteenReferences : []),
     ...(chapter.no === 14 ? chapterFourteenReferences : []),
+    ...(chapter.no === 15 ? chapterFifteenReferences : []),
+    ...(chapter.no === 16 ? chapterSixteenReferences : []),
+    ...(chapter.no === 17 ? chapterSeventeenReferences : []),
+    ...(chapter.no === 18 ? chapterEighteenReferences : []),
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
     ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
     ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...chapterTwentyToTwentyFourReferences] : []),

@@ -36,6 +36,10 @@ const netLukeElevenUrl = 'https://www.bible.com/bible/107/LUK.11.NET';
 const netLukeTwelveUrl = 'https://www.bible.com/bible/107/LUK.12.NET';
 const netLukeThirteenUrl = 'https://www.bible.com/bible/107/LUK.13.NET';
 const netLukeFourteenUrl = 'https://www.bible.com/bible/107/LUK.14.NET';
+const netLukeFifteenUrl = 'https://www.bible.com/bible/107/LUK.15.NET';
+const netLukeSixteenUrl = 'https://www.bible.com/bible/107/LUK.16.NET';
+const netLukeSeventeenUrl = 'https://www.bible.com/bible/107/LUK.17.NET';
+const netLukeEighteenUrl = 'https://www.bible.com/bible/107/LUK.18.NET';
 const seccombeLukeIsaiahUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/luke-and-isaiah/90A53C7EEB1013CF553160237B679B24';
 const rudmanLukeFourAuthorityUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/authority-and-right-of-disposal-in-luke-46/ECB998BC87B911C06416A9EF77DDD6FB';
 const meadOldNewWineUrl = 'https://journals.sagepub.com/doi/abs/10.1177/001452468809900804';
@@ -59,6 +63,18 @@ const hammBentWomanUrl = 'https://journals.sagepub.com/doi/10.1177/0142064X87010
 const solevagIdealMealUrl = 'https://journals.sagepub.com/doi/10.1177/01461079231210850';
 const llewelynHyperboleUrl = 'https://www.cambridge.org/core/journals/harvard-theological-review/article/hyperbole-and-the-cost-of-discipleship-a-case-study-of-luke-1426/2EE5C01E16DAF1A395D1F0D9E471EFCA';
 const zamfirTwoKingsUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/suing-for-peace-at-any-cost-reading-the-parable-of-the-two-kings-luke-14312-in-times-of-war/2BFA870724748BCE4778032B620B8B82';
+const ringeLukeFifteenUrl = 'https://www.workingpreacher.org/commentaries/narrative-lectionary/prodigal-son/commentary-on-luke-151-32';
+const rastoinLukeFifteenUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/le-genie-litteraire-et-theologique-de-luc-en-lc-151132-eclaire-par-le-parallele-avec-mt-212832/AF77605C45BDCFB6C1268AD7FA35DF9E';
+const carrollLukeSixteenManagerUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-25-3/commentary-on-luke-161-13-6';
+const carrollLukeSixteenLazarusUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-26-3/commentary-on-luke-1619-31-10';
+const lehtipuuAfterlifeUrl = 'https://brill.com/display/title/12770?language=en';
+const knowlesServantUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/reciprocity-and-favour-in-the-parable-of-the-undeserving-servant-luke-17710/FD54B6F516C24E2348D8B560406881A3';
+const holmenKingdomUrl = 'https://researchportal.helsinki.fi/en/publications/the-alternatives-of-the-kingdom-encountering-the-semantic-restric/';
+const stamperTenLepersUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-28-3/commentary-on-luke-1711-19-3';
+const ellisonWidowUrl = 'https://journals.sagepub.com/doi/10.1177/09667350241298633';
+const skinnerPhariseeUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-30-3/commentary-on-luke-189-14-4';
+const fowlChildrenUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/abs/receiving-the-kingdom-of-god-as-a-child-children-and-riches-in-luke-1815ff/BE73C5465998AC9A931BA484746C1AC8';
+const haysJusticeUrl = 'https://www.galaxie.com/article/jets55-1-04';
 const zacchaeusWorkingPreacherUrl = 'https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10';
 const minasGathercoleUrl = 'https://doi.org/10.1515/znw-2024-0002';
 const macnamaraZacchaeusUrl = 'https://repozytorium.kul.pl/bitstreams/cf52cf8e-75d4-4724-97e6-4defe00000d5/download';
@@ -583,6 +599,100 @@ export const chapterFourteenCitationsByRange: Record<string, StudyCitation[]> = 
   ],
 };
 
+export const chapterFifteenCitationsByRange: Record<string, StudyCitation[]> = {
+  '15:1–7': [
+    edwards(),
+    source('Ringe 2013', 'Ringe · 三个失丧比喻的共同回应', ringeLukeFifteenUrl, '解读'),
+    source('NET · 路 15', 'NET · 原文与背景注释', netLukeFifteenUrl, '解读'),
+  ],
+  '15:8–10': [
+    edwards(),
+    source('Ringe 2013', 'Ringe · 牧人、妇人与共同喜乐', ringeLukeFifteenUrl, '解读'),
+    source('NET · 路 15', 'NET · 德拉克马与比喻结构', netLukeFifteenUrl, '背景'),
+  ],
+  '15:11–24': [
+    edwards(),
+    source('Rastoin 2014', 'Rastoin 2014 · 路 15:11–32 的文学与神学', rastoinLukeFifteenUrl, '解读'),
+    source('Ringe 2013', 'Ringe · 父亲与两个失丧的儿子', ringeLukeFifteenUrl, '解读'),
+    source('NET · 路 15', 'NET · 产业、醒悟与父亲奔跑', netLukeFifteenUrl, '解读'),
+  ],
+  '15:25–32': [
+    edwards(),
+    source('Rastoin 2014', 'Rastoin 2014 · 两个儿子与开放结尾', rastoinLukeFifteenUrl, '解读'),
+    source('Ringe 2013', 'Ringe · 长子仍站在门外', ringeLukeFifteenUrl, '解读'),
+    source('NET · 路 15', 'NET · 长子的控诉与父亲的邀请', netLukeFifteenUrl, '解读'),
+  ],
+};
+
+export const chapterSixteenCitationsByRange: Record<string, StudyCitation[]> = {
+  '16:1–13': [
+    edwards(),
+    source('Carroll 2025a', 'Carroll 2025 · 不义管家的解释难题', carrollLukeSixteenManagerUrl, '解读'),
+    source('NET · 路 16', 'NET · 债额、机警与玛门', netLukeSixteenUrl, '解读'),
+  ],
+  '16:14–18': [
+    edwards(),
+    source('Carroll 2025a', 'Carroll 2025 · 钱财、神国与律法', carrollLukeSixteenManagerUrl, '解读'),
+    source('NET · 路 16', 'NET · 第 16 节译法与婚姻教导', netLukeSixteenUrl, '解读'),
+  ],
+  '16:19–31': [
+    edwards(),
+    source('Carroll 2025b', 'Carroll 2025 · 财主、拉撒路与摩西先知', carrollLukeSixteenLazarusUrl, '解读'),
+    source('Lehtipuu 2006', 'Lehtipuu · 拉撒路故事的来世图像', lehtipuuAfterlifeUrl, '背景'),
+    source('NET · 路 16', 'NET · 阴间、深渊与复活', netLukeSixteenUrl, '解读'),
+  ],
+};
+
+export const chapterSeventeenCitationsByRange: Record<string, StudyCitation[]> = {
+  '17:1–10': [
+    edwards(),
+    source('Knowles 2003', 'Knowles 2003 · 仆人、回报与本分', knowlesServantUrl, '解读'),
+    source('NET · 路 17', 'NET · 绊倒、芥菜种与“无用”仆人', netLukeSeventeenUrl, '解读'),
+  ],
+  '17:11–19': [
+    edwards(),
+    source('Stamper 2013', 'Stamper · 撒玛利亚人的感恩与辨认', stamperTenLepersUrl, '解读'),
+    praiseInLuke(),
+    source('NET · 路 17', 'NET · 洁净、外族人和“得救”', netLukeSeventeenUrl, '解读'),
+  ],
+  '17:20–37': [
+    edwards(),
+    source('Holmén 1996', 'Holmén 1996 · “在你们中间／里面”', holmenKingdomUrl, '解读'),
+    source('NET · 路 17', 'NET · 神国、人子日子与鹰／秃鹫', netLukeSeventeenUrl, '解读'),
+  ],
+};
+
+export const chapterEighteenCitationsByRange: Record<string, StudyCitation[]> = {
+  '18:1–8': [
+    edwards(),
+    source('Ellison 2025', 'Ellison 2025 · 寡妇的行动与公义', ellisonWidowUrl, '解读'),
+    source('Hays 2012', 'Hays 2012 · 路 18:1—19:10 的公义主线', haysJusticeUrl, '解读'),
+    source('NET · 路 18', 'NET · 伸冤、延迟与信心', netLukeEighteenUrl, '解读'),
+  ],
+  '18:9–14': [
+    edwards(),
+    source('Skinner 2019', 'Skinner 2019 · 自义、轻蔑与反犹太误读', skinnerPhariseeUrl, '解读'),
+    source('NET · 路 18', 'NET · 法利赛人的站立与税吏的祷告', netLukeEighteenUrl, '解读'),
+  ],
+  '18:15–17': [
+    edwards(),
+    source('Fowl 1993', 'Fowl 1993 · 像孩子领受神国', fowlChildrenUrl, '解读'),
+    source('NET · 路 18', 'NET · 婴孩与领受', netLukeEighteenUrl, '解读'),
+  ],
+  '18:18–30': [
+    edwards(),
+    source('Fowl 1993', 'Fowl 1993 · 孩子、富足者与领受', fowlChildrenUrl, '解读'),
+    source('Hays 2012', 'Hays 2012 · 财富、穷人与公义', haysJusticeUrl, '解读'),
+    source('NET · 路 18', 'NET · 官、针眼与撇下所有', netLukeEighteenUrl, '解读'),
+  ],
+  '18:31–43': [
+    edwards(),
+    praiseInLuke(),
+    source('Hays 2012', 'Hays 2012 · 看见、跟随与公义主线', haysJusticeUrl, '解读'),
+    source('NET · 路 18', 'NET · 受难预告与耶利哥医治', netLukeEighteenUrl, '解读'),
+  ],
+};
+
 export const chapterElevenReferences: ChapterReference[] = [
   { id: 'NET · 路 11', text: 'NET Bible, Luke 11. Biblical Studies Press. Translation and study notes.', url: netLukeElevenUrl, note: '用于核对主祷文的文本差异、第 8 节的关键词、约拿记号、眼睛比喻以及 11:41 的译法。' },
   { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于把祷告、圣灵、更强者、听道遵行与饭桌祸语读成一条连续的门徒道路。' },
@@ -609,6 +719,40 @@ export const chapterFourteenReferences: ChapterReference[] = [
   { id: 'Solevåg & Kartzow 2023', text: 'Solevåg, Anna Rebecca, and Marianne Bjelland Kartzow. “The Ideal Meal: Masculinity and Disability among Host and Guests in Luke.” Biblical Theology Bulletin 53/4 (2023): 272–282.', url: solevagIdealMealUrl, note: '开放获取的同行评审研究；用于辨认宾客名单中的身体、经济能力和社会网络，避免把不同处境的人压缩成同一种被动对象。' },
   { id: 'Llewelyn & Robinson 2023', text: 'Llewelyn, Stephen Robert, and Will Robinson. “Hyperbole and the Cost of Discipleship: A Case Study of Luke 14:26.” Harvard Theological Review 116/1 (2023): 44–65.', url: llewelynHyperboleUrl, note: '开放获取的同行评审研究；用于说明路 14:26 的“恨”是需要结合上下文理解的夸张语，不可据此合理化仇恨家庭或属灵控制。' },
   { id: 'Zamfir 2024', text: 'Zamfir, Korinna. “Suing for Peace at Any Cost? Reading the Parable of the Two Kings (Luke 14.31–2) in Times of War.” New Testament Studies 70/1 (2024): 1–22.', url: zamfirTwoKingsUrl, note: '开放获取的同行评审研究；用于提醒两王比喻首先服务于计算门徒代价，不能单独承担完整的现代战争与和平伦理。' },
+];
+
+export const chapterFifteenReferences: ChapterReference[] = [
+  { id: 'NET · 路 15', text: 'NET Bible, Luke 15. Biblical Studies Press. Translation and study notes.', url: netLukeFifteenUrl, note: '用于核对失羊、失钱、产业分配、父亲奔跑、长子控诉与比喻开放结尾的原文和背景问题。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于把三个比喻放回耶稣接待罪人的抱怨中，并以失丧、寻找、悔改与喜乐贯穿全章。' },
+  { id: 'Ringe 2013', text: 'Ringe, Sharon H. “Commentary on Luke 15:1–32.” Working Preacher, Luther Seminary, 2013.', url: ringeLukeFifteenUrl, note: '由新约学者撰写的释经资源；用于三个比喻的平行、两个失丧的儿子，以及长子是否进入宴席的开放结尾。其关于钱币属于嫁妆的背景仅作可能说明，本页不当作定论。' },
+  { id: 'Rastoin 2014', text: 'Rastoin, Marc. “Le génie littéraire et théologique de Luc en Lc 15.11–32 éclairé par le parallèle avec Mt 21.28–32.” New Testament Studies 60/1 (2014): 1–19.', url: rastoinLukeFifteenUrl, note: '同行评审研究；用于重视路加对两个儿子故事的文学和神学编排。作者提出与太 21:28–32 的来源关系是一种不能最终证明的假说，本页不把它写成经文事实。' },
+];
+
+export const chapterSixteenReferences: ChapterReference[] = [
+  { id: 'NET · 路 16', text: 'NET Bible, Luke 16. Biblical Studies Press. Translation and study notes.', url: netLukeSixteenUrl, note: '用于核对不义管家的债额、称赞范围、16:16 的译法、婚姻教导，以及财主与拉撒路的来世措辞。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于把管家、爱钱、律法、婚姻忠信和门口的拉撒路连成关于受托与回应神话语的整章挑战。' },
+  { id: 'Carroll 2025a', text: 'Carroll, John T. “Commentary on Luke 16:1–13.” Working Preacher, Luther Seminary, 2025.', url: carrollLukeSixteenManagerUrl, note: '用于承认管家比喻的解释难度，区分被称赞的机警与不可接受的不义，并把钱财使用带向可信、使人得益的关系。' },
+  { id: 'Carroll 2025b', text: 'Carroll, John T. “Commentary on Luke 16:19–31.” Working Preacher, Luther Seminary, 2025.', url: carrollLukeSixteenLazarusUrl, note: '用于财主确实知道拉撒路名字、门与深渊的对照、狗舔伤口的歧义，以及财富所带来的现实责任。' },
+  { id: 'Lehtipuu 2006', text: 'Lehtipuu, Outi. The Afterlife Imagery in Luke’s Story of the Rich Man and Lazarus. Novum Testamentum Supplements 123. Brill, 2006.', url: lehtipuuAfterlifeUrl, note: '学术专著；把本段来世图像放进希腊—罗马与犹太资料中，帮助避免把比喻当作对来世地理、时间顺序和所有细节的完整系统说明。' },
+];
+
+export const chapterSeventeenReferences: ChapterReference[] = [
+  { id: 'NET · 路 17', text: 'NET Bible, Luke 17. Biblical Studies Press. Translation and study notes.', url: netLukeSeventeenUrl, note: '用于核对“小子”、芥菜种、“无用”仆人、十人得洁净、“在你们中间／里面”、被取与留下及鹰／秃鹫的译法。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于把关系责任、感恩和神国已经临到而仍要完全显明，读成同一段门徒道路。' },
+  { id: 'Knowles 2003', text: 'Knowles, M. P. “Reciprocity and ‘Favour’ in the Parable of the Undeserving Servant (Luke 17.7–10).” New Testament Studies 49/2 (2003): 256–260.', url: knowlesServantUrl, note: '同行评审短论；用于仆人完成命令而不能以此向主人索取额外回报的背景。本页同时明确区分比喻取材与对奴役制度的伦理认可。' },
+  { id: 'Stamper 2013', text: 'Stamper, Meda. “Commentary on Luke 17:11–19.” Working Preacher, Luther Seminary, 2013.', url: stamperTenLepersUrl, note: '用于撒玛利亚和加利利之间的边界场景、外来者身份、归荣耀给神与对耶稣的信心回应。' },
+  { id: 'Holmén 1996', text: 'Holmén, Tom. “The Alternatives of the Kingdom: Encountering the Semantic Restrictions of Luke 17.20–21 (entos humon).” Zeitschrift für die Neutestamentliche Wissenschaft 87/3–4 (1996): 204–229.', url: holmenKingdomUrl, note: '同行评审语义研究；用于呈现“在你们中间／里面”的翻译限制与解释范围，避免把一个有争议的短语说成毫无歧义。' },
+  { id: 'Wasiak 2024', text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.', url: praiseInLukeNtsUrl, note: '开放获取同行评审研究；用于路 17:11–19 中医治、辨认耶稣、感恩和归荣耀给神的叙事联系。' },
+];
+
+export const chapterEighteenReferences: ChapterReference[] = [
+  { id: 'NET · 路 18', text: 'NET Bible, Luke 18. Biblical Studies Press. Translation and study notes.', url: netLukeEighteenUrl, note: '用于核对寡妇伸冤、神是否延迟、法利赛人的祷告、婴孩、富足的官、针眼，以及受难预告和耶利哥医治。' },
+  { id: 'Edwards 2015', text: 'Edwards, James R. The Gospel according to Luke. Pillar New Testament Commentary. Eerdmans, 2015.', url: edwardsUrl, note: '用于全章从祷告与公义推进到称义、领受、财富、受难和看见的整体结构。' },
+  { id: 'Ellison 2025', text: 'Ellison, Lauren. “Liberating Justice: Interpreting Luke’s Parable of the Widow and the Judge in Light of Norm Theory and the Experience of Modern Women in Politics.” Feminist Theology 33/2 (2025).', url: ellisonWidowUrl, note: '同行评审研究；用于重新看见寡妇的行动能力和她对不义制度的持续挑战。作者以现代政治经验作社会科学类比，本页只采用其行动与权力观察，不把类比等同历史重建。' },
+  { id: 'Skinner 2019', text: 'Skinner, Matt. “Commentary on Luke 18:9–14.” Working Preacher, Luther Seminary, 2019.', url: skinnerPhariseeUrl, note: '用于把比喻焦点放在自义与藐视，说明法利赛人不应被当作“伪君子”的同义词，并防止基督徒以反犹太刻板印象制造新的自义。' },
+  { id: 'Fowl 1993', text: 'Fowl, Stephen. “Receiving the Kingdom of God as a Child: Children and Riches in Luke 18.15ff.” New Testament Studies 39/1 (1993): 153–158.', url: fowlChildrenUrl, note: '同行评审短论；用于把像孩子领受神国与紧接着的富足官放在一起阅读，同时不把孩子本身缩减成成人的抽象教材。' },
+  { id: 'Hays 2012', text: 'Hays, J. Daniel. “‘Sell Everything You Have and Give to the Poor’: The Old Testament Prophetic Theme of Justice as the Connecting Motif of Luke 18:1–19:10.” Journal of the Evangelical Theological Society 55/1 (2012): 43–63.', url: haysJusticeUrl, note: '同行评审研究；提出旧约先知的公义主题贯穿路 18:1—19:10。本页采用它作为整段连贯阅读的重要建议，同时保留各小节自己的文学重点。' },
+  { id: 'Wasiak 2024', text: 'Wasiak, Wojciech. “Miracle Stories and Praise: Two Neglected Topics in Luke.” New Testament Studies 70/4 (2024): 452–469.', url: praiseInLukeNtsUrl, note: '用于路 18:35–43 的医治、跟随、归荣耀给神和群众赞美；本页同时明确拒绝把残障归咎于信心不足。' },
 ];
 
 export const chapterNineteenCitationsByRange: Record<string, StudyCitation[]> = {
