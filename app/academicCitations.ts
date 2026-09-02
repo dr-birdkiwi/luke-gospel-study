@@ -93,10 +93,9 @@ const bovonLukeTwentyTaxesUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.10';
 const bovonLukeTwentyResurrectionUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.11';
 const bovonLukeTwentyMessiahUrl = 'https://www.jstor.org/stable/j.ctvb6v8bq.12';
 const nevilleLukeTwentyOneUrl = 'https://journals.sagepub.com/doi/10.1177/1476993X241229158';
-const jamesLukeTwentyTwoUrl = 'https://openurl.ebsco.com/contentitem/gcd%3A180950284';
-const swordLukeTwentyTwoUrl = 'https://brill.com/view/journals/evqu/92/4/article-p351_4.xml';
+const jamesLukeTwentyTwoUrl = 'https://academic.oup.com/jts/article-abstract/75/2/336/7755002';
+const swordLukeTwentyTwoUrl = 'https://doi.org/10.1163/27725472-09204004';
 const clostermanLukeTwentyThreeUrl = 'https://www.cambridge.org/core/journals/new-testament-studies/article/reading-the-gospel-of-lukes-walk-to-calvary-as-a-funeral-procession-a-study-of-luke-23278/1C72C42AE96F64344D934FB044D92DD4';
-const byuLukeTwentyThreeUrl = 'https://byustudies.byu.edu/online-book/the-testimony-of-luke/luke-chapter-23-104';
 const paradiseLukeTwentyThreeUrl = 'https://doi.org/10.31982/KNTS.2023.3.30.1.111';
 const thompsonLukeTwentyFourUrl = 'https://www.degruyterbrill.com/document/doi/10.1515/9783110773743/html';
 const clarkHowardLukeTwentyFourUrl = 'https://www.tandfonline.com/doi/full/10.1080/23312521.2025.2495004';
@@ -939,24 +938,23 @@ export const chapterTwentyToTwentyFourCitationsByRange: Record<string, StudyCita
   ],
   '22:39–46': [
     source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
-    source('James 2024', 'James 2024 · 路 22:15–20 文本异文', jamesLukeTwentyTwoUrl, '背景'),
     source('WP · 末后晚餐', 'Working Preacher · 路 22:1–27（延伸至 22:53）', lastSupperWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
   '22:47–71': [
     source('NET · 路 22', 'NET · 路 22 原文注释', netLukeTwentyTwoUrl, '解读'),
-    source('WP · 受难审判', 'Working Preacher · 路 22:47–71', passionTrialWorkingPreacherUrl, '解读'),
+    source('WP · 受难叙事', 'Working Preacher · 路 22:14—23:56', passionTrialWorkingPreacherUrl, '解读'),
     source('Yale · 在耶路撒冷', 'Yale Bible Study · 在耶路撒冷', yaleJerusalemUrl, '背景'),
   ],
   '23:1–25': [
     source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
-    source('BYU · 路 23', 'BYU Studies · 路 23 章节注释', byuLukeTwentyThreeUrl, '背景'),
+    source('WP · 受难叙事', 'Working Preacher · 路 22:14—23:56', passionTrialWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '解读'),
   ],
   '23:26–31': [
     source('NET · 路 23', 'NET · 路 23 原文注释', netLukeTwentyThreeUrl, '解读'),
     source('Closterman 2024', 'Closterman 2024 · 走向各各他的葬礼行列', clostermanLukeTwentyThreeUrl, '解读'),
-    source('BYU · 路 23', 'BYU Studies · 路 23 章节注释', byuLukeTwentyThreeUrl, '背景'),
+    source('WP · 受难叙事', 'Working Preacher · 路 22:14—23:56', passionTrialWorkingPreacherUrl, '解读'),
     source('Yale · 受难与复活', 'Yale Bible Study · 受难与复活', passionResurrectionYaleUrl, '背景'),
   ],
   '23:32–43': [
@@ -1026,10 +1024,10 @@ export const chapterTwentyToTwentyFourReferences: ChapterReference[] = [
     note: '页面标题为路 22:1–27，正文延伸讨论到 22:38，并联系 22:39–53；用于末餐、服事领导与橄榄山祷告的相关段落。',
   },
   {
-    id: 'WP · 受难审判',
-    text: 'Skinner, Matt. “Commentary on Luke 22:14–23:56.” Working Preacher.',
+    id: 'WP · 受难叙事',
+    text: 'Skinner, Matt. “Commentary on Luke 22:14—23:56.” Working Preacher, March 28, 2010.',
     url: passionTrialWorkingPreacherUrl,
-    note: '用于路 22:47–71 的被捕、彼得否认与宗教权力审问；同时提醒读者区分神学叙事、人的责任与历史重建。',
+    note: '用于路 22:47–71 的被捕、彼得否认与宗教权力审问，也用于路 23 章的受难叙事；同时提醒读者区分神学叙事、人的责任与历史重建。',
   },
   {
     id: 'Yale · 受难与复活',
@@ -1114,13 +1112,13 @@ export const chapterTwentyTwoReferences: ChapterReference[] = [
   },
   {
     id: 'James 2024',
-    text: 'James, Rob. “Variant Readings of Luke 22:15–20 and the Relationship of Codex Bezae to Curetonian Syriac.” Journal of Theological Studies 75/2 (2024): 336.',
+    text: 'James, Rob. “Variant Readings of Luke 22:15–20 and the Relationship of Codex Bezae to Curetonian Syriac.” Journal of Theological Studies 75/2 (2024): 336–355.',
     url: jamesLukeTwentyTwoUrl,
     note: '同行评审的文本校勘研究；用于说明 22:15–20 不宜只简化为“长式／短式”二分，并支持页面对 22:19 下–20 异文的谨慎标注。',
   },
   {
     id: 'EvQ 2021',
-    text: '“Does Jesus Endorse Armed Self-Defense in Luke 22:36?” Evangelical Quarterly 92/4 (2021).',
+    text: 'Hsiao, Timothy. “Does Jesus Endorse Armed Self-Defense in Luke 22:36?” Evangelical Quarterly 92/4 (2021): 351–366.',
     url: swordLukeTwentyTwoUrl,
     note: '呈现将“买刀”理解为武装自卫的学术进路；本页面将其与 22:49–51 耶稣制止暴力的叙事并读，不把它扩展为教会武装或报复命令。',
   },
@@ -1132,12 +1130,6 @@ export const chapterTwentyThreeReferences: ChapterReference[] = [
     text: 'NET Bible. Luke 23: text, translation notes, and study notes.',
     url: netLukeTwentyThreeUrl,
     note: '用于核对彼拉多、希律、古利奈人西门、十字架、百夫长与安葬等段落。',
-  },
-  {
-    id: 'BYU · 路 23',
-    text: 'BYU Studies. “Luke Chapter 23: The Testimony of Luke.”',
-    url: byuLukeTwentyThreeUrl,
-    note: '章节注释；用于补充政治控告、彼拉多与希律、青绿树与枯干树等历史和叙事观察。',
   },
   {
     id: 'Closterman 2024',

@@ -250,6 +250,17 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
   const pastoralReferences: ChapterReference[] = pastoralMethodReferences.map((reference) => ({ ...reference }));
   if (chapter.no === 1) return [...chapterOneReferences, ...pastoralReferences];
 
+  const sharedReferenceIdsByChapter: Partial<Record<number, string[]>> = {
+    20: ['Yale · 在耶路撒冷'],
+    21: ['Yale · 在耶路撒冷', 'WP · 21:5–19', 'WP · 21:25–36'],
+    22: ['Yale · 在耶路撒冷', 'WP · 末后晚餐', 'WP · 受难叙事'],
+    23: ['WP · 受难叙事', 'Yale · 受难与复活'],
+    24: ['Yale · 受难与复活', 'WP · 空坟墓', 'WP · 以马忤斯', 'WP · 升天'],
+  };
+  const sharedReferences = chapterTwentyToTwentyFourReferences.filter((reference) =>
+    sharedReferenceIdsByChapter[chapter.no]?.includes(reference.id),
+  );
+
   const relatedPassages = [...new Map(
     (chapter.notes ?? [])
       .flatMap((note) => getRelatedPassages(note.connection))
@@ -289,11 +300,11 @@ function getChapterReferences(chapter: Chapter): ChapterReference[] {
     ...(chapter.no === 17 ? chapterSeventeenReferences : []),
     ...(chapter.no === 18 ? chapterEighteenReferences : []),
     ...(chapter.no === 19 ? chapterNineteenReferences : []),
-    ...(chapter.no === 20 ? [...chapterTwentyReferences, ...chapterTwentyToTwentyFourReferences] : []),
-    ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...chapterTwentyToTwentyFourReferences] : []),
-    ...(chapter.no === 22 ? [...chapterTwentyTwoReferences, ...chapterTwentyToTwentyFourReferences] : []),
-    ...(chapter.no === 23 ? [...chapterTwentyThreeReferences, ...chapterTwentyToTwentyFourReferences] : []),
-    ...(chapter.no === 24 ? [...chapterTwentyFourReferences, ...chapterTwentyToTwentyFourReferences] : []),
+    ...(chapter.no === 20 ? [...chapterTwentyReferences, ...sharedReferences] : []),
+    ...(chapter.no === 21 ? [...chapterTwentyOneReferences, ...sharedReferences] : []),
+    ...(chapter.no === 22 ? [...chapterTwentyTwoReferences, ...sharedReferences] : []),
+    ...(chapter.no === 23 ? [...chapterTwentyThreeReferences, ...sharedReferences] : []),
+    ...(chapter.no === 24 ? [...chapterTwentyFourReferences, ...sharedReferences] : []),
     ...pastoralReferences,
     ...(relatedPassages.length ? [{
       id: '互文',

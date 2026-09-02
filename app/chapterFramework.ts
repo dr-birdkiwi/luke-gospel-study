@@ -302,13 +302,13 @@ export const chapterFrames: Record<number, ChapterFrame> = {
   },
   13: {
     actId: 3,
-    center: '耶稣呼召每个人在神忍耐中悔改，以安息日的释放显明神国，并在走向耶路撒冷时为拒绝庇护的城哀哭。',
+    center: '耶稣呼召每个人在神忍耐中悔改，以安息日的释放显明神国，并在走向耶路撒冷时为拒绝祂庇护的城发出哀叹。',
     placement: '门徒要分辨时候，但不能把灾难变成论断别人的证据；真正紧迫的是自己回应神的忍耐。',
-    motifs: ['悔改', '忍耐', '释放', '神国成长', '为耶路撒冷哀哭'],
+    motifs: ['悔改', '忍耐', '释放', '神国成长', '为耶路撒冷哀叹'],
     movements: [
       { startNoteIndex: 0, range: '13:1–17', title: '从灾难论断转向悔改与释放', center: '耶稣拒绝简单报应论，也不让安息日规条挡住一个受捆绑者得释放。' },
       { startNoteIndex: 2, range: '13:18–21', title: '神国在微小中生长', center: '神国可能不像人期待的宏大，却持续扩展并改变所进入的世界。' },
-      { startNoteIndex: 3, range: '13:22–35', title: '进窄门，也听见主为城哀哭', center: '救恩的门向万方敞开，却要求真实进入；审判中的耶稣仍带着聚集人的怜悯。' },
+      { startNoteIndex: 3, range: '13:22–35', title: '进窄门，也听见主为城哀叹', center: '救恩的门向万方敞开，却要求真实进入；审判中的耶稣仍带着聚集人的怜悯。' },
     ],
     response: {
       gospel: '神的忍耐给人悔改的时间；耶稣不是远处评论灾难，而是走向将拒绝祂的城，要把人聚在祂翅膀下。',
@@ -410,7 +410,7 @@ export const chapterFrames: Record<number, ChapterFrame> = {
   },
   19: {
     actId: 4,
-    center: '寻找失丧者的王把“今天”的救恩带进撒该家，又纠正立即得国的期待，并以和平、眼泪和圣殿中的真理进入耶路撒冷。',
+    center: '寻找失丧者的王把“今天”的救恩带进撒该家，又纠正众人以为神国会立刻公开实现的期待，并以和平、眼泪和圣殿中的真理进入耶路撒冷。',
     placement: '漫长旅程抵达耶路撒冷门口；第18章富足官的问题在撒该身上得到回应，随后王权、审判与和平成为受难周的主线。',
     motifs: ['今天的救恩', '寻找失丧者', '受托等候', '和平的王', '圣殿审判'],
     movements: [
@@ -451,7 +451,7 @@ export const chapterFrames: Record<number, ChapterFrame> = {
     motifs: ['圣殿审判', '见证', '忍耐', '人子来临', '警醒祷告'],
     movements: [
       { startNoteIndex: 0, range: '21:1–6', title: '寡妇与将被拆毁的圣殿', center: '耶稣看见被忽略的奉献者，也宣布人所赞叹的建筑终将过去。' },
-      { startNoteIndex: 2, range: '21:7–24', title: '震动中不是猜测，而是见证与逃生', center: '战争和逼迫不自动等于末日已经来到；门徒要拒绝迷惑，在需要时逃离，也在受审时见证。' },
+      { startNoteIndex: 2, range: '21:7–24', title: '震动中拒绝猜测，坚持见证并及时避险', center: '战争和逼迫不自动等于末日已经来到；门徒要拒绝迷惑，在需要时逃离，也在受审时见证。' },
       { startNoteIndex: 4, range: '21:25–38', title: '抬头、警醒并每天听道', center: '人子来临使属祂的人得赎；真正预备是清醒、祷告和持续聆听耶稣。' },
     ],
     response: {
@@ -469,7 +469,7 @@ export const chapterFrames: Record<number, ChapterFrame> = {
     motifs: ['逾越节', '新约', '为你们舍', '服事', '祷告与顺服'],
     movements: [
       { startNoteIndex: 0, range: '22:1–6', title: '黑暗寻找机会', center: '背叛进入故事，却没有使耶稣失去对救赎时间和道路的主动。' },
-      { startNoteIndex: 1, range: '22:7–38', title: '桌边赐下自己，也恢复失败者', center: '饼和杯说明耶稣为门徒舍己；同桌门徒仍争大、将失败，却被教导服事并预先托付。' },
+      { startNoteIndex: 1, range: '22:7–38', title: '桌边赐下自己，也预备失败者回转', center: '饼和杯说明耶稣为门徒舍己；同桌门徒仍争大、将失败，却被教导服事并预先托付。' },
       { startNoteIndex: 4, range: '22:39–71', title: '在祷告中顺服，在黑暗中受审', center: '耶稣真实经历痛苦，却把自己交给父；门徒靠刀和自保失败，主仍忠于自己的身份。' },
     ],
     response: {
@@ -482,7 +482,7 @@ export const chapterFrames: Record<number, ChapterFrame> = {
   },
   23: {
     actId: 5,
-    center: '无罪的君王在政治、宗教和群众的合谋中被交付，却主动担当罪人的位置，以赦免、应许和完全交托完成祂“为你们舍己”的救恩。',
+    center: '无罪的君王在政治权力、部分宗教领袖和群众压力交织之下被交付，却主动担当罪人的位置，以赦免、应许和完全交托完成祂“为你们舍己”的救恩。',
     placement: '第22章的饼、杯和新约在这里成为真实受死；十字架既揭露人的罪和权力，也首先是基督为罪人完成的拯救。',
     motifs: ['无罪受苦者', '代替与担当', '赦免', '今日同在乐园', '真实死亡'],
     movements: [
